@@ -7,9 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC28F8D21BEB9566000B5587 /* StateType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC28F8D11BEB9566000B5587 /* StateType.swift */; };
+		BC51BC4D1BEBE86D008AFB00 /* StateType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC28F8D11BEB9566000B5587 /* StateType.swift */; };
+		BC51BC501BEBFA70008AFB00 /* TestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC51BC4F1BEBFA70008AFB00 /* TestUtils.swift */; };
+		BC51BC521BECA063008AFB00 /* reducerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC51BC511BECA063008AFB00 /* reducerType.swift */; };
+		BC51BC531BECA068008AFB00 /* reducerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC51BC511BECA063008AFB00 /* reducerType.swift */; };
+		BC51BC551BECA6CC008AFB00 /* StoreTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC51BC541BECA6CC008AFB00 /* StoreTypeTests.swift */; };
 		BCE259521BE912AE00424F65 /* SwiftRedux.h in Headers */ = {isa = PBXBuildFile; fileRef = BCE259511BE912AE00424F65 /* SwiftRedux.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BCE259591BE912AF00424F65 /* SwiftRedux.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCE2594E1BE912AE00424F65 /* SwiftRedux.framework */; };
 		BCE2595E1BE912AF00424F65 /* SwiftReduxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE2595D1BE912AF00424F65 /* SwiftReduxTests.swift */; };
+		BCE259691BE913A000424F65 /* CreateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE259681BE913A000424F65 /* CreateStore.swift */; };
+		BCE2596A1BE913A000424F65 /* CreateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE259681BE913A000424F65 /* CreateStore.swift */; };
+		BCE2596F1BE914DF00424F65 /* ActionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE2596E1BE914DF00424F65 /* ActionType.swift */; };
+		BCE259701BE914DF00424F65 /* ActionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE2596E1BE914DF00424F65 /* ActionType.swift */; };
+		BCE259721BE915A700424F65 /* StoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE259711BE915A700424F65 /* StoreType.swift */; };
+		BCE259731BE915A700424F65 /* StoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE259711BE915A700424F65 /* StoreType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,12 +35,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BC28F8D11BEB9566000B5587 /* StateType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateType.swift; sourceTree = "<group>"; };
+		BC51BC4F1BEBFA70008AFB00 /* TestUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestUtils.swift; sourceTree = "<group>"; };
+		BC51BC511BECA063008AFB00 /* reducerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = reducerType.swift; sourceTree = "<group>"; };
+		BC51BC541BECA6CC008AFB00 /* StoreTypeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreTypeTests.swift; sourceTree = "<group>"; };
 		BCE2594E1BE912AE00424F65 /* SwiftRedux.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftRedux.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCE259511BE912AE00424F65 /* SwiftRedux.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftRedux.h; sourceTree = "<group>"; };
 		BCE259531BE912AE00424F65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCE259581BE912AF00424F65 /* SwiftReduxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftReduxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCE2595D1BE912AF00424F65 /* SwiftReduxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftReduxTests.swift; sourceTree = "<group>"; };
 		BCE2595F1BE912AF00424F65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BCE259681BE913A000424F65 /* CreateStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateStore.swift; sourceTree = "<group>"; };
+		BCE2596E1BE914DF00424F65 /* ActionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionType.swift; sourceTree = "<group>"; };
+		BCE259711BE915A700424F65 /* StoreType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +92,11 @@
 			children = (
 				BCE259511BE912AE00424F65 /* SwiftRedux.h */,
 				BCE259531BE912AE00424F65 /* Info.plist */,
+				BCE259681BE913A000424F65 /* CreateStore.swift */,
+				BCE2596E1BE914DF00424F65 /* ActionType.swift */,
+				BCE259711BE915A700424F65 /* StoreType.swift */,
+				BC51BC511BECA063008AFB00 /* reducerType.swift */,
+				BC28F8D11BEB9566000B5587 /* StateType.swift */,
 			);
 			path = SwiftRedux;
 			sourceTree = "<group>";
@@ -82,6 +106,8 @@
 			children = (
 				BCE2595D1BE912AF00424F65 /* SwiftReduxTests.swift */,
 				BCE2595F1BE912AF00424F65 /* Info.plist */,
+				BC51BC4F1BEBFA70008AFB00 /* TestUtils.swift */,
+				BC51BC541BECA6CC008AFB00 /* StoreTypeTests.swift */,
 			);
 			path = SwiftReduxTests;
 			sourceTree = "<group>";
@@ -194,6 +220,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC51BC521BECA063008AFB00 /* reducerType.swift in Sources */,
+				BCE259691BE913A000424F65 /* CreateStore.swift in Sources */,
+				BCE259721BE915A700424F65 /* StoreType.swift in Sources */,
+				BC28F8D21BEB9566000B5587 /* StateType.swift in Sources */,
+				BCE2596F1BE914DF00424F65 /* ActionType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,7 +232,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC51BC551BECA6CC008AFB00 /* StoreTypeTests.swift in Sources */,
 				BCE2595E1BE912AF00424F65 /* SwiftReduxTests.swift in Sources */,
+				BC51BC501BEBFA70008AFB00 /* TestUtils.swift in Sources */,
+				BCE2596A1BE913A000424F65 /* CreateStore.swift in Sources */,
+				BCE259701BE914DF00424F65 /* ActionType.swift in Sources */,
+				BC51BC531BECA068008AFB00 /* reducerType.swift in Sources */,
+				BCE259731BE915A700424F65 /* StoreType.swift in Sources */,
+				BC51BC4D1BEBE86D008AFB00 /* StateType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,28 +346,33 @@
 		BCE259631BE912AF00424F65 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = SwiftRedux/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.stampster.SwiftRedux;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		BCE259641BE912AF00424F65 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = SwiftRedux/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.stampster.SwiftRedux;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -376,6 +419,7 @@
 				BCE259641BE912AF00424F65 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BCE259651BE912AF00424F65 /* Build configuration list for PBXNativeTarget "SwiftReduxTests" */ = {
 			isa = XCConfigurationList;
@@ -384,6 +428,7 @@
 				BCE259671BE912AF00424F65 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
