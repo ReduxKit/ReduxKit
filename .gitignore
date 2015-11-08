@@ -16,5 +16,5 @@ DerivedData
 *.hmap
 *.ipa
 *.xcuserstate
-
+Carthage/
 .DS_Store
