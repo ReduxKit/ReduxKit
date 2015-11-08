@@ -24,8 +24,3 @@ protocol Failable{
 struct DefaultAction: ActionType{
     var payload: Any?;
 }
-
-
-protocol ReducerType{
-    func reduce(statePlaceholder:Any, action:ActionType) ->Any
-}

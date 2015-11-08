@@ -15,116 +15,6 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "10"
             endingLineNumber = "10">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwiftReduxTests.SwiftReduxTests.__deallocating_deinit"
-                  moduleName = "SwiftReduxTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/aleksanderhr/Documents/Projects/Swift/SwiftRedux/SwiftReduxTests/SwiftReduxTests.swift"
-                  timestampString = "468452810.762774"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "12">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwiftReduxTests.SwiftReduxTests.init (SwiftReduxTests.SwiftReduxTests.Type)(invocation : Swift.Optional&lt;__ObjC.NSInvocation&gt;) -&gt; SwiftReduxTests.SwiftReduxTests"
-                  moduleName = "SwiftReduxTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/aleksanderhr/Documents/Projects/Swift/SwiftRedux/SwiftReduxTests/SwiftReduxTests.swift"
-                  timestampString = "468452810.764902"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "16">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwiftReduxTests.SwiftReduxTests.init (SwiftReduxTests.SwiftReduxTests.Type)(selector : ObjectiveC.Selector) -&gt; SwiftReduxTests.SwiftReduxTests"
-                  moduleName = "SwiftReduxTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/aleksanderhr/Documents/Projects/Swift/SwiftRedux/SwiftReduxTests/SwiftReduxTests.swift"
-                  timestampString = "468452810.765732"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "16">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwiftReduxTests.SwiftReduxTests.init (SwiftReduxTests.SwiftReduxTests.Type)() -&gt; SwiftReduxTests.SwiftReduxTests"
-                  moduleName = "SwiftReduxTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/aleksanderhr/Documents/Projects/Swift/SwiftRedux/SwiftReduxTests/SwiftReduxTests.swift"
-                  timestampString = "468452810.766052"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "12">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SwiftRedux/StoreType.swift"
-            timestampString = "468334405.854812"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "Store"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwiftReduxTests.Store.init &lt;A&gt; (SwiftReduxTests.Store&lt;A&gt;.Type)(reducer : (A, SwiftReduxTests.ActionType) -&gt; A, initialState : A) -&gt; SwiftReduxTests.Store&lt;A&gt;"
-                  moduleName = "SwiftReduxTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/aleksanderhr/Documents/Projects/Swift/SwiftRedux/SwiftRedux/StoreType.swift"
-                  timestampString = "468452810.766563"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "22"
-                  endingLineNumber = "22"
-                  offsetFromSymbolStart = "132">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwiftRedux.Store.init &lt;A&gt; (SwiftRedux.Store&lt;A&gt;.Type)(reducer : (A, SwiftRedux.ActionType) -&gt; A, initialState : A) -&gt; SwiftRedux.Store&lt;A&gt;"
-                  moduleName = "SwiftRedux"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/aleksanderhr/Documents/Projects/Swift/SwiftRedux/SwiftRedux/StoreType.swift"
-                  timestampString = "468452810.776071"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "22"
-                  endingLineNumber = "22"
-                  offsetFromSymbolStart = "132">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -283,53 +173,6 @@
             endingLineNumber = "37"
             landmarkName = "testFunc()"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwiftReduxTests.CombineReducersTests.testFunc (SwiftReduxTests.CombineReducersTests)() -&gt; ()"
-                  moduleName = "SwiftReduxTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/aleksanderhr/Documents/Projects/Swift/SwiftRedux/SwiftReduxTests/CombineReducersTests.swift"
-                  timestampString = "468452810.77081"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "37"
-                  endingLineNumber = "37"
-                  offsetFromSymbolStart = "341">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwiftReduxTests.CombineReducersTests.(testFunc (SwiftReduxTests.CombineReducersTests) -&gt; () -&gt; ()).(implicit closure #1)"
-                  moduleName = "SwiftReduxTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/aleksanderhr/Documents/Projects/Swift/SwiftRedux/SwiftReduxTests/CombineReducersTests.swift"
-                  timestampString = "468452810.771034"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "37"
-                  endingLineNumber = "37"
-                  offsetFromSymbolStart = "12">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwiftReduxTests.CombineReducersTests.(testFunc (SwiftReduxTests.CombineReducersTests) -&gt; () -&gt; ()).(implicit closure #2)"
-                  moduleName = "SwiftReduxTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/aleksanderhr/Documents/Projects/Swift/SwiftRedux/SwiftReduxTests/CombineReducersTests.swift"
-                  timestampString = "468452810.771392"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "37"
-                  endingLineNumber = "37"
-                  offsetFromSymbolStart = "13">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -362,38 +205,6 @@
             endingLineNumber = "17"
             landmarkName = "getDefaultState(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwiftReduxTests.getDefaultState (Swift.Array&lt;(SwiftReduxTests.StateType, SwiftReduxTests.ActionType) -&gt; SwiftReduxTests.StateType&gt;) -&gt; SwiftReduxTests.StateType"
-                  moduleName = "SwiftReduxTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/aleksanderhr/Documents/Projects/Swift/SwiftRedux/SwiftRedux/CombineReducers.swift"
-                  timestampString = "468452810.771873"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "17"
-                  endingLineNumber = "17"
-                  offsetFromSymbolStart = "18">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwiftRedux.getDefaultState (Swift.Array&lt;(SwiftRedux.StateType, SwiftRedux.ActionType) -&gt; SwiftRedux.StateType&gt;) -&gt; SwiftRedux.StateType"
-                  moduleName = "SwiftRedux"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/aleksanderhr/Documents/Projects/Swift/SwiftRedux/SwiftRedux/CombineReducers.swift"
-                  timestampString = "468452810.778171"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "17"
-                  endingLineNumber = "17"
-                  offsetFromSymbolStart = "18">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -410,38 +221,6 @@
             endingLineNumber = "21"
             landmarkName = "getDefaultState(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwiftReduxTests.getDefaultState (Swift.Array&lt;(SwiftReduxTests.StateType, SwiftReduxTests.ActionType) -&gt; SwiftReduxTests.StateType&gt;) -&gt; SwiftReduxTests.StateType"
-                  moduleName = "SwiftReduxTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/aleksanderhr/Documents/Projects/Swift/SwiftRedux/SwiftRedux/CombineReducers.swift"
-                  timestampString = "468452810.772102"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "21"
-                  endingLineNumber = "21"
-                  offsetFromSymbolStart = "293">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwiftRedux.getDefaultState (Swift.Array&lt;(SwiftRedux.StateType, SwiftRedux.ActionType) -&gt; SwiftRedux.StateType&gt;) -&gt; SwiftRedux.StateType"
-                  moduleName = "SwiftRedux"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/aleksanderhr/Documents/Projects/Swift/SwiftRedux/SwiftRedux/CombineReducers.swift"
-                  timestampString = "468452810.778768"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "21"
-                  endingLineNumber = "21"
-                  offsetFromSymbolStart = "293">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -458,68 +237,6 @@
             endingLineNumber = "26"
             landmarkName = "reduceReducers(_:state:action:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwiftReduxTests.reduceReducers (Swift.Array&lt;(SwiftReduxTests.StateType, SwiftReduxTests.ActionType) -&gt; SwiftReduxTests.StateType&gt;, state : SwiftReduxTests.StateType, action : SwiftReduxTests.ActionType) -&gt; SwiftReduxTests.StateType"
-                  moduleName = "SwiftReduxTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/aleksanderhr/Documents/Projects/Swift/SwiftRedux/SwiftRedux/CombineReducers.swift"
-                  timestampString = "468452810.772501"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26"
-                  offsetFromSymbolStart = "39">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwiftReduxTests.(reduceReducers (Swift.Array&lt;(SwiftReduxTests.StateType, SwiftReduxTests.ActionType) -&gt; SwiftReduxTests.StateType&gt;, state : SwiftReduxTests.StateType, action : SwiftReduxTests.ActionType) -&gt; SwiftReduxTests.StateType).(closure #1)"
-                  moduleName = "SwiftReduxTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/aleksanderhr/Documents/Projects/Swift/SwiftRedux/SwiftRedux/CombineReducers.swift"
-                  timestampString = "468452810.772807"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "29"
-                  endingLineNumber = "29"
-                  offsetFromSymbolStart = "26">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwiftRedux.reduceReducers (Swift.Array&lt;(SwiftRedux.StateType, SwiftRedux.ActionType) -&gt; SwiftRedux.StateType&gt;, state : SwiftRedux.StateType, action : SwiftRedux.ActionType) -&gt; SwiftRedux.StateType"
-                  moduleName = "SwiftRedux"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/aleksanderhr/Documents/Projects/Swift/SwiftRedux/SwiftRedux/CombineReducers.swift"
-                  timestampString = "468452810.779072"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26"
-                  offsetFromSymbolStart = "39">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwiftRedux.(reduceReducers (Swift.Array&lt;(SwiftRedux.StateType, SwiftRedux.ActionType) -&gt; SwiftRedux.StateType&gt;, state : SwiftRedux.StateType, action : SwiftRedux.ActionType) -&gt; SwiftRedux.StateType).(closure #1)"
-                  moduleName = "SwiftRedux"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/aleksanderhr/Documents/Projects/Swift/SwiftRedux/SwiftRedux/CombineReducers.swift"
-                  timestampString = "468452810.779404"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "29"
-                  endingLineNumber = "29"
-                  offsetFromSymbolStart = "26">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -536,38 +253,6 @@
             endingLineNumber = "27"
             landmarkName = "reduceReducers(_:state:action:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwiftReduxTests.(reduceReducers (Swift.Array&lt;(SwiftReduxTests.StateType, SwiftReduxTests.ActionType) -&gt; SwiftReduxTests.StateType&gt;, state : SwiftReduxTests.StateType, action : SwiftReduxTests.ActionType) -&gt; SwiftReduxTests.StateType).(closure #1)"
-                  moduleName = "SwiftReduxTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/aleksanderhr/Documents/Projects/Swift/SwiftRedux/SwiftRedux/CombineReducers.swift"
-                  timestampString = "468452810.773222"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "29"
-                  endingLineNumber = "29"
-                  offsetFromSymbolStart = "26">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwiftRedux.(reduceReducers (Swift.Array&lt;(SwiftRedux.StateType, SwiftRedux.ActionType) -&gt; SwiftRedux.StateType&gt;, state : SwiftRedux.StateType, action : SwiftRedux.ActionType) -&gt; SwiftRedux.StateType).(closure #1)"
-                  moduleName = "SwiftRedux"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/aleksanderhr/Documents/Projects/Swift/SwiftRedux/SwiftRedux/CombineReducers.swift"
-                  timestampString = "468452810.779713"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "29"
-                  endingLineNumber = "29"
-                  offsetFromSymbolStart = "26">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -584,38 +269,6 @@
             endingLineNumber = "29"
             landmarkName = "reduceReducers(_:state:action:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwiftReduxTests.(reduceReducers (Swift.Array&lt;(SwiftReduxTests.StateType, SwiftReduxTests.ActionType) -&gt; SwiftReduxTests.StateType&gt;, state : SwiftReduxTests.StateType, action : SwiftReduxTests.ActionType) -&gt; SwiftReduxTests.StateType).(closure #1)"
-                  moduleName = "SwiftReduxTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/aleksanderhr/Documents/Projects/Swift/SwiftRedux/SwiftRedux/CombineReducers.swift"
-                  timestampString = "468452810.773496"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "29"
-                  endingLineNumber = "29"
-                  offsetFromSymbolStart = "26">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwiftRedux.(reduceReducers (Swift.Array&lt;(SwiftRedux.StateType, SwiftRedux.ActionType) -&gt; SwiftRedux.StateType&gt;, state : SwiftRedux.StateType, action : SwiftRedux.ActionType) -&gt; SwiftRedux.StateType).(closure #1)"
-                  moduleName = "SwiftRedux"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/aleksanderhr/Documents/Projects/Swift/SwiftRedux/SwiftRedux/CombineReducers.swift"
-                  timestampString = "468452810.780044"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "29"
-                  endingLineNumber = "29"
-                  offsetFromSymbolStart = "26">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -632,38 +285,6 @@
             endingLineNumber = "19"
             landmarkName = "getDefaultState(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwiftReduxTests.getDefaultState (Swift.Array&lt;(SwiftReduxTests.StateType, SwiftReduxTests.ActionType) -&gt; SwiftReduxTests.StateType&gt;) -&gt; SwiftReduxTests.StateType"
-                  moduleName = "SwiftReduxTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/aleksanderhr/Documents/Projects/Swift/SwiftRedux/SwiftRedux/CombineReducers.swift"
-                  timestampString = "468452810.77378"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19"
-                  offsetFromSymbolStart = "71">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwiftRedux.getDefaultState (Swift.Array&lt;(SwiftRedux.StateType, SwiftRedux.ActionType) -&gt; SwiftRedux.StateType&gt;) -&gt; SwiftRedux.StateType"
-                  moduleName = "SwiftRedux"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/aleksanderhr/Documents/Projects/Swift/SwiftRedux/SwiftRedux/CombineReducers.swift"
-                  timestampString = "468452810.780342"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19"
-                  offsetFromSymbolStart = "71">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -680,68 +301,6 @@
             endingLineNumber = "17"
             landmarkName = "reducers"
             landmarkType = "19">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwiftReduxTests.CombineReducersTests.reducers.getter : Swift.Array&lt;(SwiftReduxTests.StateType, SwiftReduxTests.ActionType) -&gt; SwiftReduxTests.StateType&gt;"
-                  moduleName = "SwiftReduxTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/aleksanderhr/Documents/Projects/Swift/SwiftRedux/SwiftReduxTests/CombineReducersTests.swift"
-                  timestampString = "468452810.774042"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "12">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwiftReduxTests.CombineReducersTests.init (SwiftReduxTests.CombineReducersTests.Type)(invocation : Swift.Optional&lt;__ObjC.NSInvocation&gt;) -&gt; SwiftReduxTests.CombineReducersTests"
-                  moduleName = "SwiftReduxTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/aleksanderhr/Documents/Projects/Swift/SwiftRedux/SwiftReduxTests/CombineReducersTests.swift"
-                  timestampString = "468452810.774375"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "17"
-                  endingLineNumber = "17"
-                  offsetFromSymbolStart = "154">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwiftReduxTests.CombineReducersTests.init (SwiftReduxTests.CombineReducersTests.Type)(selector : ObjectiveC.Selector) -&gt; SwiftReduxTests.CombineReducersTests"
-                  moduleName = "SwiftReduxTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/aleksanderhr/Documents/Projects/Swift/SwiftRedux/SwiftReduxTests/CombineReducersTests.swift"
-                  timestampString = "468452810.774709"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "17"
-                  endingLineNumber = "17"
-                  offsetFromSymbolStart = "154">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwiftReduxTests.CombineReducersTests.init (SwiftReduxTests.CombineReducersTests.Type)() -&gt; SwiftReduxTests.CombineReducersTests"
-                  moduleName = "SwiftReduxTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/aleksanderhr/Documents/Projects/Swift/SwiftRedux/SwiftReduxTests/CombineReducersTests.swift"
-                  timestampString = "468452810.774966"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "17"
-                  endingLineNumber = "17"
-                  offsetFromSymbolStart = "146">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -758,38 +317,6 @@
             endingLineNumber = "45"
             landmarkName = "CombineReducers(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwiftReduxTests.(CombineReducers (Swift.Array&lt;(SwiftReduxTests.StateType, SwiftReduxTests.ActionType) -&gt; SwiftReduxTests.StateType&gt;) -&gt; (SwiftReduxTests.StateType, SwiftReduxTests.ActionType) -&gt; SwiftReduxTests.StateType).(closure #1)"
-                  moduleName = "SwiftReduxTests"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/aleksanderhr/Documents/Projects/Swift/SwiftRedux/SwiftRedux/CombineReducers.swift"
-                  timestampString = "468452810.775181"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "45"
-                  endingLineNumber = "45"
-                  offsetFromSymbolStart = "30">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwiftRedux.(CombineReducers (Swift.Array&lt;(SwiftRedux.StateType, SwiftRedux.ActionType) -&gt; SwiftRedux.StateType&gt;) -&gt; (SwiftRedux.StateType, SwiftRedux.ActionType) -&gt; SwiftRedux.StateType).(closure #1)"
-                  moduleName = "SwiftRedux"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/aleksanderhr/Documents/Projects/Swift/SwiftRedux/SwiftRedux/CombineReducers.swift"
-                  timestampString = "468452810.780685"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "45"
-                  endingLineNumber = "45"
-                  offsetFromSymbolStart = "30">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -804,7 +331,391 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "51"
             endingLineNumber = "51"
-            landmarkName = "TextFieldReducer(_:state:)"
+            landmarkName = "CountryReducer(_:state:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftReduxTests/StoreTypeTests.swift"
+            timestampString = "468519804.838974"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "StoreTypeTests"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftReduxTests/StoreTypeSpec.swift"
+            timestampString = "468705574.399595"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "spec()"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftReduxTests.StoreTypeSpec.(spec (SwiftReduxTests.StoreTypeSpec) -&gt; () -&gt; ()).(closure #1).(closure #2)"
+                  moduleName = "SwiftReduxTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksanderhr/Documents/Projects/Swift/SwiftRedux/SwiftReduxTests/StoreTypeSpec.swift"
+                  timestampString = "468706262.462371"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "762">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftReduxTests.StoreTypeSpec.(spec (SwiftReduxTests.StoreTypeSpec) -&gt; () -&gt; ()).(closure #1).(closure #2).(implicit closure #1)"
+                  moduleName = "SwiftReduxTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksanderhr/Documents/Projects/Swift/SwiftRedux/SwiftReduxTests/StoreTypeSpec.swift"
+                  timestampString = "468706262.462617"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftReduxTests/SwiftReduxTests.swift"
+            timestampString = "468686165.543213"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "SwiftReduxTests"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftReduxTests/StoreTypeSpec.swift"
+            timestampString = "468705574.399595"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "spec()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftReduxTests/StoreTypeSpec.swift"
+            timestampString = "468705574.399595"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "spec()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftReduxTests/StoreTypeSpec.swift"
+            timestampString = "468705574.399595"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "spec()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftReduxTests/StoreTypeSpec.swift"
+            timestampString = "468705579.887197"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "spec()"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftReduxTests.StoreTypeSpec.(spec (SwiftReduxTests.StoreTypeSpec) -&gt; () -&gt; ()).(closure #1).(closure #3)"
+                  moduleName = "SwiftReduxTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksanderhr/Documents/Projects/Swift/SwiftRedux/SwiftReduxTests/StoreTypeSpec.swift"
+                  timestampString = "468706262.462905"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "842">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftReduxTests.StoreTypeSpec.(spec (SwiftReduxTests.StoreTypeSpec) -&gt; () -&gt; ()).(closure #1).(closure #3).(implicit closure #1)"
+                  moduleName = "SwiftReduxTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksanderhr/Documents/Projects/Swift/SwiftRedux/SwiftReduxTests/StoreTypeSpec.swift"
+                  timestampString = "468706262.463149"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftReduxTests/StoreTypeSpec.swift"
+            timestampString = "468706261.229516"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "spec()"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftReduxTests.StoreTypeSpec.(spec (SwiftReduxTests.StoreTypeSpec) -&gt; () -&gt; ()).(closure #1).(closure #4)"
+                  moduleName = "SwiftReduxTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksanderhr/Documents/Projects/Swift/SwiftRedux/SwiftReduxTests/StoreTypeSpec.swift"
+                  timestampString = "468710901.179673"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "91"
+                  endingLineNumber = "91"
+                  offsetFromSymbolStart = "1810">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftReduxTests.StoreTypeSpec.(spec (SwiftReduxTests.StoreTypeSpec) -&gt; () -&gt; ()).(closure #1).(closure #4).(implicit closure #1)"
+                  moduleName = "SwiftReduxTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksanderhr/Documents/Projects/Swift/SwiftRedux/SwiftReduxTests/StoreTypeSpec.swift"
+                  timestampString = "468710901.180237"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "91"
+                  endingLineNumber = "91"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftReduxTests/StoreTypeSpec.swift"
+            timestampString = "468706261.229516"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "spec()"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftReduxTests.StoreTypeSpec.(spec (SwiftReduxTests.StoreTypeSpec) -&gt; () -&gt; ()).(closure #1).(closure #4)"
+                  moduleName = "SwiftReduxTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksanderhr/Documents/Projects/Swift/SwiftRedux/SwiftReduxTests/StoreTypeSpec.swift"
+                  timestampString = "468710901.1806"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "93"
+                  endingLineNumber = "93"
+                  offsetFromSymbolStart = "3469">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftReduxTests.StoreTypeSpec.(spec (SwiftReduxTests.StoreTypeSpec) -&gt; () -&gt; ()).(closure #1).(closure #4).(implicit closure #3)"
+                  moduleName = "SwiftReduxTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksanderhr/Documents/Projects/Swift/SwiftRedux/SwiftReduxTests/StoreTypeSpec.swift"
+                  timestampString = "468710901.180814"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "93"
+                  endingLineNumber = "93"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftReduxTests/StoreTypeSpec.swift"
+            timestampString = "468706261.229516"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "spec()"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftReduxTests.StoreTypeSpec.(spec (SwiftReduxTests.StoreTypeSpec) -&gt; () -&gt; ()).(closure #1).(closure #4)"
+                  moduleName = "SwiftReduxTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksanderhr/Documents/Projects/Swift/SwiftRedux/SwiftReduxTests/StoreTypeSpec.swift"
+                  timestampString = "468710901.181079"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "94"
+                  endingLineNumber = "94"
+                  offsetFromSymbolStart = "4123">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftReduxTests.StoreTypeSpec.(spec (SwiftReduxTests.StoreTypeSpec) -&gt; () -&gt; ()).(closure #1).(closure #4).(implicit closure #4)"
+                  moduleName = "SwiftReduxTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksanderhr/Documents/Projects/Swift/SwiftRedux/SwiftReduxTests/StoreTypeSpec.swift"
+                  timestampString = "468710901.181313"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "94"
+                  endingLineNumber = "94"
+                  offsetFromSymbolStart = "19">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftReduxTests/StoreTypeSpec.swift"
+            timestampString = "468706295.861055"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "spec()"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftReduxTests.StoreTypeSpec.(spec (SwiftReduxTests.StoreTypeSpec) -&gt; () -&gt; ()).(closure #1).(closure #4)"
+                  moduleName = "SwiftReduxTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksanderhr/Documents/Projects/Swift/SwiftRedux/SwiftReduxTests/StoreTypeSpec.swift"
+                  timestampString = "468710901.181645"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "92"
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "2682">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftReduxTests.StoreTypeSpec.(spec (SwiftReduxTests.StoreTypeSpec) -&gt; () -&gt; ()).(closure #1).(closure #4).(implicit closure #2)"
+                  moduleName = "SwiftReduxTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aleksanderhr/Documents/Projects/Swift/SwiftRedux/SwiftReduxTests/StoreTypeSpec.swift"
+                  timestampString = "468710901.182049"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "92"
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftReduxTests/TestStructs.swift"
+            timestampString = "468706803.941275"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "CountryReducer(_:state:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
