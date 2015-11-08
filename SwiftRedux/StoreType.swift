@@ -85,7 +85,7 @@ extension Store: Dispatchable{
         
         if(middlewares != nil){
             middlewares!.map{ middleware in
-                middleware(action: action)
+                middleware(store: self)
             }
         }
         
