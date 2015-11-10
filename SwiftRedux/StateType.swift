@@ -8,7 +8,7 @@
 
 
 
-protocol StateType{
+public protocol StateType{
 }
 
-class DefaultState: StateType{}
+public struct DefaultState: StateType{}

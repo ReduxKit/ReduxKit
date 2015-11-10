@@ -13,25 +13,25 @@ import RxSwift
 @testable import SwiftRedux
 
 
-class StoreTypeSpec: QuickSpec {
+class CreateStoreSpec: QuickSpec {
     
 
     override func spec(){
         
-        describe("The store"){
-            var defaultState: BaseState!
-            var store: Store<BaseState>!
+        describe("Create Store"){
+            var defaultState: AppState!
+            var store: Store<AppState>!
             
             beforeEach{
-                defaultState = ApplicationReducer(DefaultAction(), state: nil)
-                store = Store(reducer: ApplicationReducer, initialState: defaultState)
+                defaultState = applicationReducer(action:Action<DefaultAction>())
+                store = createStore(applicationReducer, initialState: defaultState)
             }
             
             
             it("should be subscribable and succesfully propagate one action dispatch"){
                 
                 // Arrange
-                var state: BaseState!
+                var state: AppState!
                 
                 
                 // Act
@@ -39,8 +39,8 @@ class StoreTypeSpec: QuickSpec {
                     state = newState
                 }
                 
-                store.dispatch(IncrementAction())
                 
+                store.dispatch(action: Action<IncrementAction>())
                 
                 // Assert
                 expect(state.counter).toNot(equal(defaultState.counter))
@@ -49,7 +49,7 @@ class StoreTypeSpec: QuickSpec {
             
             it("should effectively run multiple dispatches"){
                 // Arrange
-                var state: BaseState!
+                var state: AppState!
                 let iterations = 3
                 
                 // Act
@@ -59,7 +59,7 @@ class StoreTypeSpec: QuickSpec {
                 
                 // Run dispatch multiple times
                 for(var i = 0; i < iterations; i++){
-                    store.dispatch(IncrementAction())
+                    store.dispatch(action: Action<IncrementAction>())
                 }
 
                 
@@ -72,7 +72,7 @@ class StoreTypeSpec: QuickSpec {
             
             it("should work with multiple reducers"){
                 // Arrange
-                var state: BaseState!
+                var state: AppState!
                 let textMessage = "test"
                 let iterations = 3
                 
@@ -81,18 +81,16 @@ class StoreTypeSpec: QuickSpec {
                 }
                 
                 for(var i = 0; i < iterations; i++){
-                    store.dispatch(IncrementAction())
-                    store.dispatch(PushAction(text: textMessage))
-                    store.dispatch(UpdateTextFieldAction(text: textMessage))
+                    store.dispatch(action: Action<IncrementAction>())
+                    store.dispatch(action: Action<PushAction>(payload: PushAction.Payload(text: textMessage)))
+                    store.dispatch(action: Action<UpdateTextFieldAction>(payload: UpdateTextFieldAction.Payload(text: textMessage)))
                 }
                 
-                print(state.countries.count)
                 // Assert
                 expect(state.counter).to(equal(defaultState.counter+iterations))
                 expect(state.countries).to(contain(textMessage))
                 expect(state.countries.count).to(equal(iterations))
                 expect(state.textField.value).to(equal(textMessage))
-            
             }
         }
     }

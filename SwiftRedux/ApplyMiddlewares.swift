@@ -1,0 +1,46 @@
+//
+//  ApplyMiddlewares.swift
+//  SwiftRedux
+//
+//  Created by Aleksander Herforth Rendtslev on 09/11/15.
+//  Copyright © 2015 Kare Media. All rights reserved.
+//
+
+
+typealias MiddlewareReturnFunction = (DispatchFunction) -> DispatchFunction
+
+func applyMiddlewares<T where T:StateType>(middlewares: [(MiddlewareApi<T>) -> MiddlewareReturnFunction]) -> (((T, ActionType)-> T, T)  -> Store<T>) -> ((T,ActionType)-> T, T) -> Store<T>{
+    
+    func nextFunction(next: ((T, ActionType)-> T, T) -> Store<T>)  -> ((T,ActionType)-> T, T) -> Store<T> {
+        
+        func innerFunction(reducer: (T, ActionType)-> T, initialState: T) -> Store<T>{
+            let store = next(reducer, initialState)
+            // Create Middleware api - a simplified version of a store
+            let middlewareAPI = MiddlewareApi(getState: store.getState, dispatch: store.dispatch)
+            
+            /// Create an array of middlewareReturnFunctions
+            let chain = middlewares.map{ middleware in
+                middleware(middlewareAPI)
+            }
+            
+            
+            // Compounded dispatch function
+            let dispatch = compose(chain)(store.dispatch)
+            
+            // Return a store with an enhanced dispatch function
+            return Store(
+                dispatch: dispatch,
+                getState: store.getState,
+                subscribe: store.subscribe)
+            
+        }
+        return innerFunction
+    }
+    
+    return nextFunction
+}
+
+struct MiddlewareApi<T where T:StateType>{
+    let getState:() -> T
+    let dispatch: DispatchFunction
+}
