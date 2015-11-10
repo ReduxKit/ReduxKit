@@ -1,7 +1,10 @@
 # [Swift-Redux](http://rackt.github.io/redux)
 
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+
+### Intro
 Swift-Redux is a swift implementation of rackt/redux by Dan Abramov and the React Community.
+I am currently implementing this in a few swift apps so it will be frequently updated. Additions, middlewares and help will be very much appreciated!
 
 
 The following is the Gist section from the official Redux readme - I will update the project with examples and documentation shortly.  
