@@ -21,17 +21,7 @@ public protocol Failable{
     var error: String? {get set}
 }
 
-
-
 public struct DefaultAction: Payloadable{
-    public typealias PayloadType = Any?
-    public static var defaultValue:PayloadType = nil
-}
-
-/**
- *  Used to unwrap any kind of action
- */
-public struct GeneralAction: Payloadable{
     public typealias PayloadType = Any?
     public static var defaultValue:PayloadType = nil
 }
