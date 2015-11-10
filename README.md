@@ -1,9 +1,6 @@
-# swift-redux
+# [Swift-Redux] read the JS redux documentation at: (http://rackt.github.io/redux)
 
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-
-# [Swift-Redux](http://rackt.github.io/redux)
-
 Swift-Redux is a swift implementation of rackt/redux by Dan Abramov and the React Community.
 
 
