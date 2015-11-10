@@ -7,20 +7,53 @@
 //
 
 
-protocol ActionType{
-  
+
+
+
+
+public protocol Payloadable{
+    typealias PayloadType
+    static var defaultValue: PayloadType {get}
 }
 
-protocol Payloadable{
-  typealias PayloadType
-  var payload: PayloadType {get set}
-}
 
-protocol Failable{
+public protocol Failable{
     var error: String? {get set}
 }
 
 
-struct DefaultAction: ActionType{
-    var payload: Any?;
+
+public struct DefaultAction: Payloadable{
+    public typealias PayloadType = Any?
+    public static var defaultValue:PayloadType = nil
+}
+
+/**
+ *  Used to unwrap any kind of action
+ */
+public struct GeneralAction: Payloadable{
+    public typealias PayloadType = Any?
+    public static var defaultValue:PayloadType = nil
+}
+
+public protocol ActionType{
+    var type: String {get}
+}
+
+struct Action<T where T:Payloadable>: ActionType{
+    typealias Type = T
+    var type = "\(Type.self)"
+    let payload: T.PayloadType
+    let error: String?
+    
+    
+    init(payload: T.PayloadType = T.defaultValue, error: String? = nil){
+        self.payload = payload
+        self.error = error
+    }
+}
+
+func test(){
+    let test2 = Action<DefaultAction>(payload: nil)
+    print(test2)
 }

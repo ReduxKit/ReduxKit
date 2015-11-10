@@ -10,9 +10,14 @@
 		BC05881A1BED0AA800F2F4BF /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC0588181BED0AA800F2F4BF /* RxBlocking.framework */; };
 		BC05881B1BED0AA800F2F4BF /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC0588191BED0AA800F2F4BF /* RxCocoa.framework */; };
 		BC28F8D21BEB9566000B5587 /* StateType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC28F8D11BEB9566000B5587 /* StateType.swift */; };
+		BC356F811BF1401A001466FC /* BindActionCreators.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC356F801BF1401A001466FC /* BindActionCreators.swift */; };
+		BC356F821BF1413D001466FC /* BindActionCreators.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC356F801BF1401A001466FC /* BindActionCreators.swift */; };
+		BC356F841BF14180001466FC /* BindActionCreatorsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC356F831BF14180001466FC /* BindActionCreatorsSpec.swift */; };
+		BC356F861BF15D4F001466FC /* Compose.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC356F851BF15D4F001466FC /* Compose.swift */; };
+		BC356F871BF165F2001466FC /* Compose.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC356F851BF15D4F001466FC /* Compose.swift */; };
 		BC51BC4D1BEBE86D008AFB00 /* StateType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC28F8D11BEB9566000B5587 /* StateType.swift */; };
-		BC51BC501BEBFA70008AFB00 /* TestStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC51BC4F1BEBFA70008AFB00 /* TestStructs.swift */; };
-		BC51BC551BECA6CC008AFB00 /* StoreTypeSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC51BC541BECA6CC008AFB00 /* StoreTypeSpec.swift */; };
+		BC51BC501BEBFA70008AFB00 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC51BC4F1BEBFA70008AFB00 /* Mocks.swift */; };
+		BC51BC551BECA6CC008AFB00 /* CreateStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC51BC541BECA6CC008AFB00 /* CreateStoreSpec.swift */; };
 		BC97D47D1BECF22A002FE39C /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC97D47C1BECF22A002FE39C /* RxSwift.framework */; };
 		BC9F52B91BF00A9D002C2540 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC0588241BEF85BA00F2F4BF /* Nimble.framework */; };
 		BC9F52BA1BF00A9D002C2540 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC0588251BEF85BA00F2F4BF /* Quick.framework */; };
@@ -25,6 +30,13 @@
 		BCE259701BE914DF00424F65 /* ActionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE2596E1BE914DF00424F65 /* ActionType.swift */; };
 		BCE259721BE915A700424F65 /* StoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE259711BE915A700424F65 /* StoreType.swift */; };
 		BCE259731BE915A700424F65 /* StoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE259711BE915A700424F65 /* StoreType.swift */; };
+		BCE2FDA41BF0995C00D791AD /* CreateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE2FDA31BF0995C00D791AD /* CreateStore.swift */; };
+		BCE2FDA51BF0995C00D791AD /* CreateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE2FDA31BF0995C00D791AD /* CreateStore.swift */; };
+		BCE2FDA71BF099D600D791AD /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE2FDA61BF099D600D791AD /* Types.swift */; };
+		BCE2FDA81BF099D600D791AD /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE2FDA61BF099D600D791AD /* Types.swift */; };
+		BCE2FDAA1BF0A61200D791AD /* ApplyMiddlewares.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE2FDA91BF0A61200D791AD /* ApplyMiddlewares.swift */; };
+		BCE2FDAB1BF0A61200D791AD /* ApplyMiddlewares.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE2FDA91BF0A61200D791AD /* ApplyMiddlewares.swift */; };
+		BCE9BB9E1BF203130088AABE /* ApplyMiddlewaresSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE9BB9D1BF203130088AABE /* ApplyMiddlewaresSpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,8 +55,11 @@
 		BC0588241BEF85BA00F2F4BF /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		BC0588251BEF85BA00F2F4BF /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		BC28F8D11BEB9566000B5587 /* StateType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateType.swift; sourceTree = "<group>"; };
-		BC51BC4F1BEBFA70008AFB00 /* TestStructs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestStructs.swift; sourceTree = "<group>"; };
-		BC51BC541BECA6CC008AFB00 /* StoreTypeSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreTypeSpec.swift; sourceTree = "<group>"; };
+		BC356F801BF1401A001466FC /* BindActionCreators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BindActionCreators.swift; sourceTree = "<group>"; };
+		BC356F831BF14180001466FC /* BindActionCreatorsSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BindActionCreatorsSpec.swift; sourceTree = "<group>"; };
+		BC356F851BF15D4F001466FC /* Compose.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Compose.swift; sourceTree = "<group>"; };
+		BC51BC4F1BEBFA70008AFB00 /* Mocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
+		BC51BC541BECA6CC008AFB00 /* CreateStoreSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateStoreSpec.swift; sourceTree = "<group>"; };
 		BC97D47A1BECDFD1002FE39C /* Build */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Build; path = Carthage/Build; sourceTree = "<group>"; };
 		BC97D47C1BECF22A002FE39C /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		BCE2594E1BE912AE00424F65 /* SwiftRedux.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftRedux.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,6 +69,10 @@
 		BCE2595F1BE912AF00424F65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCE2596E1BE914DF00424F65 /* ActionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionType.swift; sourceTree = "<group>"; };
 		BCE259711BE915A700424F65 /* StoreType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreType.swift; sourceTree = "<group>"; };
+		BCE2FDA31BF0995C00D791AD /* CreateStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateStore.swift; sourceTree = "<group>"; };
+		BCE2FDA61BF099D600D791AD /* Types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
+		BCE2FDA91BF0A61200D791AD /* ApplyMiddlewares.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplyMiddlewares.swift; sourceTree = "<group>"; };
+		BCE9BB9D1BF203130088AABE /* ApplyMiddlewaresSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplyMiddlewaresSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +134,11 @@
 				BCE2596E1BE914DF00424F65 /* ActionType.swift */,
 				BCE259711BE915A700424F65 /* StoreType.swift */,
 				BC28F8D11BEB9566000B5587 /* StateType.swift */,
+				BCE2FDA31BF0995C00D791AD /* CreateStore.swift */,
+				BCE2FDA61BF099D600D791AD /* Types.swift */,
+				BCE2FDA91BF0A61200D791AD /* ApplyMiddlewares.swift */,
+				BC356F801BF1401A001466FC /* BindActionCreators.swift */,
+				BC356F851BF15D4F001466FC /* Compose.swift */,
 			);
 			path = SwiftRedux;
 			sourceTree = "<group>";
@@ -123,8 +147,10 @@
 			isa = PBXGroup;
 			children = (
 				BCE2595F1BE912AF00424F65 /* Info.plist */,
-				BC51BC4F1BEBFA70008AFB00 /* TestStructs.swift */,
-				BC51BC541BECA6CC008AFB00 /* StoreTypeSpec.swift */,
+				BC51BC4F1BEBFA70008AFB00 /* Mocks.swift */,
+				BC51BC541BECA6CC008AFB00 /* CreateStoreSpec.swift */,
+				BC356F831BF14180001466FC /* BindActionCreatorsSpec.swift */,
+				BCE9BB9D1BF203130088AABE /* ApplyMiddlewaresSpec.swift */,
 			);
 			path = SwiftReduxTests;
 			sourceTree = "<group>";
@@ -274,8 +300,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCE2FDAA1BF0A61200D791AD /* ApplyMiddlewares.swift in Sources */,
 				BCE259721BE915A700424F65 /* StoreType.swift in Sources */,
+				BCE2FDA41BF0995C00D791AD /* CreateStore.swift in Sources */,
+				BC356F811BF1401A001466FC /* BindActionCreators.swift in Sources */,
+				BCE2FDA71BF099D600D791AD /* Types.swift in Sources */,
 				BC28F8D21BEB9566000B5587 /* StateType.swift in Sources */,
+				BC356F861BF15D4F001466FC /* Compose.swift in Sources */,
 				BCE2596F1BE914DF00424F65 /* ActionType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,11 +315,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC51BC551BECA6CC008AFB00 /* StoreTypeSpec.swift in Sources */,
-				BC51BC501BEBFA70008AFB00 /* TestStructs.swift in Sources */,
+				BCE2FDAB1BF0A61200D791AD /* ApplyMiddlewares.swift in Sources */,
+				BC51BC551BECA6CC008AFB00 /* CreateStoreSpec.swift in Sources */,
+				BC51BC501BEBFA70008AFB00 /* Mocks.swift in Sources */,
+				BCE9BB9E1BF203130088AABE /* ApplyMiddlewaresSpec.swift in Sources */,
 				BCE259701BE914DF00424F65 /* ActionType.swift in Sources */,
+				BC356F841BF14180001466FC /* BindActionCreatorsSpec.swift in Sources */,
 				BCE259731BE915A700424F65 /* StoreType.swift in Sources */,
 				BC51BC4D1BEBE86D008AFB00 /* StateType.swift in Sources */,
+				BC356F871BF165F2001466FC /* Compose.swift in Sources */,
+				BCE2FDA51BF0995C00D791AD /* CreateStore.swift in Sources */,
+				BC356F821BF1413D001466FC /* BindActionCreators.swift in Sources */,
+				BCE2FDA81BF099D600D791AD /* Types.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
