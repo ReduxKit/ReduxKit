@@ -39,9 +39,7 @@ class ApplyMiddlewaresSpec: QuickSpec {
                 }
                 
                 // Act
-                let push = bindActionCreators(PushAction.self ,dispatch: store.dispatch)
-                
-                push(payload: PushAction.Payload(text:""))
+                store.dispatch(action: Action<PushAction>(payload: PushAction.Payload(text:"")))
                 
                 // Assert
                 expect(state.countries).to(contain(".first"))
@@ -60,9 +58,7 @@ class ApplyMiddlewaresSpec: QuickSpec {
                 }
                 
                 // Act
-                let push = bindActionCreators(PushAction.self ,dispatch: store.dispatch)
-                
-                push(payload: PushAction.Payload(text:""))
+                store.dispatch(action: Action<PushAction>(payload: PushAction.Payload(text:"")))
                 
                 // Assert
                 expect(state.countries).to(contain(".first.secondary"))
