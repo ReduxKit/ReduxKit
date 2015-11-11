@@ -7,9 +7,9 @@
 //
 
 
-typealias MiddlewareReturnFunction = (DispatchFunction) -> DispatchFunction
+public typealias MiddlewareReturnFunction = (DispatchFunction) -> DispatchFunction
 
-func applyMiddlewares<T where T:StateType>(middlewares: [(MiddlewareApi<T>) -> MiddlewareReturnFunction]) -> (((T, ActionType)-> T, T)  -> Store<T>) -> ((T,ActionType)-> T, T) -> Store<T>{
+public func applyMiddlewares<T where T:StateType>(middlewares: [(MiddlewareApi<T>) -> MiddlewareReturnFunction]) -> (((T, ActionType)-> T, T)  -> Store<T>) -> ((T,ActionType)-> T, T) -> Store<T>{
     
     func nextFunction(next: ((T, ActionType)-> T, T) -> Store<T>)  -> ((T,ActionType)-> T, T) -> Store<T> {
         
@@ -40,7 +40,7 @@ func applyMiddlewares<T where T:StateType>(middlewares: [(MiddlewareApi<T>) -> M
     return nextFunction
 }
 
-struct MiddlewareApi<T where T:StateType>{
+public struct MiddlewareApi<T where T:StateType>{
     let getState:() -> T
     let dispatch: DispatchFunction
 }

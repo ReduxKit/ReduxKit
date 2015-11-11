@@ -10,7 +10,7 @@ import RxSwift
 
 
 
-func createStore<T where T:StateType>(reducer: (T, ActionType)-> T, initialState: T) -> Store<T>{
+public func createStore<T where T:StateType>(reducer: (T, ActionType)-> T, initialState: T) -> Store<T>{
     
     var currentReducer: (T, ActionType) -> T = reducer
     var currentState: T = initialState
