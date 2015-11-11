@@ -30,13 +30,13 @@ public protocol ActionType{
     var type: String {get}
 }
 
-struct Action<T where T:Payloadable>: ActionType{
+public struct Action<T where T:Payloadable>: ActionType{
     typealias Type = T
     var type = "\(Type.self)"
     let payload: T.PayloadType
     let error: String?
-    
-    
+
+
     init(payload: T.PayloadType = T.defaultValue, error: String? = nil){
         self.payload = payload
         self.error = error
