@@ -31,19 +31,14 @@ public protocol ActionType{
 }
 
 public struct Action<T where T:Payloadable>: ActionType{
-    typealias Type = T
-    var type = "\(Type.self)"
-    let payload: T.PayloadType
-    let error: String?
+    public typealias Type = T
+    public var type = "\(Type.self)"
+    public let payload: T.PayloadType
+    public let error: String?
 
 
-    init(payload: T.PayloadType = T.defaultValue, error: String? = nil){
+    public init(payload: T.PayloadType = T.defaultValue, error: String? = nil){
         self.payload = payload
         self.error = error
     }
-}
-
-func test(){
-    let test2 = Action<DefaultAction>(payload: nil)
-    print(test2)
 }
