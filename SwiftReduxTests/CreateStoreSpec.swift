@@ -6,7 +6,6 @@
 //  Copyright © 2015 Kare Media. All rights reserved.
 //
 
-import XCTest
 import Quick
 import Nimble
 import RxSwift
@@ -32,7 +31,6 @@ class CreateStoreSpec: QuickSpec {
                 
                 // Arrange
                 var state: AppState!
-                
                 
                 // Act
                 store.subscribe{ newState in

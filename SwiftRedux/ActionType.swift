@@ -17,6 +17,7 @@ public protocol Payloadable{
 }
 
 
+
 public protocol Failable{
     var error: String? {get set}
 }
@@ -28,11 +29,14 @@ public struct DefaultAction: Payloadable{
 
 public protocol ActionType{
     var type: String {get}
+    var payloadType: String {get}
+    func getPayload() -> Any?
 }
 
 public struct Action<T where T:Payloadable>: ActionType{
     public typealias Type = T
     public var type = "\(Type.self)"
+    public var payloadType = "\(Type.PayloadType.self)"
     public let payload: T.PayloadType
     public let error: String?
 
@@ -40,5 +44,9 @@ public struct Action<T where T:Payloadable>: ActionType{
     public init(payload: T.PayloadType = T.defaultValue, error: String? = nil){
         self.payload = payload
         self.error = error
+    }
+    
+    public func getPayload() -> Any? {
+        return payload as Any?
     }
 }
