@@ -10,11 +10,9 @@
 
 
 public func bindActionCreators<T where T:Payloadable>(type: T.Type, dispatch: DispatchFunction) -> (payload: T.PayloadType?) -> Void{
-    func createAction(payload: T.PayloadType?) -> Void{
+    return{(payload: T.PayloadType?) in
         
         let action = payload != nil ? Action<T>(payload: payload!) : Action<T>()
         dispatch(action: action)
     }
-    
-    return createAction
 }

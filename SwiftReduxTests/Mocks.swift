@@ -168,10 +168,8 @@ struct PushAction: Payloadable{
  - returns: <#return value description#>
  */
 func firstPushMiddleware<T>(store: MiddlewareApi<T>) -> MiddlewareReturnFunction{
-    
-    func nextFunction(dispatch: DispatchFunction) -> DispatchFunction{
-        func actionFunction(action: ActionType) -> ActionType{
-            
+    return {(dispatch: DispatchFunction) in
+        return{(action:ActionType) in
             if let pushAction = action as? Action<PushAction>{
                 let newAction = Action<PushAction>(payload: PushAction.Payload(text: pushAction.payload.text + ".first"))
                 
@@ -181,11 +179,9 @@ func firstPushMiddleware<T>(store: MiddlewareApi<T>) -> MiddlewareReturnFunction
             }else{
                 return action
             }
+
         }
-        return actionFunction
     }
-        
-    return nextFunction
 }
 
 /**
@@ -196,9 +192,8 @@ func firstPushMiddleware<T>(store: MiddlewareApi<T>) -> MiddlewareReturnFunction
  - returns: <#return value description#>
  */
 func secondaryPushMiddleware<T>(store: MiddlewareApi<T>) -> MiddlewareReturnFunction{
-    
-    func nextFunction(dispatch: DispatchFunction) -> DispatchFunction{
-        func actionFunction(action: ActionType) -> ActionType{
+    return {(dispatch: DispatchFunction) in
+        return{(action:ActionType) in
             if let pushAction = action as? Action<PushAction>{
                 let newAction = Action<PushAction>(payload: PushAction.Payload(text: pushAction.payload.text + ".secondary"))
                 
@@ -208,9 +203,7 @@ func secondaryPushMiddleware<T>(store: MiddlewareApi<T>) -> MiddlewareReturnFunc
             }else{
                 return action
             }
+
         }
-        return actionFunction
     }
-    
-    return nextFunction
 }

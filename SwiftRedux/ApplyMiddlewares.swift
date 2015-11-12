@@ -10,10 +10,8 @@
 public typealias MiddlewareReturnFunction = (DispatchFunction) -> DispatchFunction
 
 public func applyMiddlewares<T where T:StateType>(middlewares: [(MiddlewareApi<T>) -> MiddlewareReturnFunction]) -> (((T, ActionType)-> T, T)  -> Store<T>) -> ((T,ActionType)-> T, T) -> Store<T>{
-    
-    func nextFunction(next: ((T, ActionType)-> T, T) -> Store<T>)  -> ((T,ActionType)-> T, T) -> Store<T> {
-        
-        func innerFunction(reducer: (T, ActionType)-> T, initialState: T) -> Store<T>{
+    return {(next: ((T, ActionType)-> T, T) -> Store<T>) in
+        return {(reducer: (T, ActionType)-> T, initialState: T) in
             let store = next(reducer, initialState)
             // Create Middleware api - a simplified version of a store
             let middlewareAPI = MiddlewareApi(getState: store.getState, dispatch: store.dispatch)
@@ -32,12 +30,9 @@ public func applyMiddlewares<T where T:StateType>(middlewares: [(MiddlewareApi<T
                 dispatch: dispatch,
                 getState: store.getState,
                 subscribe: store.subscribe)
-            
         }
-        return innerFunction
-    }
     
-    return nextFunction
+    }
 }
 
 public struct MiddlewareApi<T where T:StateType>{
