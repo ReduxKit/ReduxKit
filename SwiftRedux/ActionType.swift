@@ -50,7 +50,7 @@ public struct Action<T where T:Payloadable>: ActionType{
     }
 }
 
-extension Action where T:Failable{
+public extension Action where T:Failable{
     public init(payload: T.PayloadType = T.defaultValue, error: String = T.defaultError){
         self.init(payload:payload)
         self.error = error
