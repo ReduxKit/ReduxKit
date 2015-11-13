@@ -19,7 +19,7 @@ public protocol Payloadable{
 
 
 public protocol Failable{
-    var error: String? {get set}
+    static var defaultError: String {get}
 }
 
 public struct DefaultAction: Payloadable{
@@ -38,15 +38,22 @@ public struct Action<T where T:Payloadable>: ActionType{
     public var type = "\(Type.self)"
     public var payloadType = "\(Type.PayloadType.self)"
     public let payload: T.PayloadType
-    public let error: String?
+    public let error: String
 
 
-    public init(payload: T.PayloadType = T.defaultValue, error: String? = nil){
+    public init(payload: T.PayloadType = T.defaultValue){
         self.payload = payload
-        self.error = error
+        self.error = ""
     }
     
     public func getPayload() -> Any? {
         return payload as Any?
+    }
+}
+
+extension Action where T:Failable{
+    public init(payload: T.PayloadType = T.defaultValue, error: String = T.defaultError){
+        self.payload = payload
+        self.error = error
     }
 }

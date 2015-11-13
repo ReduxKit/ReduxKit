@@ -14,7 +14,7 @@ import RxSwift
 
 class CreateStoreSpec: QuickSpec {
     
-
+    
     override func spec(){
         
         describe("Create Store"){
@@ -59,13 +59,13 @@ class CreateStoreSpec: QuickSpec {
                 for(var i = 0; i < iterations; i++){
                     store.dispatch(action: Action<IncrementAction>())
                 }
-
+                
                 
                 // Assert
                 expect(state.counter).toNot(equal(defaultState.counter))
                 expect(state.counter).to(equal(defaultState.counter+iterations))
-            
-            
+                
+                
             }
             
             it("should work with multiple reducers"){
