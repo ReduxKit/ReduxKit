@@ -43,6 +43,9 @@ public struct Action<T where T:Payloadable>: ActionType{
 
     public init(payload: T.PayloadType = T.defaultValue){
         self.payload = payload
+        if let failable = T.self as? Failable.Type{
+            self.error = failable.defaultError
+        }
     }
     
     public func getPayload() -> Any? {
@@ -51,7 +54,7 @@ public struct Action<T where T:Payloadable>: ActionType{
 }
 
 public extension Action where T:Failable{
-    public init(payload: T.PayloadType = T.defaultValue, error: String = T.defaultError){
+    public init(payload: T.PayloadType = T.defaultValue, error: String){
         self.init(payload:payload)
         self.error = error
     }

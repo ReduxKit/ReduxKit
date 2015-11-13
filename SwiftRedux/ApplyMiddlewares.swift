@@ -36,6 +36,6 @@ public func applyMiddlewares<T where T:StateType>(middlewares: [(MiddlewareApi<T
 }
 
 public struct MiddlewareApi<T where T:StateType>{
-    let getState:() -> T
-    let dispatch: DispatchFunction
+    public let getState:() -> T
+    public let dispatch: DispatchFunction
 }
