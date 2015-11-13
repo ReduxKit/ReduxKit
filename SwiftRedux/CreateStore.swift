@@ -34,7 +34,7 @@ public func createStore<T where T:StateType>(reducer: (T, ActionType)-> T, initi
     
     - returns: will return the action
     */
-    func dispatch(action: ActionType) -> ActionType{
+    public func dispatch(action: ActionType) -> ActionType{
         do{
             try innerDispatch(action)
         }catch{
@@ -60,7 +60,7 @@ public func createStore<T where T:StateType>(reducer: (T, ActionType)-> T, initi
      
      - returns: the given action
      */
-    func innerDispatch(action: ActionType) throws -> ActionType{
+    public func innerDispatch(action: ActionType) throws -> ActionType{
         
         /**
         *  the previous dispatch should be completed before the next one is initiated.
