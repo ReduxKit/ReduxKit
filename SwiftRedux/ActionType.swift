@@ -38,12 +38,11 @@ public struct Action<T where T:Payloadable>: ActionType{
     public var type = "\(Type.self)"
     public var payloadType = "\(Type.PayloadType.self)"
     public let payload: T.PayloadType
-    public let error: String
+    public var error: String?
 
 
     public init(payload: T.PayloadType = T.defaultValue){
         self.payload = payload
-        self.error = ""
     }
     
     public func getPayload() -> Any? {
@@ -53,7 +52,7 @@ public struct Action<T where T:Payloadable>: ActionType{
 
 extension Action where T:Failable{
     public init(payload: T.PayloadType = T.defaultValue, error: String = T.defaultError){
-        self.payload = payload
+        self.init(payload:payload)
         self.error = error
     }
 }
