@@ -187,9 +187,9 @@ func firstPushMiddleware<T>(store: MiddlewareApi<T>) -> MiddlewareReturnFunction
 /**
  second middleware - it will add .secondary to the payload of any pushAction.
  
- - parameter store: <#store description#>
+ - parameter store: store description
  
- - returns: <#return value description#>
+ - returns: return value description
  */
 func secondaryPushMiddleware<T>(store: MiddlewareApi<T>) -> MiddlewareReturnFunction{
     return {(dispatch: DispatchFunction) in
