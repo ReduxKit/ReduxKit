@@ -90,7 +90,7 @@ let applicationReducer = {(state: State? = nil, action: Action) -> State in
 
   return
     AppState(
-            count: counterReducer(appState?.counter, action: action),
+            count: counterReducer(appState?.count, action: action),
     )
 }
 
