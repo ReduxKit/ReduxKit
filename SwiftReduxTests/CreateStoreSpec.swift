@@ -43,6 +43,7 @@ class CreateStoreSpec: QuickSpec {
                 // Assert
                 expect(state.counter).toNot(equal(defaultState.counter))
                 expect(state.counter).to(equal(defaultState.counter+1))
+                
             }
             
             it("should effectively run multiple dispatches"){
