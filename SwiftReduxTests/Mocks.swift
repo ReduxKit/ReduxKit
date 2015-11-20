@@ -11,7 +11,7 @@
 /**
 *  Application state
 */
-struct AppState: StateType{
+struct AppState: State{
     var counter: Int!
     var countries:[String]!
     var textField: TextFieldState!
@@ -21,7 +21,7 @@ struct AppState: StateType{
  *  Nested textField state. 
  *  Application state can effectively be compartementalized this way.
  */
-struct TextFieldState: StateType{
+struct TextFieldState: State{
     var value: String = "";
 }
 
@@ -38,13 +38,16 @@ struct TextFieldState: StateType{
  
  - returns: Will return BaseState
  */
-func applicationReducer(state: AppState? = nil, action: ActionType) -> AppState{
+func applicationReducer(state: State? = nil, action: Action) -> State{
     
-    return AppState(
-        counter: counterReducer(state?.counter, action: action),
-        countries: countryReducer(state?.countries, action: action),
-        textField: textFieldReducer(state?.textField, action: action)
-    )
+    let appState = state as! AppState?
+    
+    return
+        AppState(
+                counter: counterReducer(appState?.counter, action: action),
+                countries: countryReducer(appState?.countries, action: action),
+                textField: textFieldReducer(appState?.textField, action: action)
+        )
 }
 
 /**
@@ -56,7 +59,7 @@ func applicationReducer(state: AppState? = nil, action: ActionType) -> AppState{
  
  - returns: Will return nextState - Int
  */
-func counterReducer(previousState: Int?, action: ActionType) -> Int{
+func counterReducer(previousState: Int?, action: Action) -> Int{
     
     // Declare the type of the state
     let defaultValue = 0
@@ -64,11 +67,11 @@ func counterReducer(previousState: Int?, action: ActionType) -> Int{
     
     
     switch action {
-    case is Action<IncrementAction>:
-        state++
-        return state
-    default:
-        return state
+        case let action as IncrementAction:
+            state = state + action.rawPayload
+            return state
+        default:
+            return state
     }
 }
 
@@ -81,14 +84,14 @@ func counterReducer(previousState: Int?, action: ActionType) -> Int{
  
  - returns: Will return nextState: [String]
  */
-func countryReducer(previousState: [String]?,  action: ActionType) -> [String]{
+func countryReducer(previousState: [String]?,  action: Action) -> [String]{
     
     let defaultValue = [String]()
     var state = previousState ?? defaultValue
     
     switch action{
-    case let action as Action<PushAction>:
-        state.append(action.payload.text)
+    case let action as PushAction:
+        state.append(action.rawPayload.text)
         return state
     default:
         return state
@@ -105,7 +108,7 @@ func countryReducer(previousState: [String]?,  action: ActionType) -> [String]{
  
  - returns: Will return nextState: TextFieldState
  */
-func textFieldReducer(previousState: TextFieldState?, action: ActionType) -> TextFieldState{
+func textFieldReducer(previousState: TextFieldState?, action: Action) -> TextFieldState{
     
     let defaultValue = TextFieldState()
     var state = previousState ?? defaultValue
@@ -113,8 +116,8 @@ func textFieldReducer(previousState: TextFieldState?, action: ActionType) -> Tex
     
     
     switch action{
-    case let action as Action<UpdateTextFieldAction>:
-        state = TextFieldState(value: action.payload.text)
+    case let action as UpdateTextFieldAction:
+        state = TextFieldState(value: action.rawPayload.text)
         return state
     default:
         return state
@@ -127,29 +130,57 @@ func textFieldReducer(previousState: TextFieldState?, action: ActionType) -> Tex
 /**
  *  Simple updateTextFieldAction - with unique payload
  */
-struct UpdateTextFieldAction: Payloadable{
-    typealias PayloadType = Payload
-    static var defaultValue = Payload(text: "")
+struct UpdateTextFieldAction: StandardAction{
+    let meta: Any?
+    let error: Bool
+    let rawPayload: Payload
+    
+    init(payload: Payload?, meta: Any? = nil, error: Bool = false){
+        self.rawPayload = payload != nil ? payload! : Payload(text: "")
+        self.meta = meta
+        self.error = error
+    }
     
     struct Payload{
         var text: String
     }
 }
 
+struct ReTravelAction: SimpleStandardAction{
+    let meta: Any? = nil
+    let error: Bool = false
+    let rawPayload: Any? = nil
+}
+
+
 /**
  *  Simple IncrementAction. Since it doesn't utilize payload it has been set to 1
  */
-struct IncrementAction: Payloadable{
-    typealias PayloadType = Int
-    static var defaultValue = 1
+struct IncrementAction: StandardAction{
+    let meta: Any?
+    let error: Bool
+    let rawPayload: Int
+    
+    init(payload: Int? = nil, meta: Any? = nil, error: Bool = false){
+        self.rawPayload = payload ?? 1
+        self.meta = meta
+        self.error = error
+    }
 }
 
 /**
  *  Push action
  */
-struct PushAction: Payloadable{
-    typealias PayloadType = Payload
-    static var defaultValue = Payload(text: "")
+struct PushAction: StandardAction{
+    let meta: Any?
+    let error: Bool
+    let rawPayload: Payload
+    
+    init(payload: Payload?, meta: Any? = nil, error: Bool = false){
+        self.rawPayload = payload != nil ? payload! : Payload(text: "")
+        self.meta = meta
+        self.error = error
+    }
     
     struct Payload{
         var text: String
@@ -163,21 +194,21 @@ struct PushAction: Payloadable{
 /**
  first middleware - it will add .first to the payload of any pushAction.
  
- - parameter store: <#store description#>
+ - parameter store: store description
  
- - returns: <#return value description#>
+ - returns: return value description
  */
-func firstPushMiddleware<T>(store: MiddlewareApi<T>) -> MiddlewareReturnFunction{
-    return {(dispatch: DispatchFunction) in
-        return{(action:ActionType) in
-            if let pushAction = action as? Action<PushAction>{
-                let newAction = Action<PushAction>(payload: PushAction.Payload(text: pushAction.payload.text + ".first"))
+func firstPushMiddleware(store: MiddlewareApi) -> MiddlewareReturnFunction{
+    return {(next: Dispatch) in
+        return{(action:Action) in
+            if let pushAction = action as? PushAction{
+                let newAction = PushAction(payload: PushAction.Payload(text: pushAction.rawPayload.text + ".first"))
                 
-                let result = dispatch(action: newAction)
+                let result = next(newAction)
                 return result
                 
             }else{
-                return action
+                return next(action)
             }
 
         }
@@ -191,19 +222,42 @@ func firstPushMiddleware<T>(store: MiddlewareApi<T>) -> MiddlewareReturnFunction
  
  - returns: return value description
  */
-func secondaryPushMiddleware<T>(store: MiddlewareApi<T>) -> MiddlewareReturnFunction{
-    return {(dispatch: DispatchFunction) in
-        return{(action:ActionType) in
-            if let pushAction = action as? Action<PushAction>{
-                let newAction = Action<PushAction>(payload: PushAction.Payload(text: pushAction.payload.text + ".secondary"))
+func secondaryPushMiddleware(store: MiddlewareApi) -> MiddlewareReturnFunction{
+    return {(next: Dispatch) in
+        return{(action:Action) in
+            if let pushAction = action as? PushAction{
+                let newAction = PushAction(payload: PushAction.Payload(text: pushAction.rawPayload.text + ".secondary"))
                 
-                let result = dispatch(action: newAction)
+                let result = next(newAction)
                 return result
                 
             }else{
-                return action
+                return next(action)
             }
 
+        }
+    }
+}
+
+/**
+ second middleware - it will add .secondary to the payload of any pushAction.
+ 
+ - parameter store: store description
+ 
+ - returns: return value description
+ */
+func reTravelMiddleware(store: MiddlewareApi) -> MiddlewareReturnFunction{
+    return {(next: Dispatch) in
+        return{(action:Action) in
+            if(action is ReTravelAction){
+                store.dispatch(IncrementAction(payload: 10))
+            }
+            else if(action is IncrementAction){
+                return next(IncrementAction())
+            }
+            return next(action)
+            
+            
         }
     }
 }

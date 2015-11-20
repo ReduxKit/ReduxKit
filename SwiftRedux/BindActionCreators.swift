@@ -8,11 +8,20 @@
 
 
 
+/**
+Helper function that helps create shorthand dispatch functions. It requires a StandardAction with a valid initializer to function
 
-public func bindActionCreators<T where T:Payloadable>(type: T.Type, dispatch: DispatchFunction) -> (payload: T.PayloadType?) -> Void{
-    return{(payload: T.PayloadType?) in
+- parameter type:
+- parameter dispatch:
+*/
+public func bindActionCreators<T where T:StandardAction>(type: T.Type, dispatch: Dispatch) -> (payload: T.PayloadType?) -> Void{
+    
+    func innerBind(payload: T.PayloadType? = nil){
         
-        let action = payload != nil ? Action<T>(payload: payload!) : Action<T>()
-        dispatch(action: action)
+        let action = T(payload: payload, meta: nil, error: false)
+        
+        dispatch(action)
     }
+    
+    return innerBind
 }
