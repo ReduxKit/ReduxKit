@@ -19,11 +19,11 @@ class CreateStoreSpec: QuickSpec {
         
         describe("Create Store"){
             var defaultState: AppState!
-            var store: Store<AppState>!
+            var store: TypedStore<AppState>!
             
             beforeEach{
-                defaultState = applicationReducer(action:Action<DefaultAction>())
-                store = createStore(applicationReducer, initialState: defaultState)
+                store = createTypedStore()(createStore)(applicationReducer, nil)
+                defaultState = store.getState()
             }
             
             
@@ -38,7 +38,7 @@ class CreateStoreSpec: QuickSpec {
                 }
                 
                 
-                store.dispatch(action: Action<IncrementAction>())
+                store.dispatch(IncrementAction())
                 
                 // Assert
                 expect(state.counter).toNot(equal(defaultState.counter))
@@ -57,7 +57,7 @@ class CreateStoreSpec: QuickSpec {
                 
                 // Run dispatch multiple times
                 for(var i = 0; i < iterations; i++){
-                    store.dispatch(action: Action<IncrementAction>())
+                    store.dispatch(IncrementAction())
                 }
                 
                 
@@ -79,9 +79,9 @@ class CreateStoreSpec: QuickSpec {
                 }
                 
                 for(var i = 0; i < iterations; i++){
-                    store.dispatch(action: Action<IncrementAction>())
-                    store.dispatch(action: Action<PushAction>(payload: PushAction.Payload(text: textMessage)))
-                    store.dispatch(action: Action<UpdateTextFieldAction>(payload: UpdateTextFieldAction.Payload(text: textMessage)))
+                    store.dispatch(IncrementAction())
+                    store.dispatch(PushAction(payload: PushAction.Payload(text: textMessage)))
+                    store.dispatch(UpdateTextFieldAction(payload: UpdateTextFieldAction.Payload(text: textMessage)))
                 }
                 
                 // Assert

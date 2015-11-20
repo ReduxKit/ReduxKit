@@ -26,14 +26,14 @@ class ActionTypeSpec: QuickSpec {
             it("should succesfully retrieve payload from actionType"){
                 
                 // Arrange
-                let incrementAction = Action<IncrementAction>() as ActionType
-                let pushAction = Action<PushAction>() as ActionType
-                let updateTextFieldAction = Action<UpdateTextFieldAction>() as ActionType
+                let incrementAction = IncrementAction() as Action
+                let pushAction = PushAction(payload: nil) as Action
+                let updateTextFieldAction = UpdateTextFieldAction(payload: nil) as Action
                 
                 // Act
-                let incrementPayload = incrementAction.getPayload()
-                let pushPayload = pushAction.getPayload()
-                let updateTextFieldPayload = updateTextFieldAction.getPayload()
+                let incrementPayload = incrementAction.payload
+                let pushPayload = pushAction.payload
+                let updateTextFieldPayload = updateTextFieldAction.payload
                 
                 // Assert
                 expect(incrementPayload is Int).to(beTruthy())

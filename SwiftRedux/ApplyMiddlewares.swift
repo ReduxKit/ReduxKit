@@ -7,35 +7,48 @@
 //
 
 
-public typealias MiddlewareReturnFunction = (DispatchFunction) -> DispatchFunction
+public typealias MiddlewareReturnFunction = (Dispatch) -> Dispatch
+public typealias Middleware = (api: MiddlewareApi) -> MiddlewareReturnFunction
+public typealias StoreCreator = (reducer: Reducer, initialState: State?) -> Store
+public typealias StoreEnhancer = (StoreCreator) -> StoreCreator
 
-public func applyMiddlewares<T where T:StateType>(middlewares: [(MiddlewareApi<T>) -> MiddlewareReturnFunction]) -> (((T, ActionType)-> T, T)  -> Store<T>) -> ((T,ActionType)-> T, T) -> Store<T>{
-    return {(next: ((T, ActionType)-> T, T) -> Store<T>) in
-        return {(reducer: (T, ActionType)-> T, initialState: T) in
-            let store = next(reducer, initialState)
-            // Create Middleware api - a simplified version of a store
-            let middlewareAPI = MiddlewareApi(getState: store.getState, dispatch: store.dispatch)
+
+
+/**
+ applyMiddleware. Will chain the specified middlewares so they are called before the reducers.
+ 
+ - parameter middlewares: middlewares description
+ 
+ - returns: return value description
+ */
+public func applyMiddlewares(middlewares: [Middleware]) -> StoreEnhancer{
+    return { (next:StoreCreator) -> StoreCreator in
+        return { (reducer: Reducer, initialState: State?) -> Store in
+            let store = next(reducer: reducer, initialState: initialState)
+            var dispatch = store.dispatch
+            let middlewareApi = MiddlewareApi(
+                getState: store.getState,
+                dispatch: {(action: Action) -> Action in
+                    return dispatch(action)
+                })
             
             /// Create an array of middlewareReturnFunctions
             let chain = middlewares.map{ middleware in
-                middleware(middlewareAPI)
+                middleware(api: middlewareApi)
             }
             
-            
             // Compounded dispatch function
-            let dispatch = compose(chain)(store.dispatch)
+            dispatch = compose(chain)(store.dispatch)
             
-            // Return a store with an enhanced dispatch function
-            return Store(
-                dispatch: dispatch,
-                getState: store.getState,
-                subscribe: store.subscribe)
+            return StandardStore(dispatch: dispatch, getState: store.getState, subscribe: store.subscribe)
         }
-    
     }
 }
 
-public struct MiddlewareApi<T where T:StateType>{
-    public let getState:() -> T
-    public let dispatch: DispatchFunction
+/**
+ *  MiddlewareApi - it its a simpler version of a Store
+ */
+public struct MiddlewareApi{
+    public let getState:() -> State
+    public let dispatch: Dispatch
 }

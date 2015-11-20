@@ -19,11 +19,11 @@ class BindActionCreatorsSpec: QuickSpec {
         
         describe("BindActionCreators"){
             var defaultState: AppState!
-            var store: Store<AppState>!
+            var store: TypedStore<AppState>!
             
             beforeEach{
-                defaultState = applicationReducer(action:Action<DefaultAction>())
-                store = createStore(applicationReducer, initialState: defaultState)
+                store = createTypedStore()(createStore)(applicationReducer, nil)
+                defaultState = store.getState()
             }
             
             
@@ -36,7 +36,7 @@ class BindActionCreatorsSpec: QuickSpec {
                 }
                 
                 // Act
-                let increment = bindActionCreators(IncrementAction.self ,dispatch: store.dispatch)
+                let increment = bindActionCreators(IncrementAction.self,dispatch: store.dispatch)
                 
                 increment(payload: nil)
                 

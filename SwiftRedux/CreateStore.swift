@@ -9,22 +9,76 @@
 import RxSwift
 
 
-
-public func createStore<T where T:StateType>(reducer: (T, ActionType)-> T, initialState: T) -> Store<T>{
+/**
+ Helper chain function that takes a StoreCreator and creates a TypedStore
+ While this could have been a regular storeEnhancer, the current compose function expects the return type to be the same as the parameter type. So as it is
+ now it doesn't work as seen on ReduxJs and need to be put first in the chain.
+ 
+ - parameter storeEnhancers: storeEnhancers description
+ 
+ - returns: return value description
+ */
+public func createTypedStore<T where T:State>(storeEnhancers: [StoreEnhancer] = []) -> (StoreCreator) -> (Reducer, State?) -> TypedStore<T>{
     
-    var currentReducer: (T, ActionType) -> T = reducer
-    var currentState: T = initialState
-    let subjectDispatcher: PublishSubject<ActionType> = PublishSubject()
-    let stateSubject = ReplaySubject<T>.create(bufferSize: 1)
+    return  { (next:StoreCreator) -> (Reducer, State?) -> TypedStore<T> in
+        return { (reducer: Reducer, initialState: State?) -> TypedStore<T> in
+            
+            /// Will apply all storeEnhancers before applying the store creator
+            let storeCreator = compose(storeEnhancers)(next)
+            
+            /// Will create a store with the compounded storeCreator
+            let store = storeCreator(reducer: reducer, initialState: initialState)
+            
+            return convertStoreToTypedStore(store)
+        }
+        
+    }
+}
+
+/**
+ Helper function that converts a store complying to the Store protocol to a typed store.
+ 
+ - parameter store: a store complying to the Store interface
+ 
+ - returns: TypedStore<T>
+ */
+public func convertStoreToTypedStore<T where T:State>(store: Store) -> TypedStore<T>{
+    return TypedStore(
+        dispatch: store.dispatch,
+        getState: { () -> T in
+            return store.getState() as! T
+        },
+        subscribe: {(onNext: (T) -> Void) -> Disposable in
+            return store.subscribe{(state: State) -> Void in
+                onNext(state as! T)
+            }
+        }
+    )
+}
+
+/**
+ Will create a store with the state specified as
+ 
+ - parameter reducer:      reducer description
+ - parameter action:       action description
+ - parameter initialState: initialState description
+ 
+ - returns: return value description
+ */
+public func createStore(reducer: Reducer, initialState: State?) -> Store{
+    var currentReducer: Reducer = reducer
+    var currentState: State = (initialState != nil) ? initialState! : reducer(state: initialState,action:DefaultAction())
+    let subjectDispatcher: PublishSubject<Action> = PublishSubject()
+    let stateSubject = ReplaySubject<State>.create(bufferSize: 1)
     var isDispatching = false
     
     // have the stateSubject subscribe to the dispatcher
     subjectDispatcher
-        .scan(initialState, accumulator: reducer)
-        .startWith(initialState)
+        .scan(currentState, accumulator: reducer)
+        .startWith(currentState)
         .subscribe(stateSubject)
     
-    //var middlewares: [(store: Store<T>)-> ActionType]?
+    //var middlewares: [(store: Store)-> ActionType]?
     
     
     /**
@@ -34,7 +88,7 @@ public func createStore<T where T:StateType>(reducer: (T, ActionType)-> T, initi
     
     - returns: will return the action
     */
-    func dispatch(action: ActionType) -> ActionType{
+    func dispatch(action: Action) -> Action{
         do{
             try innerDispatch(action)
         }catch{
@@ -49,7 +103,7 @@ public func createStore<T where T:StateType>(reducer: (T, ActionType)-> T, initi
      
      - returns: currentState
      */
-    func getState() -> T{
+    func getState() -> State{
         return currentState
     }
     
@@ -60,7 +114,7 @@ public func createStore<T where T:StateType>(reducer: (T, ActionType)-> T, initi
      
      - returns: the given action
      */
-    func innerDispatch(action: ActionType) throws -> ActionType{
+    func innerDispatch(action: Action) throws -> Action{
         
         /**
         *  the previous dispatch should be completed before the next one is initiated.
@@ -89,10 +143,15 @@ public func createStore<T where T:StateType>(reducer: (T, ActionType)-> T, initi
      
      - returns: will return the stateSubjects onNext function
      */
-    func subscribe(onNext: T -> Void) -> Disposable{
+    func subscribe(onNext: State -> Void) -> Disposable{
         return stateSubject.subscribeNext(onNext)
     }
     
-    return Store(dispatch: dispatch, getState: getState, subscribe: subscribe)
+    return StandardStore(dispatch: dispatch, getState: getState, subscribe: subscribe)
 
+}
+
+
+public enum StoreErrors: ErrorType{
+    case DispatchError
 }
