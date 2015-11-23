@@ -57,4 +57,5 @@ public struct DefaultAction: SimpleStandardAction{
     public let meta: Any? = nil
     public let error: Bool = false
     public let rawPayload: String = "$$SwiftRedux-DefaultAction"
+    public init(){}
 }
