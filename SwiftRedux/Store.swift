@@ -18,6 +18,7 @@ public protocol Store{
     var dispatch: Dispatch {get}
     var getState: () -> State {get}
     var subscribe: (onNext: (State) -> Void) -> Disposable {get}
+    init(dispatch: Dispatch, getState: ()-> State, subscribe: (onNext: (State) -> Void) -> Disposable)
 }
 
 /**
@@ -27,6 +28,12 @@ public struct StandardStore : Store{
     public var dispatch: Dispatch
     public let getState: () -> State
     public let subscribe: (onNext: (State) -> Void) -> Disposable
+    
+    public init(dispatch: Dispatch, getState: ()-> State, subscribe: (onNext: (State) -> Void) -> Disposable){
+        self.dispatch = dispatch
+        self.getState = getState
+        self.subscribe = subscribe
+    }
 }
 
 /**
@@ -37,4 +44,10 @@ public struct TypedStore<T where T:State>{
     public let dispatch: Dispatch
     public let getState: () -> T
     public let subscribe: (onNext: (T) -> Void) -> Disposable
+    
+    public init(dispatch: Dispatch, getState: () -> T, subscribe: (onNext: (T) -> Void) -> Disposable){
+        self.dispatch = dispatch
+        self.getState = getState
+        self.subscribe = subscribe
+    }
 }
