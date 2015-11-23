@@ -7,7 +7,7 @@
 //
 
 
-func compose<T>(objects: [(T) -> T]) -> (T) -> T{
+public func compose<T>(objects: [(T) -> T]) -> (T) -> T{
     let reversed = objects.reverse()
     
     func compose(arg: T) -> T{

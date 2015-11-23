@@ -34,7 +34,7 @@ public struct StandardStore : Store{
  *  It removes the necessity of casting the state object everytime subscribe is called
  */
 public struct TypedStore<T where T:State>{
-    let dispatch: Dispatch
-    let getState: () -> T
-    let subscribe: (onNext: (T) -> Void) -> Disposable
+    public let dispatch: Dispatch
+    public let getState: () -> T
+    public let subscribe: (onNext: (T) -> Void) -> Disposable
 }
