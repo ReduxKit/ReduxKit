@@ -1,4 +1,4 @@
-# [Swift-Redux](http://rackt.github.io/redux)
+# [reduxSwift](http://rackt.github.io/redux)
 
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
@@ -117,6 +117,9 @@ disposable.dispose()
 ```
 
 ## Available Middlewares
++ [reduxSwift-Rx](https://github.com/Aleksion/reduxSwift-rx)
+  \- RxSwift utilities for ReduxSwift
+
 
 ## Input
 I am hoping to get a solid influx of middlewares up and running for Swift-Redux so we can change the way we do iOS development in the future. I am therefor welcoming pull requests, feature requests and suggestions. I want this library to be the best it can be and I can only do that with the help of the rest of you.
