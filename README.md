@@ -3,7 +3,7 @@
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 ## Intro
-Swift-Redux is a swift implementation of rackt/redux by Dan Abramov and the React Community.
+reduxSWift is a swift implementation of rackt/redux by Dan Abramov and the React Community.
 I am currently implementing this in a few swift apps so it will be frequently updated. Additions, middlewares and help will be very much appreciated!
 A thorough walkthrough and description of the framework can be found at the official Redux repostory: [Redux](http://rackt.github.io/redux)
 
@@ -11,13 +11,13 @@ A thorough walkthrough and description of the framework can be found at the offi
 ## Installation
 
 ### [Carthage](https://github.com/Carthage/Carthage)
-The easiest way to include Swift-Redux is via Carthage:
+The easiest way to include reduxSwift is via Carthage:
 
 ** Xcode 8.0 required **
 
 Add this to `Cartfile`
 ```
-github "Aleksion/swift-redux"
+github "Aleksion/reduxSwift"
 ```
 
 Run in terminal:
