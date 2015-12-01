@@ -104,7 +104,13 @@ public func createStore(reducer: Reducer, initialState: State?) -> Store{
      - returns: currentState
      */
     func getState() -> State{
-        return currentState
+        var state: State!
+        
+        stateSubject.take(1).subscribeNext{nextState in
+            state = nextState
+        }.dispose()
+        
+        return state
     }
     
     /**

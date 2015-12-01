@@ -69,6 +69,23 @@ class CreateStoreSpec: QuickSpec {
                 
             }
             
+            it("should fetch the latest state"){
+                // Arrange
+                var state: AppState!
+                
+                // Act
+                
+                // Run dispatch multiple times
+                store.dispatch(IncrementAction())
+                state = store.getState()
+                
+                
+                // Assert
+                expect(state.counter).toNot(equal(defaultState.counter))
+                
+                
+            }
+            
             it("should work with multiple reducers"){
                 // Arrange
                 var state: AppState!
