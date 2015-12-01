@@ -13,7 +13,7 @@ A thorough walkthrough and description of the framework can be found at the offi
 ### [Carthage](https://github.com/Carthage/Carthage)
 The easiest way to include reduxSwift is via Carthage:
 
-** Xcode 8.0 required **
+** iOS 8.0 required **
 
 Add this to `Cartfile`
 ```
