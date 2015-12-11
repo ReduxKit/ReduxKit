@@ -4,7 +4,7 @@
 
 ## Intro
 reduxSWift is a swift implementation of rackt/redux by Dan Abramov and the React Community.
-I am currently implementing this in a few swift apps so it will be frequently updated. Additions, middlewares and help will be very much appreciated!
+I am currently implementing this in a few swift apps so it will be frequently updated. Additions, middlewares and help will be very much appreciated! So if you're trying it out and have any suggestions - feel free to post an issue and I'll be on it.
 A thorough walkthrough and description of the framework can be found at the official Redux repostory: [Redux](http://rackt.github.io/redux)
 
 
