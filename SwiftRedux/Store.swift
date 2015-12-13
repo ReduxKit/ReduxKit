@@ -48,3 +48,7 @@ public struct TypedStore<T where T:State>{
         self.subscribe = subscribe
     }
 }
+
+public enum StoreErrors: ErrorType {
+    case DispatchError
+}
