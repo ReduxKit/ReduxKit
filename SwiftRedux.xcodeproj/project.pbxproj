@@ -7,14 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		738B36AB1C1D9084000D5552 /* EventProducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE2FDA31BF0995C00D791AD /* EventProducer.swift */; };
-		738B36AC1C1D9084000D5552 /* EventProducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE2FDA31BF0995C00D791AD /* EventProducer.swift */; };
+		731627091C1E1CEF00F5834A /* TestStreamMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731627081C1E1CEF00F5834A /* TestStreamMock.swift */; };
+		7316270B1C1E1EFC00F5834A /* SimpleStreamMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7316270A1C1E1EFC00F5834A /* SimpleStreamMock.swift */; };
+		7316270D1C1E1F9300F5834A /* EventProducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7316270C1C1E1F9300F5834A /* EventProducer.swift */; };
 		738B36AF1C1D9C07000D5552 /* CreateTypedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738B36AE1C1D9C07000D5552 /* CreateTypedStore.swift */; };
 		738B36B01C1D9C07000D5552 /* CreateTypedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738B36AE1C1D9C07000D5552 /* CreateTypedStore.swift */; };
 		738B36B21C1DA2EC000D5552 /* CreateStreamStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738B36B11C1DA2EC000D5552 /* CreateStreamStore.swift */; };
 		738B36B31C1DA2EC000D5552 /* CreateStreamStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738B36B11C1DA2EC000D5552 /* CreateStreamStore.swift */; };
-		738B36B51C1DB082000D5552 /* CreateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738B36B41C1DB082000D5552 /* CreateStore.swift */; };
-		738B36B61C1DB082000D5552 /* CreateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738B36B41C1DB082000D5552 /* CreateStore.swift */; };
 		738B36B81C1DB0D1000D5552 /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738B36B71C1DB0D1000D5552 /* Disposable.swift */; };
 		738B36B91C1DB0D1000D5552 /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738B36B71C1DB0D1000D5552 /* Disposable.swift */; };
 		738B36BB1C1DB141000D5552 /* StateStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738B36BA1C1DB141000D5552 /* StateStream.swift */; };
@@ -55,9 +54,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		731627081C1E1CEF00F5834A /* TestStreamMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestStreamMock.swift; sourceTree = "<group>"; };
+		7316270A1C1E1EFC00F5834A /* SimpleStreamMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleStreamMock.swift; sourceTree = "<group>"; };
+		7316270C1C1E1F9300F5834A /* EventProducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventProducer.swift; sourceTree = "<group>"; };
 		738B36AE1C1D9C07000D5552 /* CreateTypedStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTypedStore.swift; sourceTree = "<group>"; };
 		738B36B11C1DA2EC000D5552 /* CreateStreamStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateStreamStore.swift; sourceTree = "<group>"; };
-		738B36B41C1DB082000D5552 /* CreateStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateStore.swift; sourceTree = "<group>"; };
 		738B36B71C1DB0D1000D5552 /* Disposable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disposable.swift; sourceTree = "<group>"; };
 		738B36BA1C1DB141000D5552 /* StateStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateStream.swift; sourceTree = "<group>"; };
 		BC0036921BFDDF2B00A3071A /* Reducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reducer.swift; sourceTree = "<group>"; };
@@ -78,7 +79,6 @@
 		BCE2595F1BE912AF00424F65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCE2596E1BE914DF00424F65 /* Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		BCE259711BE915A700424F65 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
-		BCE2FDA31BF0995C00D791AD /* EventProducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventProducer.swift; sourceTree = "<group>"; };
 		BCE2FDA91BF0A61200D791AD /* ApplyMiddlewares.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplyMiddlewares.swift; sourceTree = "<group>"; };
 		BCE9BB9D1BF203130088AABE /* ApplyMiddlewaresSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplyMiddlewaresSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -134,11 +134,9 @@
 				BCE2FDA91BF0A61200D791AD /* ApplyMiddlewares.swift */,
 				BC356F801BF1401A001466FC /* BindActionCreators.swift */,
 				BC356F851BF15D4F001466FC /* Compose.swift */,
-				738B36B41C1DB082000D5552 /* CreateStore.swift */,
 				738B36B11C1DA2EC000D5552 /* CreateStreamStore.swift */,
 				738B36AE1C1D9C07000D5552 /* CreateTypedStore.swift */,
 				738B36B71C1DB0D1000D5552 /* Disposable.swift */,
-				BCE2FDA31BF0995C00D791AD /* EventProducer.swift */,
 				BC0036921BFDDF2B00A3071A /* Reducer.swift */,
 				BC28F8D11BEB9566000B5587 /* State.swift */,
 				738B36BA1C1DB141000D5552 /* StateStream.swift */,
@@ -156,6 +154,9 @@
 				BC356F831BF14180001466FC /* BindActionCreatorsSpec.swift */,
 				BC51BC541BECA6CC008AFB00 /* CreateStoreSpec.swift */,
 				BC51BC4F1BEBFA70008AFB00 /* Mocks.swift */,
+				731627081C1E1CEF00F5834A /* TestStreamMock.swift */,
+				7316270A1C1E1EFC00F5834A /* SimpleStreamMock.swift */,
+				7316270C1C1E1F9300F5834A /* EventProducer.swift */,
 			);
 			path = SwiftReduxTests;
 			sourceTree = "<group>";
@@ -290,12 +291,10 @@
 				738B36AF1C1D9C07000D5552 /* CreateTypedStore.swift in Sources */,
 				738B36B81C1DB0D1000D5552 /* Disposable.swift in Sources */,
 				BCE2FDAA1BF0A61200D791AD /* ApplyMiddlewares.swift in Sources */,
-				738B36AB1C1D9084000D5552 /* EventProducer.swift in Sources */,
 				BCE259721BE915A700424F65 /* Store.swift in Sources */,
 				BC0036931BFDDF2B00A3071A /* Reducer.swift in Sources */,
 				738B36B21C1DA2EC000D5552 /* CreateStreamStore.swift in Sources */,
 				738B36BB1C1DB141000D5552 /* StateStream.swift in Sources */,
-				738B36B51C1DB082000D5552 /* CreateStore.swift in Sources */,
 				BC356F811BF1401A001466FC /* BindActionCreators.swift in Sources */,
 				BC28F8D21BEB9566000B5587 /* State.swift in Sources */,
 				BC356F861BF15D4F001466FC /* Compose.swift in Sources */,
@@ -308,20 +307,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				738B36B31C1DA2EC000D5552 /* CreateStreamStore.swift in Sources */,
+				731627091C1E1CEF00F5834A /* TestStreamMock.swift in Sources */,
 				BCE2FDAB1BF0A61200D791AD /* ApplyMiddlewares.swift in Sources */,
-				738B36AC1C1D9084000D5552 /* EventProducer.swift in Sources */,
 				BC51BC551BECA6CC008AFB00 /* CreateStoreSpec.swift in Sources */,
 				738B36B91C1DB0D1000D5552 /* Disposable.swift in Sources */,
 				BC51BC501BEBFA70008AFB00 /* Mocks.swift in Sources */,
 				BCE9BB9E1BF203130088AABE /* ApplyMiddlewaresSpec.swift in Sources */,
 				BCE259701BE914DF00424F65 /* Action.swift in Sources */,
+				7316270B1C1E1EFC00F5834A /* SimpleStreamMock.swift in Sources */,
+				7316270D1C1E1F9300F5834A /* EventProducer.swift in Sources */,
 				738B36B01C1D9C07000D5552 /* CreateTypedStore.swift in Sources */,
 				BC356F841BF14180001466FC /* BindActionCreatorsSpec.swift in Sources */,
 				BCE259731BE915A700424F65 /* Store.swift in Sources */,
 				BC51BC4D1BEBE86D008AFB00 /* State.swift in Sources */,
 				BC356F871BF165F2001466FC /* Compose.swift in Sources */,
 				BC7BDFD81BF4A84000C7DAD3 /* ActionTypeSpec.swift in Sources */,
-				738B36B61C1DB082000D5552 /* CreateStore.swift in Sources */,
 				BC0036941BFDDF4700A3071A /* Reducer.swift in Sources */,
 				BC356F821BF1413D001466FC /* BindActionCreators.swift in Sources */,
 				738B36BC1C1DB141000D5552 /* StateStream.swift in Sources */,

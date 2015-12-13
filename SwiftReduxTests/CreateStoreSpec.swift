@@ -19,7 +19,7 @@ class CreateStoreSpec: QuickSpec {
             var store: TypedStore<AppState>!
 
             beforeEach{
-                store = createTypedStore()(createStore)(applicationReducer, nil)
+                store = createTypedStore()(createTestStore)(applicationReducer, nil)
                 defaultState = store.getState()
             }
 

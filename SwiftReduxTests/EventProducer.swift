@@ -2,7 +2,7 @@
 //  EventProducer.swift
 //  SwiftRedux
 //
-//  Created by Aleksander Herforth Rendtslev on 09/11/15.
+//  Created by Karl Bowden on 14/12/2015.
 //  Copyright © 2015 Kare Media. All rights reserved.
 //
 
