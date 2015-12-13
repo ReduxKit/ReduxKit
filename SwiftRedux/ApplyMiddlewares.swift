@@ -16,9 +16,9 @@ public typealias StoreEnhancer = (StoreCreator) -> StoreCreator
 
 /**
  applyMiddleware. Will chain the specified middlewares so they are called before the reducers.
- 
+
  - parameter middlewares: middlewares description
- 
+
  - returns: return value description
  */
 public func applyMiddlewares(middlewares: [Middleware]) -> StoreEnhancer{
@@ -31,15 +31,15 @@ public func applyMiddlewares(middlewares: [Middleware]) -> StoreEnhancer{
                 dispatch: {(action: Action) -> Action in
                     return dispatch(action)
                 })
-            
+
             /// Create an array of middlewareReturnFunctions
             let chain = middlewares.map{ middleware in
                 middleware(api: middlewareApi)
             }
-            
+
             // Compounded dispatch function
             dispatch = compose(chain)(store.dispatch)
-            
+
             return StandardStore(dispatch: dispatch, getState: store.getState, subscribe: store.subscribe)
         }
     }

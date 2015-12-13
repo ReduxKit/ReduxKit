@@ -13,8 +13,6 @@
 		738B36B01C1D9C07000D5552 /* CreateTypedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738B36AE1C1D9C07000D5552 /* CreateTypedStore.swift */; };
 		BC0036931BFDDF2B00A3071A /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0036921BFDDF2B00A3071A /* Reducer.swift */; };
 		BC0036941BFDDF4700A3071A /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0036921BFDDF2B00A3071A /* Reducer.swift */; };
-		BC05881A1BED0AA800F2F4BF /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC0588181BED0AA800F2F4BF /* RxBlocking.framework */; };
-		BC05881B1BED0AA800F2F4BF /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC0588191BED0AA800F2F4BF /* RxCocoa.framework */; };
 		BC28F8D21BEB9566000B5587 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC28F8D11BEB9566000B5587 /* State.swift */; };
 		BC356F811BF1401A001466FC /* BindActionCreators.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC356F801BF1401A001466FC /* BindActionCreators.swift */; };
 		BC356F821BF1413D001466FC /* BindActionCreators.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC356F801BF1401A001466FC /* BindActionCreators.swift */; };
@@ -25,12 +23,8 @@
 		BC51BC501BEBFA70008AFB00 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC51BC4F1BEBFA70008AFB00 /* Mocks.swift */; };
 		BC51BC551BECA6CC008AFB00 /* CreateStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC51BC541BECA6CC008AFB00 /* CreateStoreSpec.swift */; };
 		BC7BDFD81BF4A84000C7DAD3 /* ActionTypeSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7BDFD71BF4A84000C7DAD3 /* ActionTypeSpec.swift */; };
-		BC97D47D1BECF22A002FE39C /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC97D47C1BECF22A002FE39C /* RxSwift.framework */; };
 		BC9F52B91BF00A9D002C2540 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC0588241BEF85BA00F2F4BF /* Nimble.framework */; };
 		BC9F52BA1BF00A9D002C2540 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC0588251BEF85BA00F2F4BF /* Quick.framework */; };
-		BC9F52BB1BF00A9D002C2540 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC0588181BED0AA800F2F4BF /* RxBlocking.framework */; };
-		BC9F52BC1BF00A9D002C2540 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC0588191BED0AA800F2F4BF /* RxCocoa.framework */; };
-		BC9F52BD1BF00A9D002C2540 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC97D47C1BECF22A002FE39C /* RxSwift.framework */; };
 		BCE259521BE912AE00424F65 /* SwiftRedux.h in Headers */ = {isa = PBXBuildFile; fileRef = BCE259511BE912AE00424F65 /* SwiftRedux.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BCE259591BE912AF00424F65 /* SwiftRedux.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCE2594E1BE912AE00424F65 /* SwiftRedux.framework */; };
 		BCE2596F1BE914DF00424F65 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE2596E1BE914DF00424F65 /* Action.swift */; };
@@ -55,8 +49,6 @@
 /* Begin PBXFileReference section */
 		738B36AE1C1D9C07000D5552 /* CreateTypedStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTypedStore.swift; sourceTree = "<group>"; };
 		BC0036921BFDDF2B00A3071A /* Reducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reducer.swift; sourceTree = "<group>"; };
-		BC0588181BED0AA800F2F4BF /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
-		BC0588191BED0AA800F2F4BF /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		BC0588241BEF85BA00F2F4BF /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		BC0588251BEF85BA00F2F4BF /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		BC28F8D11BEB9566000B5587 /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
@@ -67,7 +59,6 @@
 		BC51BC541BECA6CC008AFB00 /* CreateStoreSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateStoreSpec.swift; sourceTree = "<group>"; };
 		BC7BDFD71BF4A84000C7DAD3 /* ActionTypeSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionTypeSpec.swift; sourceTree = "<group>"; };
 		BC97D47A1BECDFD1002FE39C /* Build */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Build; path = Carthage/Build; sourceTree = "<group>"; };
-		BC97D47C1BECF22A002FE39C /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		BCE2594E1BE912AE00424F65 /* SwiftRedux.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftRedux.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCE259511BE912AE00424F65 /* SwiftRedux.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftRedux.h; sourceTree = "<group>"; };
 		BCE259531BE912AE00424F65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -85,9 +76,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC05881A1BED0AA800F2F4BF /* RxBlocking.framework in Frameworks */,
-				BC05881B1BED0AA800F2F4BF /* RxCocoa.framework in Frameworks */,
-				BC97D47D1BECF22A002FE39C /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,9 +85,6 @@
 			files = (
 				BC9F52B91BF00A9D002C2540 /* Nimble.framework in Frameworks */,
 				BC9F52BA1BF00A9D002C2540 /* Quick.framework in Frameworks */,
-				BC9F52BB1BF00A9D002C2540 /* RxBlocking.framework in Frameworks */,
-				BC9F52BC1BF00A9D002C2540 /* RxCocoa.framework in Frameworks */,
-				BC9F52BD1BF00A9D002C2540 /* RxSwift.framework in Frameworks */,
 				BCE259591BE912AF00424F65 /* SwiftRedux.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -112,9 +97,6 @@
 			children = (
 				BC0588241BEF85BA00F2F4BF /* Nimble.framework */,
 				BC0588251BEF85BA00F2F4BF /* Quick.framework */,
-				BC0588181BED0AA800F2F4BF /* RxBlocking.framework */,
-				BC0588191BED0AA800F2F4BF /* RxCocoa.framework */,
-				BC97D47C1BECF22A002FE39C /* RxSwift.framework */,
 				BC97D47A1BECDFD1002FE39C /* Build */,
 				BCE259501BE912AE00424F65 /* SwiftRedux */,
 				BCE2595C1BE912AF00424F65 /* SwiftReduxTests */,
@@ -184,7 +166,6 @@
 				BCE2594A1BE912AE00424F65 /* Frameworks */,
 				BCE2594B1BE912AE00424F65 /* Headers */,
 				BCE2594C1BE912AE00424F65 /* Resources */,
-				BC0588151BED00FD00F2F4BF /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -268,22 +249,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		BC0588151BED00FD00F2F4BF /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxBlocking.framework",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
 		BC0588281BEF85E700F2F4BF /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -292,9 +257,6 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Quick.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Nimble.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxBlocking.framework",
 			);
 			outputPaths = (
 			);

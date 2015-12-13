@@ -9,14 +9,14 @@
 
 public func compose<T>(objects: [(T) -> T]) -> (T) -> T{
     let reversed = objects.reverse()
-    
+
     func compose(arg: T) -> T{
-      
+
         return reversed.reduce(arg) { (composed: T, f: (T) -> T) -> T in
             return f(composed)
         }
     }
-    
+
     return compose
-    
+
 }
