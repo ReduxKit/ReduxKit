@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		738B36AB1C1D9084000D5552 /* CreateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE2FDA31BF0995C00D791AD /* CreateStore.swift */; };
+		738B36AC1C1D9084000D5552 /* CreateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE2FDA31BF0995C00D791AD /* CreateStore.swift */; };
+		738B36AF1C1D9C07000D5552 /* CreateTypedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738B36AE1C1D9C07000D5552 /* CreateTypedStore.swift */; };
+		738B36B01C1D9C07000D5552 /* CreateTypedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738B36AE1C1D9C07000D5552 /* CreateTypedStore.swift */; };
 		BC0036931BFDDF2B00A3071A /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0036921BFDDF2B00A3071A /* Reducer.swift */; };
 		BC0036941BFDDF4700A3071A /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0036921BFDDF2B00A3071A /* Reducer.swift */; };
 		BC05881A1BED0AA800F2F4BF /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC0588181BED0AA800F2F4BF /* RxBlocking.framework */; };
@@ -33,8 +37,6 @@
 		BCE259701BE914DF00424F65 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE2596E1BE914DF00424F65 /* Action.swift */; };
 		BCE259721BE915A700424F65 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE259711BE915A700424F65 /* Store.swift */; };
 		BCE259731BE915A700424F65 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE259711BE915A700424F65 /* Store.swift */; };
-		BCE2FDA41BF0995C00D791AD /* CreateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE2FDA31BF0995C00D791AD /* CreateStore.swift */; };
-		BCE2FDA51BF0995C00D791AD /* CreateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE2FDA31BF0995C00D791AD /* CreateStore.swift */; };
 		BCE2FDAA1BF0A61200D791AD /* ApplyMiddlewares.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE2FDA91BF0A61200D791AD /* ApplyMiddlewares.swift */; };
 		BCE2FDAB1BF0A61200D791AD /* ApplyMiddlewares.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE2FDA91BF0A61200D791AD /* ApplyMiddlewares.swift */; };
 		BCE9BB9E1BF203130088AABE /* ApplyMiddlewaresSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE9BB9D1BF203130088AABE /* ApplyMiddlewaresSpec.swift */; };
@@ -51,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		738B36AE1C1D9C07000D5552 /* CreateTypedStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTypedStore.swift; sourceTree = "<group>"; };
 		BC0036921BFDDF2B00A3071A /* Reducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reducer.swift; sourceTree = "<group>"; };
 		BC0588181BED0AA800F2F4BF /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 		BC0588191BED0AA800F2F4BF /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
@@ -134,13 +137,14 @@
 				BCE259511BE912AE00424F65 /* SwiftRedux.h */,
 				BCE259531BE912AE00424F65 /* Info.plist */,
 				BCE2596E1BE914DF00424F65 /* Action.swift */,
-				BCE259711BE915A700424F65 /* Store.swift */,
-				BC28F8D11BEB9566000B5587 /* State.swift */,
-				BCE2FDA31BF0995C00D791AD /* CreateStore.swift */,
 				BCE2FDA91BF0A61200D791AD /* ApplyMiddlewares.swift */,
 				BC356F801BF1401A001466FC /* BindActionCreators.swift */,
 				BC356F851BF15D4F001466FC /* Compose.swift */,
+				BCE2FDA31BF0995C00D791AD /* CreateStore.swift */,
+				738B36AE1C1D9C07000D5552 /* CreateTypedStore.swift */,
 				BC0036921BFDDF2B00A3071A /* Reducer.swift */,
+				BC28F8D11BEB9566000B5587 /* State.swift */,
+				BCE259711BE915A700424F65 /* Store.swift */,
 			);
 			path = SwiftRedux;
 			sourceTree = "<group>";
@@ -149,11 +153,11 @@
 			isa = PBXGroup;
 			children = (
 				BCE2595F1BE912AF00424F65 /* Info.plist */,
-				BC51BC4F1BEBFA70008AFB00 /* Mocks.swift */,
-				BC51BC541BECA6CC008AFB00 /* CreateStoreSpec.swift */,
-				BC356F831BF14180001466FC /* BindActionCreatorsSpec.swift */,
-				BCE9BB9D1BF203130088AABE /* ApplyMiddlewaresSpec.swift */,
 				BC7BDFD71BF4A84000C7DAD3 /* ActionTypeSpec.swift */,
+				BCE9BB9D1BF203130088AABE /* ApplyMiddlewaresSpec.swift */,
+				BC356F831BF14180001466FC /* BindActionCreatorsSpec.swift */,
+				BC51BC541BECA6CC008AFB00 /* CreateStoreSpec.swift */,
+				BC51BC4F1BEBFA70008AFB00 /* Mocks.swift */,
 			);
 			path = SwiftReduxTests;
 			sourceTree = "<group>";
@@ -305,10 +309,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				738B36AF1C1D9C07000D5552 /* CreateTypedStore.swift in Sources */,
 				BCE2FDAA1BF0A61200D791AD /* ApplyMiddlewares.swift in Sources */,
+				738B36AB1C1D9084000D5552 /* CreateStore.swift in Sources */,
 				BCE259721BE915A700424F65 /* Store.swift in Sources */,
 				BC0036931BFDDF2B00A3071A /* Reducer.swift in Sources */,
-				BCE2FDA41BF0995C00D791AD /* CreateStore.swift in Sources */,
 				BC356F811BF1401A001466FC /* BindActionCreators.swift in Sources */,
 				BC28F8D21BEB9566000B5587 /* State.swift in Sources */,
 				BC356F861BF15D4F001466FC /* Compose.swift in Sources */,
@@ -321,17 +326,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCE2FDAB1BF0A61200D791AD /* ApplyMiddlewares.swift in Sources */,
+				738B36AC1C1D9084000D5552 /* CreateStore.swift in Sources */,
 				BC51BC551BECA6CC008AFB00 /* CreateStoreSpec.swift in Sources */,
 				BC51BC501BEBFA70008AFB00 /* Mocks.swift in Sources */,
 				BCE9BB9E1BF203130088AABE /* ApplyMiddlewaresSpec.swift in Sources */,
 				BCE259701BE914DF00424F65 /* Action.swift in Sources */,
+				738B36B01C1D9C07000D5552 /* CreateTypedStore.swift in Sources */,
 				BC356F841BF14180001466FC /* BindActionCreatorsSpec.swift in Sources */,
 				BCE259731BE915A700424F65 /* Store.swift in Sources */,
 				BC51BC4D1BEBE86D008AFB00 /* State.swift in Sources */,
 				BC356F871BF165F2001466FC /* Compose.swift in Sources */,
 				BC7BDFD81BF4A84000C7DAD3 /* ActionTypeSpec.swift in Sources */,
 				BC0036941BFDDF4700A3071A /* Reducer.swift in Sources */,
-				BCE2FDA51BF0995C00D791AD /* CreateStore.swift in Sources */,
 				BC356F821BF1413D001466FC /* BindActionCreators.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
