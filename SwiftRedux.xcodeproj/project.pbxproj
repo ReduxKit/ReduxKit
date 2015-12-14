@@ -8,25 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		731627091C1E1CEF00F5834A /* TestStreamMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731627081C1E1CEF00F5834A /* TestStreamMock.swift */; };
-		7316270B1C1E1EFC00F5834A /* SimpleStreamMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7316270A1C1E1EFC00F5834A /* SimpleStreamMock.swift */; };
-		7316270D1C1E1F9300F5834A /* EventProducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7316270C1C1E1F9300F5834A /* EventProducer.swift */; };
-		738B36AF1C1D9C07000D5552 /* CreateTypedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738B36AE1C1D9C07000D5552 /* CreateTypedStore.swift */; };
-		738B36B01C1D9C07000D5552 /* CreateTypedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738B36AE1C1D9C07000D5552 /* CreateTypedStore.swift */; };
-		738B36B21C1DA2EC000D5552 /* CreateStreamStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738B36B11C1DA2EC000D5552 /* CreateStreamStore.swift */; };
-		738B36B31C1DA2EC000D5552 /* CreateStreamStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738B36B11C1DA2EC000D5552 /* CreateStreamStore.swift */; };
-		738B36B81C1DB0D1000D5552 /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738B36B71C1DB0D1000D5552 /* Disposable.swift */; };
-		738B36B91C1DB0D1000D5552 /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738B36B71C1DB0D1000D5552 /* Disposable.swift */; };
+		735AA83F1C1F0047001C0FBE /* ApplyMiddlewaresSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE9BB9D1BF203130088AABE /* ApplyMiddlewaresSpec.swift */; };
+		735AA8401C1F127A001C0FBE /* ReactiveKitSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735004A81C1EC9C00040E6AE /* ReactiveKitSpec.swift */; };
+		738B36AF1C1D9C07000D5552 /* CreateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738B36AE1C1D9C07000D5552 /* CreateStore.swift */; };
+		738B36B01C1D9C07000D5552 /* CreateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738B36AE1C1D9C07000D5552 /* CreateStore.swift */; };
 		738B36BB1C1DB141000D5552 /* StateStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738B36BA1C1DB141000D5552 /* StateStream.swift */; };
 		738B36BC1C1DB141000D5552 /* StateStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738B36BA1C1DB141000D5552 /* StateStream.swift */; };
-		BC0036931BFDDF2B00A3071A /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0036921BFDDF2B00A3071A /* Reducer.swift */; };
-		BC0036941BFDDF4700A3071A /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0036921BFDDF2B00A3071A /* Reducer.swift */; };
-		BC28F8D21BEB9566000B5587 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC28F8D11BEB9566000B5587 /* State.swift */; };
+		73AC0A401C1F1942008C93E2 /* ReactiveKitMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735AA8411C1F12BB001C0FBE /* ReactiveKitMocks.swift */; };
 		BC356F811BF1401A001466FC /* BindActionCreators.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC356F801BF1401A001466FC /* BindActionCreators.swift */; };
 		BC356F821BF1413D001466FC /* BindActionCreators.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC356F801BF1401A001466FC /* BindActionCreators.swift */; };
 		BC356F841BF14180001466FC /* BindActionCreatorsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC356F831BF14180001466FC /* BindActionCreatorsSpec.swift */; };
-		BC356F861BF15D4F001466FC /* Compose.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC356F851BF15D4F001466FC /* Compose.swift */; };
-		BC356F871BF165F2001466FC /* Compose.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC356F851BF15D4F001466FC /* Compose.swift */; };
-		BC51BC4D1BEBE86D008AFB00 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC28F8D11BEB9566000B5587 /* State.swift */; };
 		BC51BC501BEBFA70008AFB00 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC51BC4F1BEBFA70008AFB00 /* Mocks.swift */; };
 		BC51BC551BECA6CC008AFB00 /* CreateStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC51BC541BECA6CC008AFB00 /* CreateStoreSpec.swift */; };
 		BC7BDFD81BF4A84000C7DAD3 /* ActionTypeSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7BDFD71BF4A84000C7DAD3 /* ActionTypeSpec.swift */; };
@@ -40,7 +31,6 @@
 		BCE259731BE915A700424F65 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE259711BE915A700424F65 /* Store.swift */; };
 		BCE2FDAA1BF0A61200D791AD /* ApplyMiddlewares.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE2FDA91BF0A61200D791AD /* ApplyMiddlewares.swift */; };
 		BCE2FDAB1BF0A61200D791AD /* ApplyMiddlewares.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE2FDA91BF0A61200D791AD /* ApplyMiddlewares.swift */; };
-		BCE9BB9E1BF203130088AABE /* ApplyMiddlewaresSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE9BB9D1BF203130088AABE /* ApplyMiddlewaresSpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,19 +45,19 @@
 
 /* Begin PBXFileReference section */
 		731627081C1E1CEF00F5834A /* TestStreamMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestStreamMock.swift; sourceTree = "<group>"; };
-		7316270A1C1E1EFC00F5834A /* SimpleStreamMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleStreamMock.swift; sourceTree = "<group>"; };
-		7316270C1C1E1F9300F5834A /* EventProducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventProducer.swift; sourceTree = "<group>"; };
-		738B36AE1C1D9C07000D5552 /* CreateTypedStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTypedStore.swift; sourceTree = "<group>"; };
-		738B36B11C1DA2EC000D5552 /* CreateStreamStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateStreamStore.swift; sourceTree = "<group>"; };
-		738B36B71C1DB0D1000D5552 /* Disposable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disposable.swift; sourceTree = "<group>"; };
+		735004801C1EA96E0040E6AE /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		735004811C1EA96E0040E6AE /* Cartfile.resolved */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile.resolved; sourceTree = "<group>"; };
+		735004821C1EA96E0040E6AE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		735004831C1EA96E0040E6AE /* SUMMARY.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SUMMARY.md; sourceTree = "<group>"; };
+		735004A01C1EAD510040E6AE /* ReactiveKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveKit.framework; path = Carthage/Build/iOS/ReactiveKit.framework; sourceTree = "<group>"; };
+		735004A81C1EC9C00040E6AE /* ReactiveKitSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactiveKitSpec.swift; sourceTree = "<group>"; };
+		735AA8411C1F12BB001C0FBE /* ReactiveKitMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactiveKitMocks.swift; sourceTree = "<group>"; };
+		738B36AE1C1D9C07000D5552 /* CreateStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateStore.swift; sourceTree = "<group>"; };
 		738B36BA1C1DB141000D5552 /* StateStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateStream.swift; sourceTree = "<group>"; };
-		BC0036921BFDDF2B00A3071A /* Reducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reducer.swift; sourceTree = "<group>"; };
 		BC0588241BEF85BA00F2F4BF /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		BC0588251BEF85BA00F2F4BF /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
-		BC28F8D11BEB9566000B5587 /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		BC356F801BF1401A001466FC /* BindActionCreators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BindActionCreators.swift; sourceTree = "<group>"; };
 		BC356F831BF14180001466FC /* BindActionCreatorsSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BindActionCreatorsSpec.swift; sourceTree = "<group>"; };
-		BC356F851BF15D4F001466FC /* Compose.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Compose.swift; sourceTree = "<group>"; };
 		BC51BC4F1BEBFA70008AFB00 /* Mocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
 		BC51BC541BECA6CC008AFB00 /* CreateStoreSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateStoreSpec.swift; sourceTree = "<group>"; };
 		BC7BDFD71BF4A84000C7DAD3 /* ActionTypeSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionTypeSpec.swift; sourceTree = "<group>"; };
@@ -107,12 +97,17 @@
 		BCE259441BE912AE00424F65 = {
 			isa = PBXGroup;
 			children = (
+				735004A01C1EAD510040E6AE /* ReactiveKit.framework */,
 				BC0588241BEF85BA00F2F4BF /* Nimble.framework */,
 				BC0588251BEF85BA00F2F4BF /* Quick.framework */,
 				BC97D47A1BECDFD1002FE39C /* Build */,
+				735004801C1EA96E0040E6AE /* Cartfile */,
+				735004811C1EA96E0040E6AE /* Cartfile.resolved */,
+				735004821C1EA96E0040E6AE /* README.md */,
+				735004831C1EA96E0040E6AE /* SUMMARY.md */,
+				BCE2594F1BE912AE00424F65 /* Products */,
 				BCE259501BE912AE00424F65 /* SwiftRedux */,
 				BCE2595C1BE912AF00424F65 /* SwiftReduxTests */,
-				BCE2594F1BE912AE00424F65 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -133,12 +128,7 @@
 				BCE2596E1BE914DF00424F65 /* Action.swift */,
 				BCE2FDA91BF0A61200D791AD /* ApplyMiddlewares.swift */,
 				BC356F801BF1401A001466FC /* BindActionCreators.swift */,
-				BC356F851BF15D4F001466FC /* Compose.swift */,
-				738B36B11C1DA2EC000D5552 /* CreateStreamStore.swift */,
-				738B36AE1C1D9C07000D5552 /* CreateTypedStore.swift */,
-				738B36B71C1DB0D1000D5552 /* Disposable.swift */,
-				BC0036921BFDDF2B00A3071A /* Reducer.swift */,
-				BC28F8D11BEB9566000B5587 /* State.swift */,
+				738B36AE1C1D9C07000D5552 /* CreateStore.swift */,
 				738B36BA1C1DB141000D5552 /* StateStream.swift */,
 				BCE259711BE915A700424F65 /* Store.swift */,
 			);
@@ -154,9 +144,9 @@
 				BC356F831BF14180001466FC /* BindActionCreatorsSpec.swift */,
 				BC51BC541BECA6CC008AFB00 /* CreateStoreSpec.swift */,
 				BC51BC4F1BEBFA70008AFB00 /* Mocks.swift */,
+				735004A81C1EC9C00040E6AE /* ReactiveKitSpec.swift */,
+				735AA8411C1F12BB001C0FBE /* ReactiveKitMocks.swift */,
 				731627081C1E1CEF00F5834A /* TestStreamMock.swift */,
-				7316270A1C1E1EFC00F5834A /* SimpleStreamMock.swift */,
-				7316270C1C1E1F9300F5834A /* EventProducer.swift */,
 			);
 			path = SwiftReduxTests;
 			sourceTree = "<group>";
@@ -218,7 +208,7 @@
 		BCE259451BE912AE00424F65 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0710;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Kare Media";
 				TargetAttributes = {
@@ -274,6 +264,7 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Quick.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Nimble.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ReactiveKit.framework",
 			);
 			outputPaths = (
 			);
@@ -288,16 +279,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				738B36AF1C1D9C07000D5552 /* CreateTypedStore.swift in Sources */,
-				738B36B81C1DB0D1000D5552 /* Disposable.swift in Sources */,
+				738B36AF1C1D9C07000D5552 /* CreateStore.swift in Sources */,
 				BCE2FDAA1BF0A61200D791AD /* ApplyMiddlewares.swift in Sources */,
 				BCE259721BE915A700424F65 /* Store.swift in Sources */,
-				BC0036931BFDDF2B00A3071A /* Reducer.swift in Sources */,
-				738B36B21C1DA2EC000D5552 /* CreateStreamStore.swift in Sources */,
 				738B36BB1C1DB141000D5552 /* StateStream.swift in Sources */,
 				BC356F811BF1401A001466FC /* BindActionCreators.swift in Sources */,
-				BC28F8D21BEB9566000B5587 /* State.swift in Sources */,
-				BC356F861BF15D4F001466FC /* Compose.swift in Sources */,
 				BCE2596F1BE914DF00424F65 /* Action.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,25 +292,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				738B36B31C1DA2EC000D5552 /* CreateStreamStore.swift in Sources */,
 				731627091C1E1CEF00F5834A /* TestStreamMock.swift in Sources */,
 				BCE2FDAB1BF0A61200D791AD /* ApplyMiddlewares.swift in Sources */,
+				735AA8401C1F127A001C0FBE /* ReactiveKitSpec.swift in Sources */,
+				735AA83F1C1F0047001C0FBE /* ApplyMiddlewaresSpec.swift in Sources */,
 				BC51BC551BECA6CC008AFB00 /* CreateStoreSpec.swift in Sources */,
-				738B36B91C1DB0D1000D5552 /* Disposable.swift in Sources */,
 				BC51BC501BEBFA70008AFB00 /* Mocks.swift in Sources */,
-				BCE9BB9E1BF203130088AABE /* ApplyMiddlewaresSpec.swift in Sources */,
 				BCE259701BE914DF00424F65 /* Action.swift in Sources */,
-				7316270B1C1E1EFC00F5834A /* SimpleStreamMock.swift in Sources */,
-				7316270D1C1E1F9300F5834A /* EventProducer.swift in Sources */,
-				738B36B01C1D9C07000D5552 /* CreateTypedStore.swift in Sources */,
+				738B36B01C1D9C07000D5552 /* CreateStore.swift in Sources */,
 				BC356F841BF14180001466FC /* BindActionCreatorsSpec.swift in Sources */,
 				BCE259731BE915A700424F65 /* Store.swift in Sources */,
-				BC51BC4D1BEBE86D008AFB00 /* State.swift in Sources */,
-				BC356F871BF165F2001466FC /* Compose.swift in Sources */,
 				BC7BDFD81BF4A84000C7DAD3 /* ActionTypeSpec.swift in Sources */,
-				BC0036941BFDDF4700A3071A /* Reducer.swift in Sources */,
 				BC356F821BF1413D001466FC /* BindActionCreators.swift in Sources */,
 				738B36BC1C1DB141000D5552 /* StateStream.swift in Sources */,
+				73AC0A401C1F1942008C93E2 /* ReactiveKitMocks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

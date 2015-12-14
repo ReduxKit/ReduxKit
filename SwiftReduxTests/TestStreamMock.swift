@@ -6,35 +6,28 @@
 //  Copyright © 2015 Kare Media. All rights reserved.
 //
 
-struct MockDisposable: Disposable {
-    var isDisposed: Bool = false
-    func dispose() {}
-}
+struct TestDisposable {}
 
-func createTestStream<T>(state: T) -> StateStream<T> {
+func createTestStream<State>(state: State) -> StateStream<State, TestDisposable> {
+
+    typealias Observer = State -> ()
+
     var latestState = state
-    typealias Observer = T -> ()
     var observers = [Observer]()
 
-    func publish(state: T) {
+    func next(state: State) {
         latestState = state
-        observers.forEach() { observer in
-            observer(latestState)
-        }
+        observers.forEach() { $0(latestState) }
     }
 
-    func subscribe(next: T -> ()) -> Disposable {
+    func observe(next: State -> ()) -> TestDisposable {
         observers.append(next)
-        return MockDisposable()
+        return TestDisposable()
     }
 
-    func getState() -> T {
-        return latestState
-    }
-
-    return StateStream(publish: publish, subscribe: subscribe, getState: getState)
+    return StateStream(next: next, observe: observe, latest: {latestState})
 }
 
-public func createTestStore(reducer: Reducer, state: State?) -> Store {
-    return createStreamStore(createTestStream, reducer: reducer, state: state)
+func createTestStore<State>(reducer: (State?, Action) -> State, state: State?) -> Store<State, TestDisposable> {
+    return createStore(createTestStream, reducer: reducer, state: state)
 }

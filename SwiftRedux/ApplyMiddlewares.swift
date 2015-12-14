@@ -6,13 +6,7 @@
 //  Copyright © 2015 Kare Media. All rights reserved.
 //
 
-
-public typealias MiddlewareReturnFunction = (Dispatch) -> Dispatch
-public typealias Middleware = (api: MiddlewareApi) -> MiddlewareReturnFunction
-public typealias StoreCreator = (reducer: Reducer, initialState: State?) -> Store
-public typealias StoreEnhancer = (StoreCreator) -> StoreCreator
-
-
+public typealias Middleware = (Dispatch) -> Dispatch
 
 /**
  applyMiddleware. Will chain the specified middlewares so they are called before the reducers.
@@ -21,34 +15,12 @@ public typealias StoreEnhancer = (StoreCreator) -> StoreCreator
 
  - returns: return value description
  */
-public func applyMiddlewares(middlewares: [Middleware]) -> StoreEnhancer{
-    return { (next:StoreCreator) -> StoreCreator in
-        return { (reducer: Reducer, initialState: State?) -> Store in
-            let store = next(reducer: reducer, initialState: initialState)
-            var dispatch = store.dispatch
-            let middlewareApi = MiddlewareApi(
-                getState: store.getState,
-                dispatch: {(action: Action) -> Action in
-                    return dispatch(action)
-                })
 
-            /// Create an array of middlewareReturnFunctions
-            let chain = middlewares.map{ middleware in
-                middleware(api: middlewareApi)
-            }
-
-            // Compounded dispatch function
-            dispatch = compose(chain)(store.dispatch)
-
-            return StandardStore(dispatch: dispatch, getState: store.getState, subscribe: store.subscribe)
-        }
-    }
+public func applyMiddleware<State, Disposable>(middleware: Middleware, store: Store<State, Disposable>) -> Store<State, Disposable> {
+    return Store(dispatch: middleware(store.dispatch), observe: store.observe, latest: store.latest)
 }
 
-/**
- *  MiddlewareApi - it its a simpler version of a Store
- */
-public struct MiddlewareApi{
-    public let getState:() -> State
-    public let dispatch: Dispatch
+public func applyMiddlewares<State, Disposable>(middlewares: [Middleware], store: Store<State, Disposable>) -> Store<State, Disposable> {
+    let dispatch = middlewares.reverse().reduce(store.dispatch) { $1($0) }
+    return Store(dispatch: dispatch, observe: store.observe, latest: store.latest)
 }

@@ -1,25 +1,26 @@
 //
-//  StoreTypeTest.swift
+//  ReactiveKitSpec.swift
 //  SwiftRedux
 //
-//  Created by Aleksander Herforth Rendtslev on 06/11/15.
+//  Created by Karl Bowden on 14/12/2015.
 //  Copyright © 2015 Kare Media. All rights reserved.
 //
 
 import Quick
 import Nimble
+import ReactiveKit
 @testable import SwiftRedux
 
-class CreateStoreSpec: QuickSpec {
+class ReactiveKitSpec: QuickSpec {
 
     override func spec() {
 
         describe("Create Store"){
             var defaultState: AppState!
-            var store: Store<AppState, TestDisposable>!
+            var store: Store<AppState, DisposableType>!
 
             beforeEach{
-                store = createTestStore(applicationReducer, state: nil)
+                store = createStore(createReactiveKitStream, reducer: applicationReducer, state: nil)
                 defaultState = store.state
             }
 
@@ -65,7 +66,6 @@ class CreateStoreSpec: QuickSpec {
                 // Run dispatch multiple times
                 store.dispatch(IncrementAction())
                 state = store.state
-
 
                 // Assert
                 expect(state.counter).toNot(equal(defaultState.counter))

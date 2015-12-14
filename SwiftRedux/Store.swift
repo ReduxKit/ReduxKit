@@ -9,46 +9,32 @@
 public typealias Dispatch = Action -> Action
 
 /**
- *  Store protocol.
+ * StoreType protocol
  */
-public protocol Store{
-    var dispatch: Dispatch {get}
-    var getState: () -> State {get}
-    var subscribe: (onNext: (State) -> Void) -> Disposable {get}
-    init(dispatch: Dispatch, getState: ()-> State, subscribe: (onNext: (State) -> Void) -> Disposable)
+public protocol StoreType {
+    typealias State
+    typealias Disposable
+
+    var dispatch: Dispatch { get }
+    var observe: ((State) -> ()) -> Disposable { get }
+    var state: State { get }
+
+    init(dispatch: Dispatch, observe: ((State) -> ()) -> Disposable, latest: () -> State)
 }
 
 /**
- *  Standard store
+ * Store implementation
  */
-public struct StandardStore : Store{
-    public var dispatch: Dispatch
-    public let getState: () -> State
-    public let subscribe: (onNext: (State) -> Void) -> Disposable
+public struct Store<State, Disposable>: StoreType {
 
-    public init(dispatch: Dispatch, getState: ()-> State, subscribe: (onNext: (State) -> Void) -> Disposable){
-        self.dispatch = dispatch
-        self.getState = getState
-        self.subscribe = subscribe
-    }
-}
-
-/**
- *  TypedStore
- *  It removes the necessity of casting the state object everytime subscribe is called
- */
-public struct TypedStore<T where T:State>{
     public let dispatch: Dispatch
-    public let getState: () -> T
-    public let subscribe: (onNext: (T) -> Void) -> Disposable
+    public let observe: (State -> ()) -> Disposable
+    public var state: State { return latest() }
+    let latest: () -> State
 
-    public init(dispatch: Dispatch, getState: () -> T, subscribe: (onNext: (T) -> Void) -> Disposable){
+    public init(dispatch: Dispatch, observe: ((State) -> ()) -> Disposable, latest: () -> State) {
         self.dispatch = dispatch
-        self.getState = getState
-        self.subscribe = subscribe
+        self.observe = observe
+        self.latest = latest
     }
-}
-
-public enum StoreErrors: ErrorType {
-    case DispatchError
 }

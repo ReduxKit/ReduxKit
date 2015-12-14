@@ -14,11 +14,11 @@ Helper function that helps create shorthand dispatch functions. It requires a St
 - parameter type:
 - parameter dispatch:
 */
-public func bindActionCreators<T where T:StandardAction>(type: T.Type, dispatch: Dispatch) -> (payload: T.PayloadType?) -> Void{
+public func bindActionCreators<Action where Action: StandardAction>(type: Action.Type, dispatch: Dispatch) -> (payload: Action.PayloadType?) -> Void {
 
-    func innerBind(payload: T.PayloadType? = nil){
+    func innerBind(payload: Action.PayloadType? = nil) {
 
-        let action = T(payload: payload, meta: nil, error: false)
+        let action = Action(payload: payload, meta: nil, error: false)
 
         dispatch(action)
     }

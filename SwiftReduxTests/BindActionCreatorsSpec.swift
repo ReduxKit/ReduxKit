@@ -16,20 +16,18 @@ class BindActionCreatorsSpec: QuickSpec {
 
         describe("BindActionCreators"){
             var defaultState: AppState!
-            var store: TypedStore<AppState>!
+            var store: Store<AppState, TestDisposable>!
 
             beforeEach{
-                store = createTypedStore()(createStore)(applicationReducer, nil)
-                defaultState = store.getState()
+                store = createTestStore(applicationReducer, state: nil)
+                defaultState = store.state
             }
 
             it("should succesfully create an action method that calls the store's dispatch with nil value"){
 
                 // Arrange
                 var state: AppState!
-                store.subscribe{ newState in
-                    state = newState
-                }
+                store.observe { state = $0 }
 
                 // Act
                 let increment = bindActionCreators(IncrementAction.self,dispatch: store.dispatch)
@@ -46,9 +44,7 @@ class BindActionCreatorsSpec: QuickSpec {
                 var state: AppState!
                 let textMessage = "test"
 
-                store.subscribe{ newState in
-                    state = newState
-                }
+                store.observe { state = $0 }
 
                 // Act
                 let push = bindActionCreators(PushAction.self, dispatch: store.dispatch)

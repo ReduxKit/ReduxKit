@@ -16,25 +16,19 @@ class ApplyMiddlewaresSpec: QuickSpec {
 
         describe("ApplyMiddlewares"){
             var defaultState: AppState!
-            var store: TypedStore<AppState>!
+            var store: Store<AppState, TestDisposable>!
 
             beforeEach{
-                defaultState = applicationReducer(action:DefaultAction()) as! AppState
+                defaultState = applicationReducer(action: DefaultAction())
             }
 
-            it("should succesfully call dispatch and pass responses through a logger"){
+            it("should succesfully call dispatch and pass responses through a logger") {
 
                 // Arrange
-                store = createTypedStore([
-                    applyMiddlewares([
-                        firstPushMiddleware
-                        ])
-                    ])(createStore)(applicationReducer, nil)
+                store = applyMiddleware(firstPushMiddleware, store: createTestStore(applicationReducer, state: nil))
 
                 var state: AppState!
-                store.subscribe{ newState in
-                    state = newState
-                }
+                store.observe { state = $0 }
 
                 // Act
                 store.dispatch(PushAction(payload: PushAction.Payload(text:"")))
@@ -43,20 +37,16 @@ class ApplyMiddlewaresSpec: QuickSpec {
                 expect(state.countries).to(contain(".first"))
             }
 
-            it("should succesfully call dispatch and pass responses through multiple loggers"){
+            it("should succesfully call dispatch and pass responses through multiple loggers") {
 
                 // Arrange
-                store = createTypedStore([
-                    applyMiddlewares([
-                        firstPushMiddleware,
-                        secondaryPushMiddleware
-                        ])
-                    ])(createStore)(applicationReducer, nil)
+                store = applyMiddlewares([
+                    firstPushMiddleware,
+                    secondaryPushMiddleware
+                    ], store: createTestStore(applicationReducer, state: nil))
 
                 var state: AppState!
-                store.subscribe{ newState in
-                    state = newState
-                }
+                store.observe { state = $0 }
 
                 // Act
                 store.dispatch(PushAction(payload: PushAction.Payload(text:"")))
@@ -65,22 +55,18 @@ class ApplyMiddlewaresSpec: QuickSpec {
                 expect(state.countries).to(contain(".first.secondary"))
             }
 
-            it("should retravel the whole chain and increment"){
+            it("should retravel the whole chain and increment") {
 
                 // Arrange
-                store = createTypedStore([
-                    applyMiddlewares([
-                        firstPushMiddleware,
-                        reTravelMiddleware,
-                        firstPushMiddleware
-                        ])
-                    ])(createStore)(applicationReducer, nil)
+                store = applyMiddlewares([
+                    firstPushMiddleware,
+                    reTravelMiddleware { store },
+                    firstPushMiddleware
+                    ], store: createTestStore(applicationReducer, state: nil))
 
                 var state: AppState!
 
-                store.subscribe{ newState in
-                    state = newState
-                }
+                store.observe { state = $0 }
 
                 // Act
                 store.dispatch(ReTravelAction())
