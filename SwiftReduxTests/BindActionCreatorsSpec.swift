@@ -12,39 +12,39 @@ import Nimble
 
 class BindActionCreatorsSpec: QuickSpec {
 
-    override func spec(){
+    override func spec() {
 
-        describe("BindActionCreators"){
+        describe("BindActionCreators") {
             var defaultState: AppState!
-            var store: Store<AppState, TestDisposable>!
+            var store: Store<AppState>!
 
-            beforeEach{
-                store = createTestStore(applicationReducer, state: nil)
+            beforeEach {
+                store = createStore(applicationReducer, state: nil)
                 defaultState = store.state
             }
 
-            it("should succesfully create an action method that calls the store's dispatch with nil value"){
+            it("should succesfully create an action method that calls the store's dispatch with nil value") {
 
                 // Arrange
                 var state: AppState!
-                store.observe { state = $0 }
+                store.subscribe { state = $0 }
 
                 // Act
-                let increment = bindActionCreators(IncrementAction.self,dispatch: store.dispatch)
+                let increment = bindActionCreators(IncrementAction.self, dispatch: store.dispatch)
 
                 increment(payload: nil)
 
                 // Assert
                 expect(state.counter).toNot(equal(defaultState.counter))
-                expect(state.counter).to(equal(defaultState.counter+1))
+                expect(state.counter).to(equal(defaultState.counter + 1))
             }
 
-            it("should succesfully create an action method that calls the store's dispatch with an actual value"){
+            it("should succesfully create an action method that calls the store's dispatch with an actual value") {
                 // Arrange
                 var state: AppState!
                 let textMessage = "test"
 
-                store.observe { state = $0 }
+                store.subscribe { state = $0 }
 
                 // Act
                 let push = bindActionCreators(PushAction.self, dispatch: store.dispatch)

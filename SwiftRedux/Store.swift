@@ -8,33 +8,39 @@
 
 public typealias Dispatch = Action -> Action
 
+
 /**
  * StoreType protocol
  */
 public protocol StoreType {
+
     typealias State
-    typealias Disposable
 
     var dispatch: Dispatch { get }
-    var observe: ((State) -> ()) -> Disposable { get }
-    var state: State { get }
 
-    init(dispatch: Dispatch, observe: ((State) -> ()) -> Disposable, latest: () -> State)
+    var subscribe: (State -> ()) -> ReduxDisposable { get }
+
+    var getState: () -> State { get }
+
+    init(dispatch: Dispatch, subscribe: (State -> ()) -> ReduxDisposable, getState: () -> State)
 }
 
 /**
  * Store implementation
  */
-public struct Store<State, Disposable>: StoreType {
+public struct Store<State>: StoreType {
 
     public let dispatch: Dispatch
-    public let observe: (State -> ()) -> Disposable
-    public var state: State { return latest() }
-    let latest: () -> State
 
-    public init(dispatch: Dispatch, observe: ((State) -> ()) -> Disposable, latest: () -> State) {
+    public let subscribe: (State -> ()) -> ReduxDisposable
+
+    public let getState: () -> State
+
+    public var state: State { return getState() }
+
+    public init(dispatch: Dispatch, subscribe: (State -> ()) -> ReduxDisposable, getState: () -> State) {
         self.dispatch = dispatch
-        self.observe = observe
-        self.latest = latest
+        self.subscribe = subscribe
+        self.getState = getState
     }
 }

@@ -6,21 +6,29 @@
 //  Copyright © 2015 Kare Media. All rights reserved.
 //
 
-public func createStore<State, Disposable>(streamFactory: State -> StateStream<State, Disposable>, reducer: (State?, Action) -> State, state: State?) -> Store<State, Disposable> {
 
-    let initialState: State = (state != nil) ? state! : reducer(state, DefaultAction())
-    let stream = streamFactory(initialState)
+public func createStore<State>(reducer: (State?, Action) -> State, state: State?) -> Store<State> {
+
+    return createStreamStore(reducer: reducer, state: state)
+}
+
+public func createStreamStore<State>(streamFactory: State -> StateStream<State> = createSimpleStream, reducer: (State?, Action) -> State, state: State?) -> Store<State> {
+
+    let stream = streamFactory(state ?? reducer(state, DefaultAction()))
 
     func dispatch(action: Action) -> Action {
-        stream.next(reducer(stream.latest(), action))
+        stream.dispatch(reducer(stream.getState(), action))
         return action
     }
 
-    return Store(dispatch: dispatch, observe: stream.observe, latest: stream.latest)
+    return Store(dispatch: dispatch, subscribe: stream.subscribe, getState: stream.getState)
 }
 
-public func createStoreFactory<State, Disposable>(streamFactory: State -> StateStream<State, Disposable>) -> (reducer: (State?, Action) -> State, state: State?) -> Store<State, Disposable> {
+/// Used to build createStore functions with an alternative streamFactory
+public func createStreamStore<State>(streamFactory: State -> StateStream<State>) -> (reducer: (State?, Action) -> State, state: State?) -> Store<State> {
+
     return { (reducer: (State?, Action) -> State, state: State?) in
-        return createStore(streamFactory, reducer: reducer, state: state)
+
+        return createStreamStore(streamFactory, reducer: reducer, state: state)
     }
 }

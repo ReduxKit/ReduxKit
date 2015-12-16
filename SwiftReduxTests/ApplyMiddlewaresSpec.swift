@@ -12,23 +12,20 @@ import Nimble
 
 class ApplyMiddlewaresSpec: QuickSpec {
 
-    override func spec(){
+    override func spec() {
 
-        describe("ApplyMiddlewares"){
-            var defaultState: AppState!
-            var store: Store<AppState, TestDisposable>!
-
-            beforeEach{
-                defaultState = applicationReducer(action: DefaultAction())
-            }
+        describe("ApplyMiddlewares") {
+            let defaultState = applicationReducer(action: DefaultAction())
+            var store: Store<AppState>!
 
             it("should succesfully call dispatch and pass responses through a logger") {
-
                 // Arrange
-                store = applyMiddleware(firstPushMiddleware, store: createTestStore(applicationReducer, state: nil))
+                store = applyMiddleware([
+                    firstPushMiddleware
+                    ])(createStore)(applicationReducer, nil)
 
                 var state: AppState!
-                store.observe { state = $0 }
+                store.subscribe { state = $0 }
 
                 // Act
                 store.dispatch(PushAction(payload: PushAction.Payload(text:"")))
@@ -38,15 +35,14 @@ class ApplyMiddlewaresSpec: QuickSpec {
             }
 
             it("should succesfully call dispatch and pass responses through multiple loggers") {
-
                 // Arrange
-                store = applyMiddlewares([
+                store = applyMiddleware([
                     firstPushMiddleware,
                     secondaryPushMiddleware
-                    ], store: createTestStore(applicationReducer, state: nil))
+                    ])(createStore)(applicationReducer, nil)
 
                 var state: AppState!
-                store.observe { state = $0 }
+                store.subscribe { state = $0 }
 
                 // Act
                 store.dispatch(PushAction(payload: PushAction.Payload(text:"")))
@@ -56,23 +52,22 @@ class ApplyMiddlewaresSpec: QuickSpec {
             }
 
             it("should retravel the whole chain and increment") {
-
                 // Arrange
-                store = applyMiddlewares([
+                store = applyMiddleware([
                     firstPushMiddleware,
-                    reTravelMiddleware { store },
+                    reTravelMiddleware,
                     firstPushMiddleware
-                    ], store: createTestStore(applicationReducer, state: nil))
+                    ])(createStore)(applicationReducer, nil)
 
                 var state: AppState!
-
-                store.observe { state = $0 }
+                store.subscribe { state = $0 }
 
                 // Act
                 store.dispatch(ReTravelAction())
 
                 // Assert
                 expect(state.counter).toNot(equal(defaultState.counter))
+                expect(state.counter).to(equal(store.state.counter))
                 expect(state.counter).to(equal(1))
             }
         }

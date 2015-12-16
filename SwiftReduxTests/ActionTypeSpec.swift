@@ -12,11 +12,11 @@ import Nimble
 
 class ActionTypeSpec: QuickSpec {
 
-    override func spec(){
+    override func spec() {
 
-        describe("ActionTypeSpec"){
+        describe("ActionTypeSpec") {
 
-            it("should succesfully retrieve payload from actionType"){
+            it("should succesfully retrieve payload from actionType") {
 
                 // Arrange
                 let incrementAction = IncrementAction() as Action

@@ -175,49 +175,53 @@ struct PushAction: StandardAction {
 
  - returns: return value description
  */
-func firstPushMiddleware(next: Dispatch) -> Dispatch {
-    return { action in
-        if let pushAction = action as? PushAction {
-            let newAction = PushAction(payload: PushAction.Payload(text: pushAction.rawPayload.text + ".first"))
-            return next(newAction)
-        }
-        else {
-            return next(action)
-        }
-    }
-}
-
-/**
- second middleware - it will add .secondary to the payload of any pushAction.
-
- - parameter store: store description
-
- - returns: return value description
- */
-func secondaryPushMiddleware(next: Dispatch) -> Dispatch {
-    return { action in
-        if let pushAction = action as? PushAction {
-            let newAction = PushAction(payload: PushAction.Payload(text: pushAction.rawPayload.text + ".secondary"))
-            return next(newAction)
-        }
-        else {
-            return next(action)
-        }
-    }
-}
-
-/**
- second middleware - it will add .secondary to the payload of any pushAction.
-
- - parameter store: store description
-
- - returns: return value description
- */
-func reTravelMiddleware<Store where Store: StoreType>(store: () -> Store) -> Middleware {
+func firstPushMiddleware<State>(store: Store<State>) -> Dispatch -> Dispatch {
     return { next in
-        return { action in
+        { action in
+            if let pushAction = action as? PushAction {
+                let newAction = PushAction(payload: PushAction.Payload(text: pushAction.rawPayload.text + ".first"))
+                return next(newAction)
+            }
+            else {
+                return next(action)
+            }
+        }
+    }
+}
+
+/**
+ second middleware - it will add .secondary to the payload of any pushAction.
+
+ - parameter store: store description
+
+ - returns: return value description
+ */
+func secondaryPushMiddleware<State>(store: Store<State>) -> Dispatch -> Dispatch {
+    return { next in
+        { action in
+            if let pushAction = action as? PushAction {
+                let newAction = PushAction(payload: PushAction.Payload(text: pushAction.rawPayload.text + ".secondary"))
+                return next(newAction)
+            }
+            else {
+                return next(action)
+            }
+        }
+    }
+}
+
+/**
+ second middleware - it will add .secondary to the payload of any pushAction.
+
+ - parameter store: store description
+
+ - returns: return value description
+ */
+func reTravelMiddleware<State>(store: Store<State>) -> Dispatch -> Dispatch {
+    return { next in
+        { action in
             if (action is ReTravelAction) {
-                store().dispatch(IncrementAction(payload: 10))
+                store.dispatch(IncrementAction(payload: 10))
             }
             else if (action is IncrementAction) {
                 return next(IncrementAction())
