@@ -8,6 +8,13 @@
 
 public typealias Dispatch = Action -> Action
 
+// MARK: - Type map examples
+
+typealias _State = Any
+typealias _Subscriber = _State -> ()
+typealias _Store = Store<_State>
+
+// MARK: - Protocols
 
 /**
  * StoreType protocol
@@ -24,6 +31,8 @@ public protocol StoreType {
 
     init(dispatch: Dispatch, subscribe: (State -> ()) -> ReduxDisposable, getState: () -> State)
 }
+
+// MARK: - Implementations
 
 /**
  * Store implementation

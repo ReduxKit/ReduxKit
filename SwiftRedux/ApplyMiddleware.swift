@@ -6,7 +6,21 @@
 //  Copyright © 2015 Kare Media. All rights reserved.
 //
 
-public typealias DispatchTransformer = (Dispatch) -> Dispatch
+public typealias DispatchTransformer = Dispatch -> Dispatch
+
+typealias _MiddlewareApi = Store<_State>
+typealias _Middleware = _MiddlewareApi -> DispatchTransformer
+typealias _StoreCreator = (reducer: _Reducer, initialState: _State?) -> Store<_State>
+typealias _StoreEnhancer = (_StoreCreator) -> _StoreCreator
+
+
+/**
+ Internal example:
+    applyMiddleware([Middleware]) -> StoreEnhancer
+ */
+func _applyMiddleware(middlewares: [_Middleware]) -> _StoreEnhancer {
+    return applyMiddleware(middlewares)
+}
 
 public func applyMiddleware<State>(middlewares: [(Store<State>) -> DispatchTransformer]) -> (((State?, Action) -> State, State?) -> Store<State>) -> (((State?, Action) -> State, State?) -> Store<State>) {
 

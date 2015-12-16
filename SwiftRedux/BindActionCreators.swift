@@ -9,10 +9,11 @@
 
 
 /**
-Helper function that helps create shorthand dispatch functions. It requires a StandardAction with a valid initializer to function
+ Helper function that helps create shorthand dispatch functions. It requires a
+ StandardAction with a valid initializer to function.
 
-- parameter type:
-- parameter dispatch:
+ - parameter type:
+ - parameter dispatch:
 */
 public func bindActionCreators<Action where Action: StandardAction>(type: Action.Type, dispatch: Dispatch) -> (payload: Action.PayloadType?) -> Void {
 

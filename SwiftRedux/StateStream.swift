@@ -6,6 +6,8 @@
 //  Copyright © 2015 Kare Media. All rights reserved.
 //
 
+typealias _StateStream = StateStream<_State>
+
 /**
 
  StateStream is the layer between reactive frameworks and SwiftRedux in order to
