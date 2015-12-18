@@ -1,6 +1,6 @@
 //
-//  StoreTypeTest.swift
-//  SwiftRedux
+//  ActionTypeSpec.swift
+//  Redux
 //
 //  Created by Aleksander Herforth Rendtslev on 06/11/15.
 //  Copyright © 2015 Kare Media. All rights reserved.
@@ -8,7 +8,7 @@
 
 import Quick
 import Nimble
-@testable import SwiftRedux
+@testable import Redux
 
 class ActionTypeSpec: QuickSpec {
 

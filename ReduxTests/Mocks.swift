@@ -1,12 +1,12 @@
 //
-//  TestUtils.swift
-//  SwiftRedux
+//  Mocks.swift
+//  Redux
 //
 //  Created by Aleksander Herforth Rendtslev on 05/11/15.
 //  Copyright © 2015 Kare Media. All rights reserved.
 //
 
-import SwiftRedux
+import Redux
 
 /**
  *  Application state
@@ -175,7 +175,7 @@ struct PushAction: StandardAction {
 
  - returns: return value description
  */
-func firstPushMiddleware<State>(store: Store<State>) -> Dispatch -> Dispatch {
+func firstPushMiddleware<State>(store: Store<State>) -> DispatchTransformer {
     return { next in
         { action in
             if let pushAction = action as? PushAction {
@@ -196,7 +196,7 @@ func firstPushMiddleware<State>(store: Store<State>) -> Dispatch -> Dispatch {
 
  - returns: return value description
  */
-func secondaryPushMiddleware<State>(store: Store<State>) -> Dispatch -> Dispatch {
+func secondaryPushMiddleware<State>(store: Store<State>) -> DispatchTransformer {
     return { next in
         { action in
             if let pushAction = action as? PushAction {
@@ -217,7 +217,7 @@ func secondaryPushMiddleware<State>(store: Store<State>) -> Dispatch -> Dispatch
 
  - returns: return value description
  */
-func reTravelMiddleware<State>(store: Store<State>) -> Dispatch -> Dispatch {
+func reTravelMiddleware<State>(store: Store<State>) -> DispatchTransformer {
     return { next in
         { action in
             if (action is ReTravelAction) {

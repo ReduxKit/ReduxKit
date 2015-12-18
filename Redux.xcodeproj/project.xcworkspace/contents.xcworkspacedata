@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:SwiftRedux.xcodeproj">
+      location = "self:Redux.xcodeproj">
    </FileRef>
 </Workspace>

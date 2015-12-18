@@ -1,6 +1,6 @@
 //
 //  Store.swift
-//  SwiftRedux
+//  Redux
 //
 //  Created by Aleksander Herforth Rendtslev on 03/11/15.
 //  Copyright © 2015 Kare Media. All rights reserved.

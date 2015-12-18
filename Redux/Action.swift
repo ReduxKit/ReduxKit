@@ -1,6 +1,6 @@
 //
-//  ActionType.swift
-//  SwiftRedux
+//  Action.swift
+//  Redux
 //
 //  Created by Aleksander Herforth Rendtslev on 03/11/15.
 //  Copyright © 2015 Kare Media. All rights reserved.
@@ -63,7 +63,7 @@ public struct DefaultAction: SimpleStandardAction {
 
     public let error: Bool = false
 
-    public let rawPayload: String = "$$SwiftRedux-DefaultAction"
+    public let rawPayload: String = "$$Redux-DefaultAction"
 
     public init() {}
 }

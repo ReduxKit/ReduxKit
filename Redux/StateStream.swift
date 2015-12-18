@@ -1,6 +1,6 @@
 //
 //  StateStream.swift
-//  SwiftRedux
+//  Redux
 //
 //  Created by Karl Bowden on 14/12/2015.
 //  Copyright © 2015 Kare Media. All rights reserved.
@@ -10,7 +10,7 @@ typealias _StateStream = StateStream<_State>
 
 /**
 
- StateStream is the layer between reactive frameworks and SwiftRedux in order to
+ StateStream is the layer between reactive frameworks and Redux in order to
  produce States served by your perfered framework.
 
  */

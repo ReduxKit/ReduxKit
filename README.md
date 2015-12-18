@@ -3,7 +3,7 @@
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 ## Intro
-reduxSWift is a swift implementation of rackt/redux by Dan Abramov and the React Community.
+SwiftRedux is a swift implementation of rackt/redux by Dan Abramov and the React Community.
 I am currently implementing this in a few swift apps so it will be frequently updated. Additions, middlewares and help will be very much appreciated! So if you're trying it out and have any suggestions - feel free to post an issue and I'll be on it.
 A thorough walkthrough and description of the framework can be found at the official Redux repostory: [Redux](http://rackt.github.io/redux)
 
@@ -28,7 +28,7 @@ $ carthage update
 ## Usage
 
 ``` swift
-import SwiftRedux
+import Redux
 
 /**
   * This is a simple standard action. The only requirement is that an action complies to
@@ -51,7 +51,7 @@ struct IncrementAction: SimpleStandardAction{
   * It describes how an action transforms the previous state into the next state.
   *
   * Instead of using the actions.type property - as is done in the regular Redux framework
-  * we use the power of Swifts static typing to deduce the action.  
+  * we use the power of Swifts static typing to deduce the action.
   */
 func counterReducer(previousState: Int?, action: Action) -> Int{
     // Declare the reducers default value
