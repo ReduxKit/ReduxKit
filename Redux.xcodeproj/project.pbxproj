@@ -118,6 +118,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		731D20551C2446AB00EAE2FE /* Redux.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = Redux.podspec; sourceTree = "<group>"; };
+		731D20561C24475200EAE2FE /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		735004801C1EA96E0040E6AE /* Cartfile.private */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile.private; sourceTree = "<group>"; };
 		735004811C1EA96E0040E6AE /* Cartfile.resolved */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile.resolved; sourceTree = "<group>"; };
 		735004821C1EA96E0040E6AE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -278,10 +280,12 @@
 		BCE259441BE912AE00424F65 = {
 			isa = PBXGroup;
 			children = (
-				735004801C1EA96E0040E6AE /* Cartfile.private */,
-				735004811C1EA96E0040E6AE /* Cartfile.resolved */,
+				731D20561C24475200EAE2FE /* LICENSE */,
 				735004821C1EA96E0040E6AE /* README.md */,
 				735004831C1EA96E0040E6AE /* SUMMARY.md */,
+				735004801C1EA96E0040E6AE /* Cartfile.private */,
+				735004811C1EA96E0040E6AE /* Cartfile.resolved */,
+				731D20551C2446AB00EAE2FE /* Redux.podspec */,
 				73D842EB1C24369900644EEC /* Redux */,
 				73D842F71C24369900644EEC /* ReduxTests */,
 				BCE2594F1BE912AE00424F65 /* Products */,
@@ -1146,6 +1150,7 @@
 				7389B87B1C24431B00D58617 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		73D842FB1C24369900644EEC /* Build configuration list for PBXNativeTarget "Redux-OSX" */ = {
 			isa = XCConfigurationList;
