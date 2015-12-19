@@ -22,7 +22,11 @@ public struct StateStream<State> {
 
     public let getState: () -> State
 
-    public init(dispatch: State -> (), subscribe: (State -> ()) -> ReduxDisposable, getState: () -> State) {
+    public init(
+        dispatch: State -> (),
+        subscribe: (State -> ()) -> ReduxDisposable,
+        getState: () -> State) {
+
         self.dispatch = dispatch
         self.subscribe = subscribe
         self.getState = getState

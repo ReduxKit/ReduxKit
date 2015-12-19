@@ -11,7 +11,7 @@ public typealias DispatchTransformer = Dispatch -> Dispatch
 typealias _MiddlewareApi = Store<_State>
 typealias _Middleware = _MiddlewareApi -> DispatchTransformer
 typealias _StoreCreator = (reducer: _Reducer, initialState: _State?) -> Store<_State>
-typealias _StoreEnhancer = (_StoreCreator) -> _StoreCreator
+typealias _StoreEnhancer = _StoreCreator -> _StoreCreator
 
 
 /**
@@ -22,7 +22,9 @@ func _applyMiddleware(middlewares: [_Middleware]) -> _StoreEnhancer {
     return applyMiddleware(middlewares)
 }
 
-public func applyMiddleware<State>(middlewares: [(Store<State>) -> DispatchTransformer]) -> (((State?, Action) -> State, State?) -> Store<State>) -> (((State?, Action) -> State, State?) -> Store<State>) {
+public func applyMiddleware<State>(middleware: [Store<State> -> DispatchTransformer])
+    -> (((State?, Action) -> State, State?) -> Store<State>)
+    -> (((State?, Action) -> State, State?) -> Store<State>) {
 
     return { next in
         return { reducer, initialState in
@@ -31,10 +33,13 @@ public func applyMiddleware<State>(middlewares: [(Store<State>) -> DispatchTrans
 
             var dispatch: Dispatch = store.dispatch
 
-            let middlewareApi = Store(dispatch: { dispatch($0) }, subscribe: {_ in SimpleReduxDisposable(disposed: {false}, dispose: {})}, getState: store.getState)
+            let middlewareApi = Store(
+                dispatch: { dispatch($0) },
+                subscribe: { _ in SimpleReduxDisposable(disposed: { false }, dispose: {}) },
+                getState: store.getState)
 
             /// Create an array of DispatchTransformers
-            let chain = middlewares.map { $0(middlewareApi) }
+            let chain = middleware.map { $0(middlewareApi) }
 
             dispatch = compose(chain)(store.dispatch)
 

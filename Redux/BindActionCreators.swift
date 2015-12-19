@@ -15,7 +15,9 @@
  - parameter type:
  - parameter dispatch:
 */
-public func bindActionCreators<Action where Action: StandardAction>(type: Action.Type, dispatch: Dispatch) -> (payload: Action.PayloadType?) -> Void {
+public func bindActionCreators<Action where Action: StandardAction>(type: Action.Type, dispatch: Dispatch)
+    -> (payload: Action.PayloadType?)
+    -> () {
 
     func innerBind(payload: Action.PayloadType? = nil) {
 
