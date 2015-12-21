@@ -29,7 +29,7 @@ Pod::Spec.new do |s|
                    A thorough walkthrough and description of the framework can be found at the official Redux repostory: [Redux](http://rackt.github.io/redux)
                    DESC
 
-  s.homepage     = "https://github.com/Aleksion/reduxSwift"
+  s.homepage     = "https://github.com/ReSwift/reduxSwift"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -78,7 +78,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/Aleksion/reduxSwift.git", :tag => "0.0.19" }
+  s.source       = { :git => "https://github.com/ReSwift/reduxSwift.git", :tag => "0.0.19" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
