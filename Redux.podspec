@@ -15,8 +15,8 @@ Pod::Spec.new do |s|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  s.name         = "Redux"
-  s.version      = "0.0.19"
+  s.name         = "ReduxKit"
+  s.version      = "0.1.0"
   s.summary      = "A Swift implementation of Redux."
 
   # This description is used to generate tags and improve search results.
@@ -25,11 +25,11 @@ Pod::Spec.new do |s|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = <<-DESC
-                   SwiftRedux is a swift implementation of rackt/redux by Dan Abramov and the React Community.
+                   ReduxKit is a swift implementation of rackt/redux by Dan Abramov and the React Community.
                    A thorough walkthrough and description of the framework can be found at the official Redux repostory: [Redux](http://rackt.github.io/redux)
                    DESC
 
-  s.homepage     = "https://github.com/ReSwift/reduxSwift"
+  s.homepage     = "https://github.com/ReduxKit/ReduxKit"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -78,7 +78,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/ReSwift/reduxSwift.git", :tag => "0.0.19" }
+  s.source       = { :git => "https://github.com/ReduxKit/ReduxKit.git", :tag => "0.0.19" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

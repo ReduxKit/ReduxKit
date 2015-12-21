@@ -1,27 +1,27 @@
-# [SwiftRedux](https://github.com/ReSwift/ReduxSwift)
+# [ReduxKit](https://github.com/ReduxKit/ReduxKit)
 
-[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![Cocoapods Compatible](https://img.shields.io/cocoapods/v/Redux.svg)](https://img.shields.io/cocoapods/v/Redux.svg) [![Platform](https://img.shields.io/cocoapods/p/Redux.svg?style=flat)](http://cocoadocs.org/docsets/Redux)
+[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![Cocoapods Compatible](https://img.shields.io/cocoapods/v/ReduxKit.svg)](https://img.shields.io/cocoapods/v/ReduxKit.svg) [![Platform](https://img.shields.io/cocoapods/p/ReduxKit.svg?style=flat)](http://cocoadocs.org/docsets/ReduxKit)
 
 
 ## Intro
-SwiftRedux is a swift implementation of the JavaScript [Redux](http://rackt.github.io/redux) library by Dan Abramov and the React Community. SwiftRedux stays as close as possible to Redux while bringing in Swift ways of doing things where appropriate.
+ReduxKit is a swift implementation of the JavaScript [Redux](http://rackt.github.io/redux) library by Dan Abramov and the React Community. ReduxKit stays as close as possible to Redux while bringing in Swift ways of doing things where appropriate.
 
-A thorough walkthrough and description of the framework can be found at the official Redux repostory: [Redux](http://rackt.github.io/redux).
+A thorough walk through and description of the framework can be found at the official Redux repostory: [Redux](http://rackt.github.io/redux).
 
-It is currently implemented in a few swift apps and is frequently updated. Additions, middlewares and help will be very much appreciated! So if you're trying it out and have any suggestions - feel free to post an issue and I'll be on it.
+It is currently implemented in a few swift apps and is frequently updated. Additions, middleware and help will be very much appreciated! So if you're trying it out and have any suggestions - feel free to post an issue and I'll be on it.
 
 
 ## Installation
 
 ### [Carthage](https://github.com/Carthage/Carthage)
 
-The easiest way to include Redux is via Carthage:
+The easiest way to include ReduxKit is via Carthage:
 
 **iOS 8.0 required**
 
-Add Redux to `Cartfile`
+Add ReduxKit to `Cartfile`
 ```
-github "ReSwift/reduxSwift"
+github "ReduxKit/ReduxKit"
 ```
 
 Run in terminal:
@@ -31,13 +31,13 @@ $ carthage update
 
 ### [CocoaPods](http://cocoapods.org)
 
-Add Redux to your `Podfile`:
+Add ReduxKit to your `Podfile`:
 
 ```ruby
 source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '8.0'
 
-pod 'Redux', '~> 0.0.19'
+pod 'ReduxKit', '~> 0.1.0'
 ```
 
 Then, run the following command:
@@ -147,7 +147,7 @@ disposable.dispose()
 
 ## Types and the generic State
 
-SwiftRedux makes heavy use of Swift generics for simpler implementation and usage.
+ReduxKit makes heavy use of Swift generics for simpler implementation and usage.
 
 The only types used as generics are `State`, `Action` and `PayloadType`. Of which only `State` has no inference and will be commonly used. Because `typealias` does not support generics this does cause the framework source to become harder to read. Example `typealias` have been included privately in the source.
 
@@ -308,7 +308,7 @@ func bindActionCreators<Action where Action: StandardAction>(type: Action.Type, 
 
 
 ## Available Middlewares
-+ [reduxSwift-Rx](https://github.com/ReSwift/reduxSwift-rx)
++ [reduxSwift-Rx](https://github.com/ReduxKit/reduxSwift-rx)
   \- RxSwift utilities for ReduxSwift
 
 
@@ -320,23 +320,23 @@ The StateStream type allow does exactly that. Combined with a StateStreamFactory
 
 There is a state stream included with Redux. It is not advisable to use it for anything more than examples as it's not thread or leak safe. The SimpleStateStream is just an array of subscribers.
 
-Redux has been tested with:
+ReduxKit has StateStream bindings available for:
 
-- RxSwift
-- ReactiveCocoa
-- ReactiveKit
-- SwiftBond
+- [RxSwift](https://github.com/ReduxKit/ReduxKitRxSwift)
+- [ReactiveCocoa](https://github.com/ReduxKit/ReduxKitReactiveCocoa)
+- [ReactiveKit](https://github.com/ReduxKit/ReduxKitReactiveKit)
+- [SwiftBond](https://github.com/ReduxKit/ReduxKitBond)
 
 TODO: Include examples and links to reactive stream providers.
 
 
 ## How can you help?
 
-I am hoping to get a solid influx of middlewares up and running for Swift-Redux so we can change the way we do iOS development in the future. I am therefor welcoming pull requests, feature requests and suggestions. I want this library to be the best it can be and I can only do that with the help of the rest of you.
+I am hoping to get a solid influx of middleware up and running for ReduxKit so we can change the way we do iOS development in the future. I am therefore welcoming pull requests, feature requests and suggestions. I want this library to be the best it can be and I can only do that with the help of the rest of you.
 
 ### TODO
 
-The actual implementation of Redux is fairly complete. More tooling is still required though.
+The actual implementation of ReduxKit is fairly complete. More tooling is still required though.
 
 - Test and release reactive framework bindings
 - Create the TODO app to showcase ease of use
