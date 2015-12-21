@@ -21,7 +21,7 @@ The easiest way to include ReduxKit is via Carthage:
 
 Add ReduxKit to `Cartfile`
 ```
-github "ReduxKit/ReduxKit"
+github "ReduxKit/ReduxKit" ~> 0.1
 ```
 
 Run in terminal:
@@ -37,7 +37,7 @@ Add ReduxKit to your `Podfile`:
 source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '8.0'
 
-pod 'ReduxKit', '~> 0.1.0'
+pod 'ReduxKit', '~> 0.1.2'
 ```
 
 Then, run the following command:
