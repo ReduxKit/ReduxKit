@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0710"
+   LastUpgradeVersion = "0720"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BCE2594D1BE912AE00424F65"
-               BuildableName = "SwiftRedux.framework"
-               BlueprintName = "SwiftRedux"
-               ReferencedContainer = "container:SwiftRedux.xcodeproj">
+               BlueprintIdentifier = "73D843051C24373D00644EEC"
+               BuildableName = "Redux.framework"
+               BlueprintName = "Redux-tvOS"
+               ReferencedContainer = "container:Redux.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,20 +32,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BCE259571BE912AF00424F65"
-               BuildableName = "SwiftReduxTests.xctest"
-               BlueprintName = "SwiftReduxTests"
-               ReferencedContainer = "container:SwiftRedux.xcodeproj">
+               BlueprintIdentifier = "7389B8711C24431B00D58617"
+               BuildableName = "Redux-tvOSTests.xctest"
+               BlueprintName = "Redux-tvOSTests"
+               ReferencedContainer = "container:Redux.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BCE2594D1BE912AE00424F65"
-            BuildableName = "SwiftRedux.framework"
-            BlueprintName = "SwiftRedux"
-            ReferencedContainer = "container:SwiftRedux.xcodeproj">
+            BlueprintIdentifier = "73D843051C24373D00644EEC"
+            BuildableName = "Redux.framework"
+            BlueprintName = "Redux-tvOS"
+            ReferencedContainer = "container:Redux.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -64,10 +64,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BCE2594D1BE912AE00424F65"
-            BuildableName = "SwiftRedux.framework"
-            BlueprintName = "SwiftRedux"
-            ReferencedContainer = "container:SwiftRedux.xcodeproj">
+            BlueprintIdentifier = "73D843051C24373D00644EEC"
+            BuildableName = "Redux.framework"
+            BlueprintName = "Redux-tvOS"
+            ReferencedContainer = "container:Redux.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -82,10 +82,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BCE2594D1BE912AE00424F65"
-            BuildableName = "SwiftRedux.framework"
-            BlueprintName = "SwiftRedux"
-            ReferencedContainer = "container:SwiftRedux.xcodeproj">
+            BlueprintIdentifier = "73D843051C24373D00644EEC"
+            BuildableName = "Redux.framework"
+            BlueprintName = "Redux-tvOS"
+            ReferencedContainer = "container:Redux.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
