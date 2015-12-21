@@ -1,4 +1,4 @@
-# [SwiftRedux](https://github.com/Aleksion/ReduxSwift)
+# [SwiftRedux](https://github.com/ReSwift/ReduxSwift)
 
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![Cocoapods Compatible](https://img.shields.io/cocoapods/v/Redux.svg)](https://img.shields.io/cocoapods/v/Redux.svg) [![Platform](https://img.shields.io/cocoapods/p/Redux.svg?style=flat)](http://cocoadocs.org/docsets/Redux)
 
@@ -21,7 +21,7 @@ The easiest way to include Redux is via Carthage:
 
 Add Redux to `Cartfile`
 ```
-github "Aleksion/reduxSwift"
+github "ReSwift/reduxSwift"
 ```
 
 Run in terminal:
@@ -308,7 +308,7 @@ func bindActionCreators<Action where Action: StandardAction>(type: Action.Type, 
 
 
 ## Available Middlewares
-+ [reduxSwift-Rx](https://github.com/Aleksion/reduxSwift-rx)
++ [reduxSwift-Rx](https://github.com/ReSwift/reduxSwift-rx)
   \- RxSwift utilities for ReduxSwift
 
 
