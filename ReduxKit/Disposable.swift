@@ -1,6 +1,6 @@
 //
 //  Disposable.swift
-//  Redux
+//  ReduxKit
 //
 //  Created by Karl Bowden on 16/12/2015.
 //  Copyright © 2015 Kare Media. All rights reserved.

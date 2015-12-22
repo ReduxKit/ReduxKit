@@ -1,6 +1,6 @@
 //
 //  ApplyMiddlewaresSpec.swift
-//  Redux
+//  ReduxKit
 //
 //  Created by Aleksander Herforth Rendtslev on 10/11/15.
 //  Copyright © 2015 Kare Media. All rights reserved.
@@ -8,7 +8,7 @@
 
 import Quick
 import Nimble
-@testable import Redux
+@testable import ReduxKit
 
 class ApplyMiddlewaresSpec: QuickSpec {
 

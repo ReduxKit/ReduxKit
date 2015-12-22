@@ -52,7 +52,7 @@ $ pod install
 A more advanced Swift example of the original [gist](https://github.com/rackt/redux/blob/master/README.md#the-gist)
 
 ```swift
-import Redux
+import ReduxKit
 
 /**
   * This is a simple standard action. The only requirement is that an action complies to
@@ -154,7 +154,7 @@ The only types used as generics are `State`, `Action` and `PayloadType`. Of whic
 Once the root state type has been defined in your project, you may want to declare appropriate `typealias` mapping to the JavaScript Redux types.
 
 ```swift
-// These two are already exported by Redux as they do not use the State generic
+// These two are already exported by ReduxKit as they do not use the State generic
 // typealias Dispatch = Action -> Action
 // typealias DispatchTransformer = Dispatch -> Dispatch
 
@@ -162,7 +162,7 @@ struct State {} // Can be named anything you like, as long as it's consistent in
 
 // Underscores are used where needed to prevent clashes with exported protocols. Again, naming is up to you.
 
-typealias Store = Redux.Store<State>
+typealias Store = ReduxKit.Store<State>
 
 typealias Reducer = (previousState: State?, action: Action) -> State
 typealias Subscriber = (updatedState: State) -> ()
@@ -172,11 +172,11 @@ typealias Middleware = MiddlewareApi -> DispatchTransformer
 typealias StoreCreator = (reducer: Reducer, initialState: State?) -> Store
 typealias StoreEnhancer = (StoreCreator) -> StoreCreator
 
-typealias StateStream = Redux.StateStream<State>
+typealias StateStream = ReduxKit.StateStream<State>
 typealias StreamFactory = (initialState: State) -> StateStream
 ```
 
-Typealias not supporting generics can been seen most in the applyMiddleware function and makes for the best example of how to expand the Redux examples out.
+Typealias not supporting generics can been seen most in the applyMiddleware function and makes for the best example of how to expand the ReduxKit examples out.
 
 ```swift
 // How the applyMiddleware function would ideally be declared
@@ -314,11 +314,11 @@ func bindActionCreators<Action where Action: StandardAction>(type: Action.Type, 
 
 ## StateStreams
 
-The Redux Store is, at it's heart, a subscribable stream of states. You are likely already familiar with the concept from reactive frameworks. The two are so similar in fact that you will more than likely want to use Redux with you favourite reactive framework.
+The ReduxKit Store is, at it's heart, a subscribable stream of states. You are likely already familiar with the concept from reactive frameworks. The two are so similar in fact that you will more than likely want to use ReduxKit with you favourite reactive framework.
 
-The StateStream type allow does exactly that. Combined with a StateStreamFactory it allows Redux to use almost any existing reactive framework as the state stream.
+The StateStream type allow does exactly that. Combined with a StateStreamFactory it allows ReduxKit to use almost any existing reactive framework as the state stream.
 
-There is a state stream included with Redux. It is not advisable to use it for anything more than examples as it's not thread or leak safe. The SimpleStateStream is just an array of subscribers.
+There is a state stream included with ReduxKit. It is not advisable to use it for anything more than examples as it's not thread or leak safe. The SimpleStateStream is just an array of subscribers.
 
 ReduxKit has StateStream bindings available for:
 

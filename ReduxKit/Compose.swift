@@ -1,6 +1,6 @@
 //
 //  Compose.swift
-//  Redux
+//  ReduxKit
 //
 //  Created by Karl Bowden on 17/12/2015.
 //  Copyright © 2015 Kare Media. All rights reserved.

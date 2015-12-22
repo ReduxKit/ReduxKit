@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "73D842E91C24369900644EEC"
-               BuildableName = "Redux.framework"
-               BlueprintName = "Redux-OSX"
-               ReferencedContainer = "container:Redux.xcodeproj">
+               BlueprintIdentifier = "BCE2594D1BE912AE00424F65"
+               BuildableName = "ReduxKit.framework"
+               BlueprintName = "ReduxKit-iOS"
+               ReferencedContainer = "container:ReduxKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -28,10 +28,10 @@
             buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "73D843671C243C8800644EEC"
-               BuildableName = "Redux-OSXTests.xctest"
-               BlueprintName = "Redux-OSXTests"
-               ReferencedContainer = "container:Redux.xcodeproj">
+               BlueprintIdentifier = "BCE259571BE912AF00424F65"
+               BuildableName = "ReduxKitTests.xctest"
+               BlueprintName = "ReduxKit-iOSTests"
+               ReferencedContainer = "container:ReduxKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -40,27 +40,26 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      codeCoverageEnabled = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "73D843671C243C8800644EEC"
-               BuildableName = "Redux-OSXTests.xctest"
-               BlueprintName = "Redux-OSXTests"
-               ReferencedContainer = "container:Redux.xcodeproj">
+               BlueprintIdentifier = "BCE259571BE912AF00424F65"
+               BuildableName = "ReduxKitTests.xctest"
+               BlueprintName = "ReduxKit-iOSTests"
+               ReferencedContainer = "container:ReduxKit.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "73D842E91C24369900644EEC"
-            BuildableName = "Redux.framework"
-            BlueprintName = "Redux-OSX"
-            ReferencedContainer = "container:Redux.xcodeproj">
+            BlueprintIdentifier = "BCE2594D1BE912AE00424F65"
+            BuildableName = "ReduxKit.framework"
+            BlueprintName = "ReduxKit-iOS"
+            ReferencedContainer = "container:ReduxKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -79,10 +78,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "73D842E91C24369900644EEC"
-            BuildableName = "Redux.framework"
-            BlueprintName = "Redux-OSX"
-            ReferencedContainer = "container:Redux.xcodeproj">
+            BlueprintIdentifier = "BCE2594D1BE912AE00424F65"
+            BuildableName = "ReduxKit.framework"
+            BlueprintName = "ReduxKit-iOS"
+            ReferencedContainer = "container:ReduxKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -97,10 +96,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "73D842E91C24369900644EEC"
-            BuildableName = "Redux.framework"
-            BlueprintName = "Redux-OSX"
-            ReferencedContainer = "container:Redux.xcodeproj">
+            BlueprintIdentifier = "BCE2594D1BE912AE00424F65"
+            BuildableName = "ReduxKit.framework"
+            BlueprintName = "ReduxKit-iOS"
+            ReferencedContainer = "container:ReduxKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
