@@ -1,4 +1,4 @@
-# [ReduxKit](https://github.com/ReduxKit/ReduxKit)
+# [![ReduxKit](https://cdn.rawgit.com/ReduxKit/ReduxKit/b3eb23d773f7c036d7567767884ed5cd50ff6b58/ReduxKit.svg)](https://github.com/ReduxKit/ReduxKit)
 
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![Cocoapods Compatible](https://img.shields.io/cocoapods/v/ReduxKit.svg)](https://img.shields.io/cocoapods/v/ReduxKit.svg) [![Platform](https://img.shields.io/cocoapods/p/ReduxKit.svg?style=flat)](http://cocoadocs.org/docsets/ReduxKit)
 
