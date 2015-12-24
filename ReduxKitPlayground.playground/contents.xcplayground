@@ -4,5 +4,6 @@
         <page name='Minimal example'/>
         <page name='Increment and decrement'/>
         <page name='Disposables'/>
+        <page name='Custom store creator'/>
     </pages>
 </playground>
