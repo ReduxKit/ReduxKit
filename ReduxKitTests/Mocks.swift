@@ -175,7 +175,7 @@ struct PushAction: StandardAction {
 
  - returns: return value description
  */
-func firstPushMiddleware<State>(store: Store<State>) -> DispatchTransformer {
+func firstPushMiddleware<State>(store: MiddlewareApi<State>) -> DispatchTransformer {
     return { next in
         { action in
             if let pushAction = action as? PushAction {
@@ -196,7 +196,7 @@ func firstPushMiddleware<State>(store: Store<State>) -> DispatchTransformer {
 
  - returns: return value description
  */
-func secondaryPushMiddleware<State>(store: Store<State>) -> DispatchTransformer {
+func secondaryPushMiddleware<State>(store: MiddlewareApi<State>) -> DispatchTransformer {
     return { next in
         { action in
             if let pushAction = action as? PushAction {
@@ -217,7 +217,7 @@ func secondaryPushMiddleware<State>(store: Store<State>) -> DispatchTransformer 
 
  - returns: return value description
  */
-func reTravelMiddleware<State>(store: Store<State>) -> DispatchTransformer {
+func reTravelMiddleware<State>(store: MiddlewareApi<State>) -> DispatchTransformer {
     return { next in
         { action in
             if (action is ReTravelAction) {
