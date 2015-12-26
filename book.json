@@ -1,0 +1,35 @@
+{
+    "structure": {
+        "readme": "ReduxKit/README.md",
+        "summary": "ReduxKit/SUMMARY.md"
+    },
+    "plugins": [
+        "edit-link",
+        "prism",
+        "github",
+        "atoc",
+        "todo",
+        "-highlight"
+    ],
+    "links": {
+        "sharing": {
+            "google": false,
+            "facebook": false,
+            "twitter": false,
+            "all": false
+        }
+    },
+    "pluginsConfig": {
+        "edit-link": {
+            "base": "https://github.com/ReduxKit/ReduxKit/tree/master",
+            "label": "Edit This Page"
+        },
+        "github": {
+            "url": "https://github.com/ReduxKit/ReduxKit/"
+        },
+        "atoc": {
+            "addClass": true,
+            "className": "atoc"
+        }
+    }
+}
