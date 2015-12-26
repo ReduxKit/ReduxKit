@@ -13,7 +13,9 @@ jazzy --config .jazzy.json --module-version "$VERSION"
 
 # ----- Gitbook
 gitbook install
+cp book.json ReduxKit/book.json
 gitbook build ReduxKit tmp
-rm -rf gitbook
-mv tmp/{*.html,*.json,gitbook} ./
+rm -rf gitbook docs
+mv tmp/{*.html,*.json,gitbook,docs} ./
 rm -rf tmp
+rm ReduxKit/book.json

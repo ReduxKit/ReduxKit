@@ -1,7 +1,7 @@
 {
     "structure": {
-        "readme": "ReduxKit/README.md",
-        "summary": "ReduxKit/SUMMARY.md"
+        "readme": "README.md",
+        "summary": "SUMMARY.md"
     },
     "plugins": [
         "edit-link",
@@ -17,6 +17,10 @@
             "facebook": false,
             "twitter": false,
             "all": false
+        },
+        "sidebar": {
+            "github ReduxKit/ReduxKit": "https://github.com/ReduxKit/ReduxKit/",
+            "API Docs": "http://reduxkit.github.io/ReduxKit/api/"
         }
     },
     "pluginsConfig": {
