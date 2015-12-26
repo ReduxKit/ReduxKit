@@ -1,0 +1,11 @@
+_book
+Cartfile.private
+Cartfile.resolved
+LICENSE
+ReduxKit
+ReduxKit.podspec
+ReduxKit.svg
+ReduxKit.xcodeproj
+ReduxKitPlayground.playground
+ReduxKitPlayground.xcworkspace
+ReduxKitTests
