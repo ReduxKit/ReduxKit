@@ -1,4 +1,4 @@
-# Summary
+## Table of Contents
 
-* Swift Redux
-
+* [Read Me](README.md)
+* [License](docs/LICENSE.md)
