@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Introduction | ReduxKit</title>
+        <title>Read Me | ReduxKit</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="Carthage Compatible Cocoapods Compatible Platform">
         <meta name="generator" content="GitBook 2.6.6">
@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="gitbook/style.css">
     
         
-        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-highlight/website.css">
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-prism/prism.css">
         
     
         
@@ -37,6 +37,8 @@
         
     
     
+    <link rel="next" href="./docs/LICENSE.html" />
+    
     
 
         
@@ -46,10 +48,10 @@
         
     <div class="book"
         data-level="0"
-        data-chapter-title="Introduction"
+        data-chapter-title="Read Me"
         data-filepath="README.md"
         data-basepath="."
-        data-revision="Sat Dec 26 2015 22:56:34 GMT+1100 (AEDT)"
+        data-revision="Sat Dec 26 2015 23:29:16 GMT+1100 (AEDT)"
         data-innerlanguage="">
     
 
@@ -59,8 +61,20 @@
             
             
             
+                
+                <li>
+                    <a href="https://github.com/ReduxKit/ReduxKit/" target="blank" class="custom-link">github ReduxKit/ReduxKit</a>
+                </li>
+            
+                
+                <li>
+                    <a href="http://reduxkit.github.io/ReduxKit/api/" target="blank" class="custom-link">API Docs</a>
+                </li>
+            
             
 
+            
+            <li class="divider"></li>
             
 
             
@@ -72,15 +86,23 @@
                 
                         <i class="fa fa-check"></i>
                         
-                        Introduction
+                        Read Me
                     </a>
             
             
         </li>
     
-        <li class="chapter " data-level="1" >
+        <li class="chapter " data-level="1" data-path="docs/LICENSE.html">
             
-            <span><b>1.</b> Swift Redux</span>
+                
+                    <a href="./docs/LICENSE.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        License
+                    </a>
             
             
         </li>
@@ -140,19 +162,19 @@
 </code></pre>
 <h3 id="cocoapods"><a href="http://cocoapods.org" target="_blank">CocoaPods</a></h3>
 <p>Add ReduxKit to your <code>Podfile</code>:</p>
-<pre><code class="lang-ruby">source <span class="hljs-string">&apos;https://github.com/CocoaPods/Specs.git&apos;</span>
-platform <span class="hljs-symbol">:ios</span>, <span class="hljs-string">&apos;8.0&apos;</span>
+<pre><code class="lang-ruby">source <span class="token string">&apos;https://github.com/CocoaPods/Specs.git&apos;</span>
+platform <span class="token symbol">:ios</span><span class="token punctuation">,</span> <span class="token string">&apos;8.0&apos;</span>
 
-pod <span class="hljs-string">&apos;ReduxKit&apos;</span>, <span class="hljs-string">&apos;~&gt; 0.1.3&apos;</span>
+pod <span class="token string">&apos;ReduxKit&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;~&gt; 0.1.3&apos;</span>
 </code></pre>
 <p>Then, run the following command:</p>
-<pre><code class="lang-bash">$ pod install
+<pre><code class="lang-bash">$ pod <span class="token function">install</span>
 </code></pre>
 <h2 id="the-gist">The Gist</h2>
 <p>A more advanced Swift example of the original <a href="https://github.com/rackt/redux/blob/master/README.md#the-gist" target="_blank">gist</a></p>
-<pre><code class="lang-swift"><span class="hljs-keyword">import</span> ReduxKit
+<pre><code class="lang-swift"><span class="token keyword">import</span> <span class="token builtin">ReduxKit</span>
 
-<span class="hljs-comment">/**
+<span class="token comment" spellcheck="true">/**
   * This is a simple standard action. The only requirement is that an action complies to
   * the Action protocol. The SimpleStandardAction contains a strongly typed rawPayload
   * property. The protocol automatically assigns the rawPayload to the Actions payload
@@ -162,19 +184,19 @@ pod <span class="hljs-string">&apos;ReduxKit&apos;</span>, <span class="hljs-str
   * There&apos;s also the StandardAction protocol, that requires the struct to have an
   * initializer. This is required if the bindActionCreators helper is to be used.
   */</span>
-<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">IncrementAction</span>: <span class="hljs-title">SimpleStandardAction</span> </span>{
-    <span class="hljs-keyword">let</span> meta: <span class="hljs-type">Any</span>? = <span class="hljs-literal">nil</span>
-    <span class="hljs-keyword">let</span> error: <span class="hljs-type">Bool</span> = <span class="hljs-literal">false</span>
-    <span class="hljs-keyword">let</span> rawPayload: <span class="hljs-type">Int</span> = <span class="hljs-number">1</span>
-}
+<span class="token keyword">struct</span> <span class="token builtin">IncrementAction</span><span class="token punctuation">:</span> <span class="token builtin">SimpleStandardAction</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> meta<span class="token punctuation">:</span> <span class="token builtin">Any</span><span class="token operator">?</span> <span class="token operator">=</span> <span class="token constant">nil</span>
+    <span class="token keyword">let</span> error<span class="token punctuation">:</span> <span class="token builtin">Bool</span> <span class="token operator">=</span> <span class="token boolean">false</span>
+    <span class="token keyword">let</span> rawPayload<span class="token punctuation">:</span> <span class="token builtin">Int</span> <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token punctuation">}</span>
 
-<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">DecrementAction</span>: <span class="hljs-title">SimpleStandardAction</span> </span>{
-    <span class="hljs-keyword">let</span> meta: <span class="hljs-type">Any</span>? = <span class="hljs-literal">nil</span>
-    <span class="hljs-keyword">let</span> error: <span class="hljs-type">Bool</span> = <span class="hljs-literal">false</span>
-    <span class="hljs-keyword">let</span> rawPayload: <span class="hljs-type">Int</span> = <span class="hljs-number">1</span>
-}
+<span class="token keyword">struct</span> <span class="token builtin">DecrementAction</span><span class="token punctuation">:</span> <span class="token builtin">SimpleStandardAction</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> meta<span class="token punctuation">:</span> <span class="token builtin">Any</span><span class="token operator">?</span> <span class="token operator">=</span> <span class="token constant">nil</span>
+    <span class="token keyword">let</span> error<span class="token punctuation">:</span> <span class="token builtin">Bool</span> <span class="token operator">=</span> <span class="token boolean">false</span>
+    <span class="token keyword">let</span> rawPayload<span class="token punctuation">:</span> <span class="token builtin">Int</span> <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token punctuation">}</span>
 
-<span class="hljs-comment">/**
+<span class="token comment" spellcheck="true">/**
   * This is a simple reducer. It is a pure function that follows the syntax
   * (state, action) -&gt; state.
   * It describes how an action transforms the previous state into the next state.
@@ -182,183 +204,183 @@ pod <span class="hljs-string">&apos;ReduxKit&apos;</span>, <span class="hljs-str
   * Instead of using the actions.type property - as is done in the regular Redux framework
   * we use the power of Swifts static typing to deduce the action.
   */</span>
-<span class="hljs-func"><span class="hljs-keyword">func</span> <span class="hljs-title">counterReducer</span><span class="hljs-params">(previousState: Int?, action: Action)</span></span> -&gt; <span class="hljs-type">Int</span> {
-    <span class="hljs-comment">// Declare the reducers default value</span>
-    <span class="hljs-keyword">let</span> defaultValue = <span class="hljs-number">0</span>
-    <span class="hljs-keyword">var</span> state = previousState ?? defaultValue
+<span class="token keyword">func</span> <span class="token function">counterReducer<span class="token punctuation">(</span></span>previousState<span class="token punctuation">:</span> <span class="token builtin">Int</span><span class="token operator">?</span><span class="token punctuation">,</span> action<span class="token punctuation">:</span> <span class="token builtin">Action</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">Int</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// Declare the reducers default value</span>
+    <span class="token keyword">let</span> defaultValue <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">var</span> state <span class="token operator">=</span> previousState <span class="token operator">?</span><span class="token operator">?</span> defaultValue
 
-    <span class="hljs-keyword">switch</span> action {
-        <span class="hljs-keyword">case</span> <span class="hljs-keyword">let</span> action <span class="hljs-keyword">as</span> <span class="hljs-type">IncrementAction</span>:
-            <span class="hljs-keyword">return</span> state + action.rawPayload
-        <span class="hljs-keyword">case</span> <span class="hljs-keyword">let</span> action <span class="hljs-keyword">as</span> <span class="hljs-type">DecrementAction</span>:
-            <span class="hljs-keyword">return</span> state - action.rawPayload
-        <span class="hljs-keyword">default</span>:
-            <span class="hljs-keyword">return</span> state
-    }
-}
+    <span class="token keyword">switch</span> action <span class="token punctuation">{</span>
+        <span class="token keyword">case</span> <span class="token keyword">let</span> action <span class="token keyword">as</span> <span class="token builtin">IncrementAction</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> state <span class="token operator">+</span> action<span class="token punctuation">.</span>rawPayload
+        <span class="token keyword">case</span> <span class="token keyword">let</span> action <span class="token keyword">as</span> <span class="token builtin">DecrementAction</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> state <span class="token operator">-</span> action<span class="token punctuation">.</span>rawPayload
+        <span class="token keyword">default</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> state
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-<span class="hljs-comment">/**
+<span class="token comment" spellcheck="true">/**
   * The applications state. This should contain the state of the whole application.
   * When building larger applications, you can optionally assign complex structs to
   * properties on the AppState and handle them in the part of the application that
   * uses them.
   */</span>
-<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">AppState</span> </span>{
-  <span class="hljs-keyword">var</span> <span class="hljs-built_in">count</span>: <span class="hljs-type">Int</span>!
-}
+<span class="token keyword">struct</span> <span class="token builtin">AppState</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> <span class="token builtin">count</span><span class="token punctuation">:</span> <span class="token builtin">Int</span><span class="token operator">!</span>
+<span class="token punctuation">}</span>
 
-<span class="hljs-comment">/**
+<span class="token comment" spellcheck="true">/**
   * Create the applications reducer. While we could create a combineReducer function
   * we&apos;ve currently chosen to allow reducers to be statically typed and accept
   * static states - instead of Any - which currently forces us to define the
   * application reducer as such. This could possibly be simplified with reflection.
   */</span>
-<span class="hljs-keyword">let</span> applicationReducer = {(state: <span class="hljs-type">AppState</span>? = <span class="hljs-literal">nil</span>, action: <span class="hljs-type">Action</span>) -&gt; <span class="hljs-type">AppState</span> <span class="hljs-keyword">in</span>
+<span class="token keyword">let</span> applicationReducer <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">(</span>state<span class="token punctuation">:</span> <span class="token builtin">AppState</span><span class="token operator">?</span> <span class="token operator">=</span> <span class="token constant">nil</span><span class="token punctuation">,</span> action<span class="token punctuation">:</span> <span class="token builtin">Action</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">AppState</span> <span class="token keyword">in</span>
 
-  <span class="hljs-keyword">return</span> <span class="hljs-type">AppState</span>(
-    <span class="hljs-built_in">count</span>: counterReducer(appState?.<span class="hljs-built_in">count</span>, action: action),
-    )
-}
+  <span class="token keyword">return</span> <span class="token function">AppState<span class="token punctuation">(</span></span>
+    <span class="token builtin">count</span><span class="token punctuation">:</span> <span class="token function">counterReducer<span class="token punctuation">(</span></span>appState<span class="token operator">?</span><span class="token punctuation">.</span><span class="token builtin">count</span><span class="token punctuation">,</span> action<span class="token punctuation">:</span> action<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
 
-<span class="hljs-comment">// Create application store. The second parameter is an optional default state.</span>
-<span class="hljs-keyword">let</span> store = createStore(applicationReducer, <span class="hljs-literal">nil</span>)
+<span class="token comment" spellcheck="true">// Create application store. The second parameter is an optional default state.</span>
+<span class="token keyword">let</span> store <span class="token operator">=</span> <span class="token function">createStore<span class="token punctuation">(</span></span>applicationReducer<span class="token punctuation">,</span> <span class="token constant">nil</span><span class="token punctuation">)</span>
 
-<span class="hljs-keyword">let</span> disposable = store.subscribe{ state <span class="hljs-keyword">in</span>
-  <span class="hljs-built_in">print</span>(state)
-}
+<span class="token keyword">let</span> disposable <span class="token operator">=</span> store<span class="token punctuation">.</span>subscribe<span class="token punctuation">{</span> state <span class="token keyword">in</span>
+  <span class="token function">print<span class="token punctuation">(</span></span>state<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
 
 
-store.dispatch(<span class="hljs-type">IncrementAction</span>())
-<span class="hljs-comment">// {counter: 1}</span>
+store<span class="token punctuation">.</span><span class="token function">dispatch<span class="token punctuation">(</span></span><span class="token function">IncrementAction<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">// {counter: 1}</span>
 
-store.dispatch(<span class="hljs-type">IncrementAction</span>())
-<span class="hljs-comment">// {counter: 2}</span>
+store<span class="token punctuation">.</span><span class="token function">dispatch<span class="token punctuation">(</span></span><span class="token function">IncrementAction<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">// {counter: 2}</span>
 
-store.dispatch(<span class="hljs-type">DecrementAction</span>())
-<span class="hljs-comment">// {counter: 1}</span>
+store<span class="token punctuation">.</span><span class="token function">dispatch<span class="token punctuation">(</span></span><span class="token function">DecrementAction<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">// {counter: 1}</span>
 
-<span class="hljs-comment">// Dispose of the subscriber after use.</span>
-disposable.dispose()
+<span class="token comment" spellcheck="true">// Dispose of the subscriber after use.</span>
+disposable<span class="token punctuation">.</span><span class="token function">dispose<span class="token punctuation">(</span></span><span class="token punctuation">)</span>
 </code></pre>
 <h2 id="types-and-the-generic-state">Types and the generic State</h2>
 <p>ReduxKit makes heavy use of Swift generics for simpler implementation and usage.</p>
 <p>The only types used as generics are <code>State</code>, <code>Action</code> and <code>PayloadType</code>. Of which only <code>State</code> has no inference and will be commonly used. Because <code>typealias</code> does not support generics this does cause the framework source to become harder to read. Example <code>typealias</code> have been included privately in the source.</p>
 <p>Once the root state type has been defined in your project, you may want to declare appropriate <code>typealias</code> mapping to the JavaScript Redux types.</p>
-<pre><code class="lang-swift"><span class="hljs-comment">// These two are already exported by ReduxKit as they do not use the State generic</span>
-<span class="hljs-comment">// typealias Dispatch = Action -&gt; Action</span>
-<span class="hljs-comment">// typealias DispatchTransformer = Dispatch -&gt; Dispatch</span>
+<pre><code class="lang-swift"><span class="token comment" spellcheck="true">// These two are already exported by ReduxKit as they do not use the State generic</span>
+<span class="token comment" spellcheck="true">// typealias Dispatch = Action -&gt; Action</span>
+<span class="token comment" spellcheck="true">// typealias DispatchTransformer = Dispatch -&gt; Dispatch</span>
 
-<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">State</span> </span>{} <span class="hljs-comment">// Can be named anything you like, as long as it&apos;s consistent in the typealias declarations</span>
+<span class="token keyword">struct</span> <span class="token builtin">State</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token comment" spellcheck="true">// Can be named anything you like, as long as it&apos;s consistent in the typealias declarations</span>
 
-<span class="hljs-comment">// Underscores are used where needed to prevent clashes with exported protocols. Again, naming is up to you.</span>
+<span class="token comment" spellcheck="true">// Underscores are used where needed to prevent clashes with exported protocols. Again, naming is up to you.</span>
 
-<span class="hljs-keyword">typealias</span> <span class="hljs-type">Store</span> = <span class="hljs-type">ReduxKit</span>.<span class="hljs-type">Store</span>&lt;<span class="hljs-type">State</span>&gt;
+<span class="token keyword">typealias</span> <span class="token builtin">Store</span> <span class="token operator">=</span> <span class="token builtin">ReduxKit</span><span class="token punctuation">.</span><span class="token builtin">Store</span><span class="token operator">&lt;</span><span class="token builtin">State</span><span class="token operator">&gt;</span>
 
-<span class="hljs-keyword">typealias</span> <span class="hljs-type">Reducer</span> = (previousState: <span class="hljs-type">State</span>?, action: <span class="hljs-type">Action</span>) -&gt; <span class="hljs-type">State</span>
-<span class="hljs-keyword">typealias</span> <span class="hljs-type">Subscriber</span> = (updatedState: <span class="hljs-type">State</span>) -&gt; ()
+<span class="token keyword">typealias</span> <span class="token builtin">Reducer</span> <span class="token operator">=</span> <span class="token punctuation">(</span>previousState<span class="token punctuation">:</span> <span class="token builtin">State</span><span class="token operator">?</span><span class="token punctuation">,</span> action<span class="token punctuation">:</span> <span class="token builtin">Action</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">State</span>
+<span class="token keyword">typealias</span> <span class="token builtin">Subscriber</span> <span class="token operator">=</span> <span class="token punctuation">(</span>updatedState<span class="token punctuation">:</span> <span class="token builtin">State</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">)</span>
 
-<span class="hljs-keyword">typealias</span> <span class="hljs-type">MiddlewareApi</span> = <span class="hljs-type">Store</span>
-<span class="hljs-keyword">typealias</span> <span class="hljs-type">Middleware</span> = <span class="hljs-type">MiddlewareApi</span> -&gt; <span class="hljs-type">DispatchTransformer</span>
-<span class="hljs-keyword">typealias</span> <span class="hljs-type">StoreCreator</span> = (reducer: <span class="hljs-type">Reducer</span>, initialState: <span class="hljs-type">State</span>?) -&gt; <span class="hljs-type">Store</span>
-<span class="hljs-keyword">typealias</span> <span class="hljs-type">StoreEnhancer</span> = (<span class="hljs-type">StoreCreator</span>) -&gt; <span class="hljs-type">StoreCreator</span>
+<span class="token keyword">typealias</span> <span class="token builtin">MiddlewareApi</span> <span class="token operator">=</span> <span class="token builtin">Store</span>
+<span class="token keyword">typealias</span> <span class="token builtin">Middleware</span> <span class="token operator">=</span> <span class="token builtin">MiddlewareApi</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">DispatchTransformer</span>
+<span class="token keyword">typealias</span> <span class="token builtin">StoreCreator</span> <span class="token operator">=</span> <span class="token punctuation">(</span>reducer<span class="token punctuation">:</span> <span class="token builtin">Reducer</span><span class="token punctuation">,</span> initialState<span class="token punctuation">:</span> <span class="token builtin">State</span><span class="token operator">?</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">Store</span>
+<span class="token keyword">typealias</span> <span class="token builtin">StoreEnhancer</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token builtin">StoreCreator</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">StoreCreator</span>
 
-<span class="hljs-keyword">typealias</span> <span class="hljs-type">StateStream</span> = <span class="hljs-type">ReduxKit</span>.<span class="hljs-type">StateStream</span>&lt;<span class="hljs-type">State</span>&gt;
-<span class="hljs-keyword">typealias</span> <span class="hljs-type">StreamFactory</span> = (initialState: <span class="hljs-type">State</span>) -&gt; <span class="hljs-type">StateStream</span>
+<span class="token keyword">typealias</span> <span class="token builtin">StateStream</span> <span class="token operator">=</span> <span class="token builtin">ReduxKit</span><span class="token punctuation">.</span><span class="token builtin">StateStream</span><span class="token operator">&lt;</span><span class="token builtin">State</span><span class="token operator">&gt;</span>
+<span class="token keyword">typealias</span> <span class="token builtin">StreamFactory</span> <span class="token operator">=</span> <span class="token punctuation">(</span>initialState<span class="token punctuation">:</span> <span class="token builtin">State</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">StateStream</span>
 </code></pre>
 <p>Typealias not supporting generics can been seen most in the applyMiddleware function and makes for the best example of how to expand the ReduxKit examples out.</p>
-<pre><code class="lang-swift"><span class="hljs-comment">// How the applyMiddleware function would ideally be declared</span>
-<span class="hljs-func"><span class="hljs-keyword">func</span> <span class="hljs-title">applyMiddleware</span><span class="hljs-params">(middleware: [Middleware])</span></span>
-    -&gt; <span class="hljs-type">StoreEnhancer</span>
+<pre><code class="lang-swift"><span class="token comment" spellcheck="true">// How the applyMiddleware function would ideally be declared</span>
+<span class="token keyword">func</span> <span class="token function">applyMiddleware<span class="token punctuation">(</span></span>middleware<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token builtin">Middleware</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">StoreEnhancer</span>
 
-<span class="hljs-comment">// Expanding out (sans generic state):</span>
-<span class="hljs-func"><span class="hljs-keyword">func</span> <span class="hljs-title">applyMiddleware</span><span class="hljs-params">(middleware: [MiddlewareApi -&gt; DispatchTransformer])</span></span>
-    -&gt; <span class="hljs-type">StoreCreator</span>
-    -&gt; <span class="hljs-type">StoreCreator</span>
+<span class="token comment" spellcheck="true">// Expanding out (sans generic state):</span>
+<span class="token keyword">func</span> <span class="token function">applyMiddleware<span class="token punctuation">(</span></span>middleware<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token builtin">MiddlewareApi</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">DispatchTransformer</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">StoreCreator</span>
+    <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">StoreCreator</span>
 
-<span class="hljs-func"><span class="hljs-keyword">func</span> <span class="hljs-title">applyMiddleware</span><span class="hljs-params">(middleware: [Store -&gt; DispatchTransformer])</span></span>
-    -&gt; ((<span class="hljs-type">Reducer</span>, <span class="hljs-type">State</span>?) -&gt; <span class="hljs-type">Store</span>)
-    -&gt; ((<span class="hljs-type">Reducer</span>, <span class="hljs-type">State</span>?) -&gt; <span class="hljs-type">Store</span>)
+<span class="token keyword">func</span> <span class="token function">applyMiddleware<span class="token punctuation">(</span></span>middleware<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token builtin">Store</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">DispatchTransformer</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token builtin">Reducer</span><span class="token punctuation">,</span> <span class="token builtin">State</span><span class="token operator">?</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">Store</span><span class="token punctuation">)</span>
+    <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token builtin">Reducer</span><span class="token punctuation">,</span> <span class="token builtin">State</span><span class="token operator">?</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">Store</span><span class="token punctuation">)</span>
 
-<span class="hljs-func"><span class="hljs-keyword">func</span> <span class="hljs-title">applyMiddleware</span><span class="hljs-params">(middleware: [Store -&gt; DispatchTransformer])</span></span>
-    -&gt; (((<span class="hljs-type">State</span>?, <span class="hljs-type">Action</span>) -&gt; <span class="hljs-type">State</span>, <span class="hljs-type">State</span>?) -&gt; <span class="hljs-type">Store</span>)
-    -&gt; (((<span class="hljs-type">State</span>?, <span class="hljs-type">Action</span>) -&gt; <span class="hljs-type">State</span>, <span class="hljs-type">State</span>?) -&gt; <span class="hljs-type">Store</span>)
+<span class="token keyword">func</span> <span class="token function">applyMiddleware<span class="token punctuation">(</span></span>middleware<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token builtin">Store</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">DispatchTransformer</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token builtin">State</span><span class="token operator">?</span><span class="token punctuation">,</span> <span class="token builtin">Action</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">State</span><span class="token punctuation">,</span> <span class="token builtin">State</span><span class="token operator">?</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">Store</span><span class="token punctuation">)</span>
+    <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token builtin">State</span><span class="token operator">?</span><span class="token punctuation">,</span> <span class="token builtin">Action</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">State</span><span class="token punctuation">,</span> <span class="token builtin">State</span><span class="token operator">?</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">Store</span><span class="token punctuation">)</span>
 
-<span class="hljs-comment">// With the generic State</span>
-<span class="hljs-func"><span class="hljs-keyword">func</span> <span class="hljs-title">applyMiddleware</span><span class="hljs-generics">&lt;State&gt;</span><span class="hljs-params">(middleware: [<span class="hljs-params">(Store&lt;State&gt;)</span></span></span> -&gt; <span class="hljs-type">DispatchTransformer</span>])
-    -&gt; (((<span class="hljs-type">State</span>?, <span class="hljs-type">Action</span>) -&gt; <span class="hljs-type">State</span>, <span class="hljs-type">State</span>?) -&gt; <span class="hljs-type">Store</span>&lt;<span class="hljs-type">State</span>&gt;)
-    -&gt; (((<span class="hljs-type">State</span>?, <span class="hljs-type">Action</span>) -&gt; <span class="hljs-type">State</span>, <span class="hljs-type">State</span>?) -&gt; <span class="hljs-type">Store</span>&lt;<span class="hljs-type">State</span>&gt;)
+<span class="token comment" spellcheck="true">// With the generic State</span>
+<span class="token keyword">func</span> applyMiddleware<span class="token operator">&lt;</span><span class="token builtin">State</span><span class="token operator">&gt;</span><span class="token punctuation">(</span>middleware<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token builtin">Store</span><span class="token operator">&lt;</span><span class="token builtin">State</span><span class="token operator">&gt;</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">DispatchTransformer</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token builtin">State</span><span class="token operator">?</span><span class="token punctuation">,</span> <span class="token builtin">Action</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">State</span><span class="token punctuation">,</span> <span class="token builtin">State</span><span class="token operator">?</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">Store</span><span class="token operator">&lt;</span><span class="token builtin">State</span><span class="token operator">&gt;</span><span class="token punctuation">)</span>
+    <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token builtin">State</span><span class="token operator">?</span><span class="token punctuation">,</span> <span class="token builtin">Action</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">State</span><span class="token punctuation">,</span> <span class="token builtin">State</span><span class="token operator">?</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">Store</span><span class="token operator">&lt;</span><span class="token builtin">State</span><span class="token operator">&gt;</span><span class="token punctuation">)</span>
 </code></pre>
 <h2 id="api">API</h2>
 <p>Simplified and actual public functions and types:</p>
 <h3 id="createstore">createStore</h3>
-<pre><code class="lang-swift">createStore(reducer: <span class="hljs-type">Reducer</span>, state: <span class="hljs-type">State</span>?) -&gt; <span class="hljs-type">Store</span>
-createStore&lt;<span class="hljs-type">State</span>&gt;(reducer: (<span class="hljs-type">State</span>?, <span class="hljs-type">Action</span>) -&gt; <span class="hljs-type">State</span>, state: <span class="hljs-type">State</span>?) -&gt; <span class="hljs-type">Store</span>&lt;<span class="hljs-type">State</span>&gt;
+<pre><code class="lang-swift"><span class="token function">createStore<span class="token punctuation">(</span></span>reducer<span class="token punctuation">:</span> <span class="token builtin">Reducer</span><span class="token punctuation">,</span> state<span class="token punctuation">:</span> <span class="token builtin">State</span><span class="token operator">?</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">Store</span>
+createStore<span class="token operator">&lt;</span><span class="token builtin">State</span><span class="token operator">&gt;</span><span class="token punctuation">(</span>reducer<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token builtin">State</span><span class="token operator">?</span><span class="token punctuation">,</span> <span class="token builtin">Action</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">State</span><span class="token punctuation">,</span> state<span class="token punctuation">:</span> <span class="token builtin">State</span><span class="token operator">?</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">Store</span><span class="token operator">&lt;</span><span class="token builtin">State</span><span class="token operator">&gt;</span>
 </code></pre>
 <h3 id="createstreamstore">createStreamStore</h3>
-<pre><code class="lang-swift">createStreamStore(streamFactory: <span class="hljs-type">StreamFactory</span>, reducer: <span class="hljs-type">Reducer</span>, state: <span class="hljs-type">State</span>?) -&gt; <span class="hljs-type">Store</span>
-createStreamStore&lt;<span class="hljs-type">State</span>&gt;(
-    streamFactory: <span class="hljs-type">State</span> -&gt; <span class="hljs-type">StateStream</span>&lt;<span class="hljs-type">State</span>&gt; = createSimpleStream,
-    reducer: (<span class="hljs-type">State</span>?, <span class="hljs-type">Action</span>) -&gt; <span class="hljs-type">State</span>,
-    state: <span class="hljs-type">State</span>?)
-    -&gt; <span class="hljs-type">Store</span>&lt;<span class="hljs-type">State</span>&gt;
+<pre><code class="lang-swift"><span class="token function">createStreamStore<span class="token punctuation">(</span></span>streamFactory<span class="token punctuation">:</span> <span class="token builtin">StreamFactory</span><span class="token punctuation">,</span> reducer<span class="token punctuation">:</span> <span class="token builtin">Reducer</span><span class="token punctuation">,</span> state<span class="token punctuation">:</span> <span class="token builtin">State</span><span class="token operator">?</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">Store</span>
+createStreamStore<span class="token operator">&lt;</span><span class="token builtin">State</span><span class="token operator">&gt;</span><span class="token punctuation">(</span>
+    streamFactory<span class="token punctuation">:</span> <span class="token builtin">State</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">StateStream</span><span class="token operator">&lt;</span><span class="token builtin">State</span><span class="token operator">&gt;</span> <span class="token operator">=</span> createSimpleStream<span class="token punctuation">,</span>
+    reducer<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token builtin">State</span><span class="token operator">?</span><span class="token punctuation">,</span> <span class="token builtin">Action</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">State</span><span class="token punctuation">,</span>
+    state<span class="token punctuation">:</span> <span class="token builtin">State</span><span class="token operator">?</span><span class="token punctuation">)</span>
+    <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">Store</span><span class="token operator">&lt;</span><span class="token builtin">State</span><span class="token operator">&gt;</span>
 
-createStreamStore(streamFactory: <span class="hljs-type">StreamFactory</span>) -&gt; <span class="hljs-type">StoreCreator</span>
-createStreamStore&lt;<span class="hljs-type">State</span>&gt;(streamFactory: <span class="hljs-type">State</span> -&gt; <span class="hljs-type">StateStream</span>&lt;<span class="hljs-type">State</span>&gt;)
-    -&gt; (reducer: (<span class="hljs-type">State</span>?, <span class="hljs-type">Action</span>) -&gt; <span class="hljs-type">State</span>, state: <span class="hljs-type">State</span>?)
-    -&gt; <span class="hljs-type">Store</span>&lt;<span class="hljs-type">State</span>&gt;
+<span class="token function">createStreamStore<span class="token punctuation">(</span></span>streamFactory<span class="token punctuation">:</span> <span class="token builtin">StreamFactory</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">StoreCreator</span>
+createStreamStore<span class="token operator">&lt;</span><span class="token builtin">State</span><span class="token operator">&gt;</span><span class="token punctuation">(</span>streamFactory<span class="token punctuation">:</span> <span class="token builtin">State</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">StateStream</span><span class="token operator">&lt;</span><span class="token builtin">State</span><span class="token operator">&gt;</span><span class="token punctuation">)</span>
+    <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span>reducer<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token builtin">State</span><span class="token operator">?</span><span class="token punctuation">,</span> <span class="token builtin">Action</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">State</span><span class="token punctuation">,</span> state<span class="token punctuation">:</span> <span class="token builtin">State</span><span class="token operator">?</span><span class="token punctuation">)</span>
+    <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">Store</span><span class="token operator">&lt;</span><span class="token builtin">State</span><span class="token operator">&gt;</span>
 </code></pre>
 <h3 id="disposable">Disposable</h3>
-<pre><code class="lang-swift"><span class="hljs-class"><span class="hljs-keyword">protocol</span> <span class="hljs-title">ReduxDisposable</span> </span>{
-    <span class="hljs-keyword">var</span> disposed: <span class="hljs-type">Bool</span> { <span class="hljs-keyword">get</span> }
-    <span class="hljs-keyword">var</span> dispose: () -&gt; () { <span class="hljs-keyword">get</span> }
-}
+<pre><code class="lang-swift"><span class="token keyword">protocol</span> <span class="token builtin">ReduxDisposable</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> disposed<span class="token punctuation">:</span> <span class="token builtin">Bool</span> <span class="token punctuation">{</span> <span class="token keyword">get</span> <span class="token punctuation">}</span>
+    <span class="token keyword">var</span> dispose<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">get</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">SimpleReduxDisposable</span>: <span class="hljs-title">ReduxDisposable</span> </span>{
-    <span class="hljs-keyword">init</span>(disposed: () -&gt; <span class="hljs-type">Bool</span>, dispose: () -&gt; ())
-}
+<span class="token keyword">struct</span> <span class="token builtin">SimpleReduxDisposable</span><span class="token punctuation">:</span> <span class="token builtin">ReduxDisposable</span> <span class="token punctuation">{</span>
+    <span class="token keyword">init</span><span class="token punctuation">(</span>disposed<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">Bool</span><span class="token punctuation">,</span> dispose<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h3 id="statestream">StateStream</h3>
-<pre><code class="lang-swift"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">StateStream</span> </span>{
-    <span class="hljs-keyword">let</span> dispatch: <span class="hljs-type">State</span> -&gt; ()
-    <span class="hljs-keyword">let</span> subscribe: <span class="hljs-type">Subscriber</span> -&gt; <span class="hljs-type">ReduxDisposable</span>
-    <span class="hljs-keyword">let</span> getState: () -&gt; <span class="hljs-type">State</span>
-    <span class="hljs-keyword">init</span>(dispatch: <span class="hljs-type">State</span> -&gt; (), subscribe: <span class="hljs-type">Subscriber</span> -&gt; <span class="hljs-type">ReduxDisposable</span>, getState: () -&gt; <span class="hljs-type">State</span>)
-}
-<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">StateStream</span>&lt;<span class="hljs-title">State</span>&gt; </span>{
-    <span class="hljs-keyword">let</span> dispatch: <span class="hljs-type">State</span> -&gt; ()
-    <span class="hljs-keyword">let</span> subscribe: (<span class="hljs-type">State</span> -&gt; ()) -&gt; <span class="hljs-type">ReduxDisposable</span>
-    <span class="hljs-keyword">let</span> getState: () -&gt; <span class="hljs-type">State</span>
-    <span class="hljs-keyword">init</span>(dispatch: <span class="hljs-type">State</span> -&gt; (), subscribe: (<span class="hljs-type">State</span> -&gt; ()) -&gt; <span class="hljs-type">ReduxDisposable</span>, getState: () -&gt; <span class="hljs-type">State</span>)
-}
+<pre><code class="lang-swift"><span class="token keyword">struct</span> <span class="token builtin">StateStream</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> dispatch<span class="token punctuation">:</span> <span class="token builtin">State</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">let</span> subscribe<span class="token punctuation">:</span> <span class="token builtin">Subscriber</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">ReduxDisposable</span>
+    <span class="token keyword">let</span> getState<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">State</span>
+    <span class="token keyword">init</span><span class="token punctuation">(</span>dispatch<span class="token punctuation">:</span> <span class="token builtin">State</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> subscribe<span class="token punctuation">:</span> <span class="token builtin">Subscriber</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">ReduxDisposable</span><span class="token punctuation">,</span> getState<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">State</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">struct</span> <span class="token builtin">StateStream</span><span class="token operator">&lt;</span><span class="token builtin">State</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> dispatch<span class="token punctuation">:</span> <span class="token builtin">State</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">let</span> subscribe<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token builtin">State</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">ReduxDisposable</span>
+    <span class="token keyword">let</span> getState<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">State</span>
+    <span class="token keyword">init</span><span class="token punctuation">(</span>dispatch<span class="token punctuation">:</span> <span class="token builtin">State</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> subscribe<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token builtin">State</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">ReduxDisposable</span><span class="token punctuation">,</span> getState<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">State</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h3 id="storetype">StoreType</h3>
-<pre><code class="lang-swift"><span class="hljs-class"><span class="hljs-keyword">protocol</span> <span class="hljs-title">StoreType</span> </span>{
-    <span class="hljs-keyword">typealias</span> <span class="hljs-type">State</span>
-    <span class="hljs-keyword">var</span> dispatch: <span class="hljs-type">Dispatch</span> { <span class="hljs-keyword">get</span> }
-    <span class="hljs-keyword">var</span> subscribe: (<span class="hljs-type">Subscriber</span>) -&gt; <span class="hljs-type">ReduxDisposable</span> { <span class="hljs-keyword">get</span> }
-    <span class="hljs-keyword">var</span> getState: () -&gt; <span class="hljs-type">State</span> { <span class="hljs-keyword">get</span> }
-    <span class="hljs-keyword">init</span>(dispatch: <span class="hljs-type">Dispatch</span>, subscribe: (<span class="hljs-type">Subscriber</span>) -&gt; <span class="hljs-type">ReduxDisposable</span>, getState: () -&gt; <span class="hljs-type">State</span>)
-}
+<pre><code class="lang-swift"><span class="token keyword">protocol</span> <span class="token builtin">StoreType</span> <span class="token punctuation">{</span>
+    <span class="token keyword">typealias</span> <span class="token builtin">State</span>
+    <span class="token keyword">var</span> dispatch<span class="token punctuation">:</span> <span class="token builtin">Dispatch</span> <span class="token punctuation">{</span> <span class="token keyword">get</span> <span class="token punctuation">}</span>
+    <span class="token keyword">var</span> subscribe<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token builtin">Subscriber</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">ReduxDisposable</span> <span class="token punctuation">{</span> <span class="token keyword">get</span> <span class="token punctuation">}</span>
+    <span class="token keyword">var</span> getState<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">State</span> <span class="token punctuation">{</span> <span class="token keyword">get</span> <span class="token punctuation">}</span>
+    <span class="token keyword">init</span><span class="token punctuation">(</span>dispatch<span class="token punctuation">:</span> <span class="token builtin">Dispatch</span><span class="token punctuation">,</span> subscribe<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token builtin">Subscriber</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">ReduxDisposable</span><span class="token punctuation">,</span> getState<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">State</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h3 id="store">Store</h3>
-<pre><code class="lang-swift"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Store</span>&lt;<span class="hljs-title">State</span>&gt;: <span class="hljs-title">StoreType</span> </span>{
-    <span class="hljs-keyword">let</span> dispatch: <span class="hljs-type">Dispatch</span>
-    <span class="hljs-keyword">let</span> subscribe: (<span class="hljs-type">Subscriber</span>) -&gt; <span class="hljs-type">ReduxDisposable</span>
-    <span class="hljs-keyword">let</span> getState: () -&gt; <span class="hljs-type">State</span>
-    <span class="hljs-keyword">var</span> state: <span class="hljs-type">State</span>
-    <span class="hljs-keyword">init</span>(dispatch: <span class="hljs-type">Dispatch</span>, subscribe: (<span class="hljs-type">Subscriber</span>) -&gt; <span class="hljs-type">ReduxDisposable</span>, getState: () -&gt; <span class="hljs-type">State</span>)
-}
+<pre><code class="lang-swift"><span class="token keyword">struct</span> <span class="token builtin">Store</span><span class="token operator">&lt;</span><span class="token builtin">State</span><span class="token operator">&gt;</span><span class="token punctuation">:</span> <span class="token builtin">StoreType</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> dispatch<span class="token punctuation">:</span> <span class="token builtin">Dispatch</span>
+    <span class="token keyword">let</span> subscribe<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token builtin">Subscriber</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">ReduxDisposable</span>
+    <span class="token keyword">let</span> getState<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">State</span>
+    <span class="token keyword">var</span> state<span class="token punctuation">:</span> <span class="token builtin">State</span>
+    <span class="token keyword">init</span><span class="token punctuation">(</span>dispatch<span class="token punctuation">:</span> <span class="token builtin">Dispatch</span><span class="token punctuation">,</span> subscribe<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token builtin">Subscriber</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">ReduxDisposable</span><span class="token punctuation">,</span> getState<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">State</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h3 id="applymiddleware">applyMiddleware</h3>
-<pre><code class="lang-swift"><span class="hljs-func"><span class="hljs-keyword">func</span> <span class="hljs-title">applyMiddleware</span><span class="hljs-params">(middleware: [Middleware])</span></span> -&gt; <span class="hljs-type">StoreEnhancer</span>
-<span class="hljs-func"><span class="hljs-keyword">func</span> <span class="hljs-title">applyMiddleware</span><span class="hljs-generics">&lt;State&gt;</span><span class="hljs-params">(middleware: [Store&lt;State&gt; -&gt; DispatchTransformer])</span></span>
-    -&gt; (((<span class="hljs-type">State</span>?, <span class="hljs-type">Action</span>) -&gt; <span class="hljs-type">State</span>, <span class="hljs-type">State</span>?) -&gt; <span class="hljs-type">Store</span>&lt;<span class="hljs-type">State</span>&gt;)
-    -&gt; (((<span class="hljs-type">State</span>?, <span class="hljs-type">Action</span>) -&gt; <span class="hljs-type">State</span>, <span class="hljs-type">State</span>?) -&gt; <span class="hljs-type">Store</span>&lt;<span class="hljs-type">State</span>&gt;)
+<pre><code class="lang-swift"><span class="token keyword">func</span> <span class="token function">applyMiddleware<span class="token punctuation">(</span></span>middleware<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token builtin">Middleware</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">StoreEnhancer</span>
+<span class="token keyword">func</span> applyMiddleware<span class="token operator">&lt;</span><span class="token builtin">State</span><span class="token operator">&gt;</span><span class="token punctuation">(</span>middleware<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token builtin">Store</span><span class="token operator">&lt;</span><span class="token builtin">State</span><span class="token operator">&gt;</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">DispatchTransformer</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token builtin">State</span><span class="token operator">?</span><span class="token punctuation">,</span> <span class="token builtin">Action</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">State</span><span class="token punctuation">,</span> <span class="token builtin">State</span><span class="token operator">?</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">Store</span><span class="token operator">&lt;</span><span class="token builtin">State</span><span class="token operator">&gt;</span><span class="token punctuation">)</span>
+    <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token builtin">State</span><span class="token operator">?</span><span class="token punctuation">,</span> <span class="token builtin">Action</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">State</span><span class="token punctuation">,</span> <span class="token builtin">State</span><span class="token operator">?</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">Store</span><span class="token operator">&lt;</span><span class="token builtin">State</span><span class="token operator">&gt;</span><span class="token punctuation">)</span>
 </code></pre>
 <h3 id="bindactioncreators">bindActionCreators</h3>
-<pre><code class="lang-swift"><span class="hljs-func"><span class="hljs-keyword">func</span> <span class="hljs-title">bindActionCreators</span><span class="hljs-generics">&lt;Action where Action: StandardAction&gt;</span><span class="hljs-params">(type: Action.<span class="hljs-keyword">Type</span>, dispatch: Dispatch)</span></span>
-    -&gt; (payload: <span class="hljs-type">Action</span>.<span class="hljs-type">PayloadType</span>?)
-    -&gt; ()
+<pre><code class="lang-swift"><span class="token keyword">func</span> bindActionCreators<span class="token operator">&lt;</span><span class="token builtin">Action</span> <span class="token keyword">where</span> <span class="token builtin">Action</span><span class="token punctuation">:</span> <span class="token builtin">StandardAction</span><span class="token operator">&gt;</span><span class="token punctuation">(</span>type<span class="token punctuation">:</span> <span class="token builtin">Action</span><span class="token punctuation">.</span><span class="token keyword">Type</span><span class="token punctuation">,</span> dispatch<span class="token punctuation">:</span> <span class="token builtin">Dispatch</span><span class="token punctuation">)</span>
+    <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span>payload<span class="token punctuation">:</span> <span class="token builtin">Action</span><span class="token punctuation">.</span><span class="token builtin">PayloadType</span><span class="token operator">?</span><span class="token punctuation">)</span>
+    <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">)</span>
 </code></pre>
 <h2 id="available-middleware">Available Middleware</h2>
 <ul>
@@ -389,7 +411,7 @@ createStreamStore&lt;<span class="hljs-type">State</span>&gt;(streamFactory: <sp
 </ul>
 <h2 id="license">License</h2>
 <p>MIT</p>
-
+<script type="text/javascript">var targetUl = document.getElementsByClassName('page-inner')[0].getElementsByTagName('ul')[0];if(targetUl&&targetUl.getElementsByTagName('a').length>0){targetUl.className='atoc';}</script>
                     
                     </section>
                 
@@ -400,11 +422,21 @@ createStreamStore&lt;<span class="hljs-type">State</span>&gt;(streamFactory: <sp
 
         
         
+        <a href="./docs/LICENSE.html" class="navigation navigation-next navigation-unique" aria-label="Next page: License"><i class="fa fa-angle-right"></i></a>
+        
     </div>
 </div>
 
         
 <script src="gitbook/app.js"></script>
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-edit-link/plugin.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-github/plugin.js"></script>
+    
 
     
     <script src="gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
@@ -424,7 +456,7 @@ createStreamStore&lt;<span class="hljs-type">State</span>&gt;(streamFactory: <sp
 
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    var config = {"edit-link":{"base":"https://github.com/ReduxKit/ReduxKit/tree/master","label":"Edit This Page"},"github":{"url":"https://github.com/ReduxKit/ReduxKit/"},"atoc":{"addClass":true,"className":"atoc"},"prism":{},"todo":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":[]},"fontsettings":{"theme":"white","family":"sans","size":2}};
     gitbook.start(config);
 });
 </script>
