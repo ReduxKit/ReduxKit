@@ -1,0 +1,52 @@
+CreateStore.swift
+	public func createStore<State>(reducer: (State?, Action) -> State, state: State?)
+    -> Store<State>
+	public func createStreamStore<State>(
+        streamFactory: State -> StateStream<State> = createSimpleStream,
+        reducer: (State?, Action) -> State,
+        state: State?)
+    -> Store<State>
+Disposable.swift
+	public protocol ReduxDisposable
+	var disposed: Bool { get }
+	var dispose: () -> () { get }
+	public struct SimpleReduxDisposable: ReduxDisposable
+	public var disposed: Bool { return _disposed() }
+	public let dispose: () -> ()
+	public init(disposed: () -> Bool, dispose: () -> ())
+StateStream.swift
+	public let dispatch: State -> ()
+	public let subscribe: (State -> ()) -> ReduxDisposable
+	public let getState: () -> State
+	public init(
+        dispatch: State -> (),
+        subscribe: (State -> ()) -> ReduxDisposable,
+        getState: () -> State)
+Store.swift
+	var dispatch: Dispatch { get }
+	var subscribe: (State -> ()) -> ReduxDisposable { get }
+	var getState: () -> State { get }
+	init(dispatch: Dispatch, subscribe: (State -> ()) -> ReduxDisposable, getState: () -> State)
+	public let dispatch: Dispatch
+	public let subscribe: (State -> ()) -> ReduxDisposable
+	public let getState: () -> State
+	public var state: State { return getState() }
+	public init(dispatch: Dispatch, subscribe: (State -> ()) -> ReduxDisposable, getState: () -> State)
+ApplyMiddleware.swift
+	public func applyMiddleware<State>(middleware: [Store<State> -> DispatchTransformer])
+    -> (((State?, Action) -> State, State?) -> Store<State>)
+    -> (((State?, Action) -> State, State?) -> Store<State>)
+Compose.swift
+	public func compose<T>(objects: [(T) -> T]) -> (T) -> T
+Action.swift
+	var type: String { get }
+	var payload: Any? { get }
+	var meta: Any? { get }
+	var error: Bool { get }
+	init(payload: PayloadType?, meta: Any?, error: Bool)
+	var rawPayload : PayloadType { get }
+	public struct DefaultAction: SimpleStandardAction
+	public let meta: Any? = nil
+	public let error: Bool = false
+	public let rawPayload: String = "$$ReduxKit-DefaultAction"
+	public init() {}
