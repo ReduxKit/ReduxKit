@@ -1,0 +1,15 @@
+{
+    "output": "api",
+    "clean": true,
+    "xcodebuild_arguments": ["-project", "ReduxKit/ReduxKit.xcodeproj", "-scheme", "ReduxKit-Mac"],
+    "swift_version": "2.1.1",
+    "author_name": "ReduxKit",
+    "author_url": "https://github.com/ReduxKit/ReduxKit",
+    "module_name": "ReduxKit",
+    "version": "0.1.0",
+    "root_url": "https://github.com/ReduxKit/ReduxKit",
+    "github_url": "https://github.com/ReduxKit/ReduxKit",
+    "github_file_prefix": "https://github.com/ReduxKit/ReduxKit/tree/master",
+    "assets_directory": "assets",
+    "template_directory": "templates"
+}
