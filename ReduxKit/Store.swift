@@ -19,15 +19,9 @@ typealias _Store = Store<_State>
 /**
  * StoreType protocol
  */
-public protocol StoreType {
-
-    typealias State
-
-    var dispatch: Dispatch { get }
+public protocol StoreType: MiddlewareApiType {
 
     var subscribe: (State -> ()) -> ReduxDisposable { get }
-
-    var getState: () -> State { get }
 
     init(dispatch: Dispatch, subscribe: (State -> ()) -> ReduxDisposable, getState: () -> State)
 }
@@ -46,6 +40,10 @@ public struct Store<State>: StoreType {
     public let getState: () -> State
 
     public var state: State { return getState() }
+
+    public init(dispatch: Dispatch, getState: () -> State) {
+        fatalError("init(dispatch:getState:) has not been implemented")
+    }
 
     public init(dispatch: Dispatch, subscribe: (State -> ()) -> ReduxDisposable, getState: () -> State) {
         self.dispatch = dispatch
