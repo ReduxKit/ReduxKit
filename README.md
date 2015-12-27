@@ -44,7 +44,7 @@ Add ReduxKit to your `Podfile`:
 source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '8.0'
 
-pod 'ReduxKit', '~> 0.1.3'
+pod 'ReduxKit', '~> 0.1'
 ```
 
 Then, run the following command:
