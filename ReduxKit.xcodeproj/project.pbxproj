@@ -23,6 +23,14 @@
 		738EEA261C30284D00797452 /* MiddlewareApiSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738EEA251C30284D00797452 /* MiddlewareApiSpec.swift */; };
 		738EEA271C30284D00797452 /* MiddlewareApiSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738EEA251C30284D00797452 /* MiddlewareApiSpec.swift */; };
 		738EEA281C30284D00797452 /* MiddlewareApiSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738EEA251C30284D00797452 /* MiddlewareApiSpec.swift */; };
+		738EEA291C302D7000797452 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D8432E1C243A8D00644EEC /* Action.swift */; };
+		738EEA2A1C302D7000797452 /* ApplyMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D8432F1C243A8D00644EEC /* ApplyMiddleware.swift */; };
+		738EEA2B1C302D7000797452 /* BindActionCreators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D843301C243A8D00644EEC /* BindActionCreators.swift */; };
+		738EEA2C1C302D7000797452 /* Compose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D843311C243A8D00644EEC /* Compose.swift */; };
+		738EEA2D1C302D7000797452 /* CreateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D843321C243A8D00644EEC /* CreateStore.swift */; };
+		738EEA2E1C302D7000797452 /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D843331C243A8D00644EEC /* Disposable.swift */; };
+		738EEA2F1C302D7000797452 /* StateStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D843341C243A8D00644EEC /* StateStream.swift */; };
+		738EEA301C302D7000797452 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D843351C243A8D00644EEC /* Store.swift */; };
 		73971CBE1C243F41005AC995 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73D843601C243C6300644EEC /* Nimble.framework */; };
 		73971CBF1C243F44005AC995 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73D843611C243C6300644EEC /* Quick.framework */; };
 		73971CC21C24409D005AC995 /* ReduxKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 73D842EC1C24369900644EEC /* ReduxKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -614,6 +622,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				73061FAD1C2BB644005FA55E /* MiddlewareApi.swift in Sources */,
+				738EEA2F1C302D7000797452 /* StateStream.swift in Sources */,
+				738EEA2B1C302D7000797452 /* BindActionCreators.swift in Sources */,
+				738EEA301C302D7000797452 /* Store.swift in Sources */,
+				738EEA291C302D7000797452 /* Action.swift in Sources */,
+				738EEA2A1C302D7000797452 /* ApplyMiddleware.swift in Sources */,
+				738EEA2C1C302D7000797452 /* Compose.swift in Sources */,
+				738EEA2E1C302D7000797452 /* Disposable.swift in Sources */,
+				738EEA2D1C302D7000797452 /* CreateStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
