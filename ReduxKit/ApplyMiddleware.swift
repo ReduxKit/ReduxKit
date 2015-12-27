@@ -29,20 +29,22 @@ public func applyMiddleware<State>(middleware: [MiddlewareApi<State> -> Dispatch
     return { next in
         return { reducer, initialState in
 
-            let store = next(reducer, initialState)
+            var dispatch: Dispatch!
 
-            var dispatch: Dispatch = store.dispatch
+            let store = next(reducer, initialState)
 
             let middlewareApi = MiddlewareApi(
                 dispatch: { dispatch($0) },
                 getState: store.getState)
 
-            /// Create an array of DispatchTransformers
-            let chain = middleware.map { $0(middlewareApi) }
+            let middlewareChain = middleware.map { $0(middlewareApi) }
 
-            dispatch = compose(chain)(store.dispatch)
+            dispatch = compose(middlewareChain)(store.dispatch)
 
-            return Store(dispatch: dispatch, subscribe: store.subscribe, getState: store.getState)
+            return Store(
+                dispatch: dispatch,
+                subscribe: store.subscribe,
+                getState: store.getState)
         }
     }
 }

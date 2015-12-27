@@ -37,8 +37,6 @@ public struct MiddlewareApi<State>: MiddlewareApiType {
 
     public let getState: () -> State
 
-    public var state: State { return getState() }
-
     public init(dispatch: Dispatch, getState: () -> State) {
         self.dispatch = dispatch
         self.getState = getState

@@ -20,6 +20,9 @@
 		73552BEB1C2990AE003B7389 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7389B88B1C24436200D58617 /* Nimble.framework */; };
 		73552BEC1C2990AE003B7389 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7389B88C1C24436200D58617 /* Quick.framework */; };
 		73552BED1C2990D2003B7389 /* ReduxKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 73D842EC1C24369900644EEC /* ReduxKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		738EEA261C30284D00797452 /* MiddlewareApiSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738EEA251C30284D00797452 /* MiddlewareApiSpec.swift */; };
+		738EEA271C30284D00797452 /* MiddlewareApiSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738EEA251C30284D00797452 /* MiddlewareApiSpec.swift */; };
+		738EEA281C30284D00797452 /* MiddlewareApiSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738EEA251C30284D00797452 /* MiddlewareApiSpec.swift */; };
 		73971CBE1C243F41005AC995 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73D843601C243C6300644EEC /* Nimble.framework */; };
 		73971CBF1C243F44005AC995 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73D843611C243C6300644EEC /* Quick.framework */; };
 		73971CC21C24409D005AC995 /* ReduxKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 73D842EC1C24369900644EEC /* ReduxKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -101,6 +104,7 @@
 		73552BD71C298D87003B7389 /* ReduxKit-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ReduxKit-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7389B88B1C24436200D58617 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/tvOS/Nimble.framework; sourceTree = SOURCE_ROOT; };
 		7389B88C1C24436200D58617 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/tvOS/Quick.framework; sourceTree = SOURCE_ROOT; };
+		738EEA251C30284D00797452 /* MiddlewareApiSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiddlewareApiSpec.swift; sourceTree = "<group>"; };
 		73D842EA1C24369900644EEC /* ReduxKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReduxKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73D842EC1C24369900644EEC /* ReduxKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReduxKit.h; sourceTree = "<group>"; };
 		73D842EE1C24369900644EEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -225,6 +229,7 @@
 				73D8431D1C24399200644EEC /* ApplyMiddlewaresSpec.swift */,
 				73D8431E1C24399200644EEC /* BindActionCreatorsSpec.swift */,
 				73D8431F1C24399200644EEC /* CreateStoreSpec.swift */,
+				738EEA251C30284D00797452 /* MiddlewareApiSpec.swift */,
 				73D843201C24399200644EEC /* Mocks.swift */,
 				73D8431B1C24392900644EEC /* Dependencies iOS */,
 				73D8435F1C243C3000644EEC /* Dependencies Mac */,
@@ -617,6 +622,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				73552BE91C2990A5003B7389 /* CreateStoreSpec.swift in Sources */,
+				738EEA281C30284D00797452 /* MiddlewareApiSpec.swift in Sources */,
 				73552BE61C2990A5003B7389 /* ActionTypeSpec.swift in Sources */,
 				73552BE71C2990A5003B7389 /* ApplyMiddlewaresSpec.swift in Sources */,
 				73552BE81C2990A5003B7389 /* BindActionCreatorsSpec.swift in Sources */,
@@ -661,6 +667,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				73D843751C243CCE00644EEC /* BindActionCreatorsSpec.swift in Sources */,
+				738EEA271C30284D00797452 /* MiddlewareApiSpec.swift in Sources */,
 				73D843741C243CCE00644EEC /* ApplyMiddlewaresSpec.swift in Sources */,
 				73D843761C243CCE00644EEC /* CreateStoreSpec.swift in Sources */,
 				73D843731C243CCE00644EEC /* ActionTypeSpec.swift in Sources */,
@@ -689,6 +696,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				73D843271C24399200644EEC /* CreateStoreSpec.swift in Sources */,
+				738EEA261C30284D00797452 /* MiddlewareApiSpec.swift in Sources */,
 				73D843231C24399200644EEC /* ApplyMiddlewaresSpec.swift in Sources */,
 				73D843291C24399200644EEC /* Mocks.swift in Sources */,
 				73D843251C24399200644EEC /* BindActionCreatorsSpec.swift in Sources */,
