@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.documentation_url = 'http://reduxkit.github.io/ReduxKit/api/'
   s.license           = { :type => 'MIT', :file => 'LICENSE' }
   s.authors           = { 'Aleksander Herforth Rendtslev' => 'kontakt@karemedia.dk', 'Karl Bowden' => 'karl@karlbowden.com' }
-  s.source            = { :git => 'https://github.com/ReduxKit/ReduxKit.git', :tag => spec.version.to_s }
+  s.source            = { :git => 'https://github.com/ReduxKit/ReduxKit.git', :tag => s.version.to_s }
   s.source_files      = 'ReduxKit'
   s.ios.deployment_target     = '8.0'
   s.osx.deployment_target     = '10.10'
