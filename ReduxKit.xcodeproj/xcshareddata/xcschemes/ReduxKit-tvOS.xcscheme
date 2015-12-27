@@ -14,23 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BCE2594D1BE912AE00424F65"
+               BlueprintIdentifier = "73552BCD1C298D87003B7389"
                BuildableName = "ReduxKit.framework"
-               BlueprintName = "ReduxKit-iOS"
-               ReferencedContainer = "container:ReduxKit.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "NO"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BCE259571BE912AF00424F65"
-               BuildableName = "ReduxKitTests.xctest"
-               BlueprintName = "ReduxKit-iOSTests"
+               BlueprintName = "ReduxKit-tvOS"
                ReferencedContainer = "container:ReduxKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -47,9 +33,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BCE259571BE912AF00424F65"
-               BuildableName = "ReduxKitTests.xctest"
-               BlueprintName = "ReduxKit-iOSTests"
+               BlueprintIdentifier = "73552BD61C298D87003B7389"
+               BuildableName = "ReduxKit-tvOSTests.xctest"
+               BlueprintName = "ReduxKit-tvOSTests"
                ReferencedContainer = "container:ReduxKit.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -57,9 +43,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BCE2594D1BE912AE00424F65"
+            BlueprintIdentifier = "73552BCD1C298D87003B7389"
             BuildableName = "ReduxKit.framework"
-            BlueprintName = "ReduxKit-iOS"
+            BlueprintName = "ReduxKit-tvOS"
             ReferencedContainer = "container:ReduxKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -79,9 +65,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BCE2594D1BE912AE00424F65"
+            BlueprintIdentifier = "73552BCD1C298D87003B7389"
             BuildableName = "ReduxKit.framework"
-            BlueprintName = "ReduxKit-iOS"
+            BlueprintName = "ReduxKit-tvOS"
             ReferencedContainer = "container:ReduxKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -97,9 +83,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BCE2594D1BE912AE00424F65"
+            BlueprintIdentifier = "73552BCD1C298D87003B7389"
             BuildableName = "ReduxKit.framework"
-            BlueprintName = "ReduxKit-iOS"
+            BlueprintName = "ReduxKit-tvOS"
             ReferencedContainer = "container:ReduxKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

@@ -1,6 +1,8 @@
 # [![ReduxKit](https://cdn.rawgit.com/ReduxKit/ReduxKit/b3eb23d773f7c036d7567767884ed5cd50ff6b58/ReduxKit.svg)](https://github.com/ReduxKit/ReduxKit)
 
-[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![Cocoapods Compatible](https://img.shields.io/cocoapods/v/ReduxKit.svg)](https://img.shields.io/cocoapods/v/ReduxKit.svg) [![Platform](https://img.shields.io/cocoapods/p/ReduxKit.svg?style=flat)](http://cocoadocs.org/docsets/ReduxKit)
+[![Build Status](https://img.shields.io/travis/ReduxKit/ReduxKit.svg)](https://travis-ci.org/ReduxKit/ReduxKit) [![Code coverage status](https://img.shields.io/codecov/c/github/codecov/ReduxKit.svg)](http://codecov.io/github/ReduxKit/ReduxKit) [![Doc coverage](https://img.shields.io/cocoapods/metrics/doc-percent/ReduxKit.svg)](https://cocoapods.org/pods/ReduxKit)
+[![Carthage Version](https://img.shields.io/github/tag/ReduxKit/ReduxKit.svg?label=carthage&color=4481C7)](https://github.com/Carthage/Carthage) [![Cocoapods Compatible](https://img.shields.io/cocoapods/v/ReduxKit.svg)](https://cocoapods.org/pods/ReduxKit) [![Platform](https://img.shields.io/cocoapods/p/ReduxKit.svg)](https://cocoapods.org/pods/ReduxKit) [![License MIT](https://img.shields.io/badge/license-MIT-4481C7.svg)](https://opensource.org/licenses/MIT)
+
 
 ## Cross promotion / pollination
 
@@ -42,7 +44,7 @@ Add ReduxKit to your `Podfile`:
 source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '8.0'
 
-pod 'ReduxKit', '~> 0.1.3'
+pod 'ReduxKit', '~> 0.1'
 ```
 
 Then, run the following command:
