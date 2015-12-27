@@ -7,7 +7,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <title>Read Me | ReduxKit</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="Carthage Compatible Cocoapods Compatible Platform">
+        <meta name="description" content="Build Status Code coverage status Doc coverageCarthage Version Cocoapods Compatible Platform License MIT">
         <meta name="generator" content="GitBook 2.6.6">
         
         
@@ -51,7 +51,7 @@
         data-chapter-title="Read Me"
         data-filepath="README.md"
         data-basepath="."
-        data-revision="Sat Dec 26 2015 23:29:16 GMT+1100 (AEDT)"
+        data-revision="Mon Dec 28 2015 00:25:43 GMT+1100 (AEDT)"
         data-innerlanguage="">
     
 
@@ -141,7 +141,8 @@
                     <section class="normal" id="section-">
                     
                         <h1 id=""><a href="https://github.com/ReduxKit/ReduxKit" target="_blank"><img src="https://cdn.rawgit.com/ReduxKit/ReduxKit/b3eb23d773f7c036d7567767884ed5cd50ff6b58/ReduxKit.svg" alt="ReduxKit"></a></h1>
-<p><a href="https://github.com/Carthage/Carthage" target="_blank"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage Compatible"></a> <a href="https://img.shields.io/cocoapods/v/ReduxKit.svg" target="_blank"><img src="https://img.shields.io/cocoapods/v/ReduxKit.svg" alt="Cocoapods Compatible"></a> <a href="http://cocoadocs.org/docsets/ReduxKit" target="_blank"><img src="https://img.shields.io/cocoapods/p/ReduxKit.svg?style=flat" alt="Platform"></a></p>
+<p><a href="https://travis-ci.org/ReduxKit/ReduxKit" target="_blank"><img src="https://img.shields.io/travis/ReduxKit/ReduxKit.svg" alt="Build Status"></a> <a href="http://codecov.io/github/ReduxKit/ReduxKit" target="_blank"><img src="https://img.shields.io/codecov/c/github/ReduxKit/ReduxKit.svg" alt="Code coverage status"></a> <a href="https://cocoapods.org/pods/ReduxKit" target="_blank"><img src="https://img.shields.io/cocoapods/metrics/doc-percent/ReduxKit.svg" alt="Doc coverage"></a>
+<a href="https://github.com/Carthage/Carthage" target="_blank"><img src="https://img.shields.io/github/tag/ReduxKit/ReduxKit.svg?label=carthage&amp;color=4481C7" alt="Carthage Version"></a> <a href="https://cocoapods.org/pods/ReduxKit" target="_blank"><img src="https://img.shields.io/cocoapods/v/ReduxKit.svg" alt="Cocoapods Compatible"></a> <a href="https://cocoapods.org/pods/ReduxKit" target="_blank"><img src="https://img.shields.io/cocoapods/p/ReduxKit.svg" alt="Platform"></a> <a href="https://opensource.org/licenses/MIT" target="_blank"><img src="https://img.shields.io/badge/license-MIT-4481C7.svg" alt="License MIT"></a></p>
 <h2 id="cross-promotion--pollination">Cross promotion / pollination</h2>
 <blockquote>
 <p><a href="https://github.com/ReduxKit/ReduxKit/issues/13" target="_blank">#13</a>: <a href="https://github.com/Ben-G" target="_blank">@Ben-G</a> has done an awesome job of developing an independent, very idiomatic, swift implementation of Redux as <a href="https://github.com/Swift-Flow/Swift-Flow" target="_blank">Swift-Flow</a>.</p>
@@ -165,7 +166,7 @@
 <pre><code class="lang-ruby">source <span class="token string">&apos;https://github.com/CocoaPods/Specs.git&apos;</span>
 platform <span class="token symbol">:ios</span><span class="token punctuation">,</span> <span class="token string">&apos;8.0&apos;</span>
 
-pod <span class="token string">&apos;ReduxKit&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;~&gt; 0.1.3&apos;</span>
+pod <span class="token string">&apos;ReduxKit&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;~&gt; 0.1&apos;</span>
 </code></pre>
 <p>Then, run the following command:</p>
 <pre><code class="lang-bash">$ pod <span class="token function">install</span>
@@ -238,7 +239,7 @@ pod <span class="token string">&apos;ReduxKit&apos;</span><span class="token pun
 <span class="token keyword">let</span> applicationReducer <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">(</span>state<span class="token punctuation">:</span> <span class="token builtin">AppState</span><span class="token operator">?</span> <span class="token operator">=</span> <span class="token constant">nil</span><span class="token punctuation">,</span> action<span class="token punctuation">:</span> <span class="token builtin">Action</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token builtin">AppState</span> <span class="token keyword">in</span>
 
   <span class="token keyword">return</span> <span class="token function">AppState<span class="token punctuation">(</span></span>
-    <span class="token builtin">count</span><span class="token punctuation">:</span> <span class="token function">counterReducer<span class="token punctuation">(</span></span>appState<span class="token operator">?</span><span class="token punctuation">.</span><span class="token builtin">count</span><span class="token punctuation">,</span> action<span class="token punctuation">:</span> action<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token builtin">count</span><span class="token punctuation">:</span> <span class="token function">counterReducer<span class="token punctuation">(</span></span>state<span class="token operator">?</span><span class="token punctuation">.</span><span class="token builtin">count</span><span class="token punctuation">,</span> action<span class="token punctuation">:</span> action<span class="token punctuation">)</span><span class="token punctuation">,</span>
     <span class="token punctuation">)</span>
 <span class="token punctuation">}</span>
 
