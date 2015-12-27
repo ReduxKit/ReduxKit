@@ -123,7 +123,7 @@ struct AppState {
 let applicationReducer = {(state: AppState? = nil, action: Action) -> AppState in
 
   return AppState(
-    count: counterReducer(appState?.count, action: action),
+    count: counterReducer(state?.count, action: action),
     )
 }
 
