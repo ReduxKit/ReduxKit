@@ -16,6 +16,14 @@
 		73552BEB1C2990AE003B7389 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7389B88B1C24436200D58617 /* Nimble.framework */; };
 		73552BEC1C2990AE003B7389 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7389B88C1C24436200D58617 /* Quick.framework */; };
 		73552BED1C2990D2003B7389 /* ReduxKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 73D842EC1C24369900644EEC /* ReduxKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		738EEA1D1C2FE98000797452 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D8432E1C243A8D00644EEC /* Action.swift */; };
+		738EEA1E1C2FE98300797452 /* ApplyMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D8432F1C243A8D00644EEC /* ApplyMiddleware.swift */; };
+		738EEA1F1C2FE98600797452 /* BindActionCreators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D843301C243A8D00644EEC /* BindActionCreators.swift */; };
+		738EEA201C2FE98F00797452 /* Compose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D843311C243A8D00644EEC /* Compose.swift */; };
+		738EEA211C2FE98F00797452 /* CreateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D843321C243A8D00644EEC /* CreateStore.swift */; };
+		738EEA221C2FE98F00797452 /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D843331C243A8D00644EEC /* Disposable.swift */; };
+		738EEA231C2FE98F00797452 /* StateStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D843341C243A8D00644EEC /* StateStream.swift */; };
+		738EEA241C2FE98F00797452 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D843351C243A8D00644EEC /* Store.swift */; };
 		73971CBE1C243F41005AC995 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73D843601C243C6300644EEC /* Nimble.framework */; };
 		73971CBF1C243F44005AC995 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73D843611C243C6300644EEC /* Quick.framework */; };
 		73971CC21C24409D005AC995 /* ReduxKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 73D842EC1C24369900644EEC /* ReduxKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -602,6 +610,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				738EEA211C2FE98F00797452 /* CreateStore.swift in Sources */,
+				738EEA221C2FE98F00797452 /* Disposable.swift in Sources */,
+				738EEA231C2FE98F00797452 /* StateStream.swift in Sources */,
+				738EEA241C2FE98F00797452 /* Store.swift in Sources */,
+				738EEA1E1C2FE98300797452 /* ApplyMiddleware.swift in Sources */,
+				738EEA1F1C2FE98600797452 /* BindActionCreators.swift in Sources */,
+				738EEA201C2FE98F00797452 /* Compose.swift in Sources */,
+				738EEA1D1C2FE98000797452 /* Action.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,65 @@
+language: objective-c
+osx_image: xcode7.2
+
+branches:
+  except:
+    - gh-pages
+
+before_install:
+  - brew update
+  - brew install carthage || brew outdated carthage || brew upgrade carthage
+  - carthage version
+
+install:
+  - gem install xcpretty
+  - carthage bootstrap
+
+env:
+  global:
+    - LC_CTYPE=en_US.UTF-8
+    - LANG=en_US.UTF-8
+    - PROJECT=ReduxKit.xcodeproj
+    - FRAMEWORK_NAME="ReduxKit"
+    - IOS_FRAMEWORK_SCHEME="ReduxKit-iOS"
+    - OSX_FRAMEWORK_SCHEME="ReduxKit-Mac"
+    - TVOS_FRAMEWORK_SCHEME="ReduxKit-tvOS"
+    - WATCHOS_FRAMEWORK_SCHEME="ReduxKit-watchOS"
+    - IOS_SDK=iphonesimulator9.2
+    - OSX_SDK=macosx10.11
+    - TVOS_SDK=appletvsimulator9.1
+    - WATCHOS_SDK=watchsimulator2.1
+  matrix:
+    - DESTINATION="OS=8.1,name=iPhone 4S"          SCHEME="$IOS_FRAMEWORK_SCHEME"     SDK="$IOS_SDK"     COMMAND="test"
+    - DESTINATION="OS=8.2,name=iPhone 5"           SCHEME="$IOS_FRAMEWORK_SCHEME"     SDK="$IOS_SDK"     COMMAND="test"
+    - DESTINATION="OS=8.3,name=iPhone 5S"          SCHEME="$IOS_FRAMEWORK_SCHEME"     SDK="$IOS_SDK"     COMMAND="test"
+    - DESTINATION="OS=8.4,name=iPhone 6"           SCHEME="$IOS_FRAMEWORK_SCHEME"     SDK="$IOS_SDK"     COMMAND="test"
+    - DESTINATION="OS=9.0,name=iPhone 6 Plus"      SCHEME="$IOS_FRAMEWORK_SCHEME"     SDK="$IOS_SDK"     COMMAND="test"
+    - DESTINATION="OS=9.1,name=iPhone 6S"          SCHEME="$IOS_FRAMEWORK_SCHEME"     SDK="$IOS_SDK"     COMMAND="test"
+    - DESTINATION="OS=9.2,name=iPhone 6S Plus"     SCHEME="$IOS_FRAMEWORK_SCHEME"     SDK="$IOS_SDK"     COMMAND="test"
+    - DESTINATION="arch=x86_64"                    SCHEME="$OSX_FRAMEWORK_SCHEME"     SDK="$OSX_SDK"     COMMAND="test"
+    - DESTINATION="OS=9.1,name=Apple TV 1080p"     SCHEME="$TVOS_FRAMEWORK_SCHEME"    SDK="$TVOS_SDK"    COMMAND="test"
+    - DESTINATION="OS=2.1,name=Apple Watch - 38mm" SCHEME="$WATCHOS_FRAMEWORK_SCHEME" SDK="$WATCHOS_SDK" COMMAND="build"
+
+script:
+  - set -o pipefail
+  - xcodebuild -version
+  - xcodebuild -showsdks
+  - xcodebuild -project "$PROJECT" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO "$COMMAND" GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES | xcpretty -c
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+
+before_deploy:
+  - carthage build --no-skip-current
+  - carthage archive $FRAMEWORK_NAME
+
+deploy:
+  provider: releases
+  api_key:
+    secure: k3EJfm0vOCPaBhcVJbaEWAb2LkIfGOBfs/nWAR46vNQwc9kchG8h9SmLgFfyIuMmPGVWpiNslCYfkIJzH0JU+KTqSCX2GSWjnlRQHwr/sKFutpAiFu/lzQEbhr7ZYvYyGxAUoiZRVkk0HvX0wHxivUGTJbf2uF1hhPX8daniRpi5R7vFhg00YWR4PhoUc9C6x+59iHRSU2xKYitmwaSfgG+OWzHogxfSRKl0WXfiHBVJrHuvEgABbU7S4jU241FeuBvadOOQGLxy7VPufhZAC3cfaYQ3Y+Upm0WRUbpHzQPNYwNl83e/EaT2jrONWrw46P3QVnAJV8U7WlHcefJIn2ld8VT5rGxhfsaeHsPKTu/7wnUHySOfS2VJsZf2sC6BRFxDh4sohsfpHIIrXd7WMdJ9ePSzFJTjKVRGjxOshmQo/7abPIqn/E7HCglT7RTH4W1OCGQHrcpF2Ft1TQR5sVAEaarssdycAkKkxitC7KQvSHn2gEU/xpiAPWkb1bJ8afB20P8C27ZeLVOB2GY9SDRZlXwVr0COFvnAm+5Isr8AIh7tvOPcnJeoYt5pBCPrRXqWJ8SV7/RMHopg+lPJZx8vKA8zzacz2DLsJD6ugZA+FoX+MT986Dm1KmJPVRA+15J3nRzoamYRZwf2h9T8IxOASlmfWfZNjSBlsJeYpdQ=
+  file: "$FRAMEWORK_NAME.framework.zip"
+  skip_cleanup: true
+  on:
+    repo: ReduxKit/ReduxKit
+    tags: true
+    condition: "$SDK = 'macosx10.11'"
