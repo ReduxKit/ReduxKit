@@ -14,23 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BCE2594D1BE912AE00424F65"
+               BlueprintIdentifier = "73D843121C24377F00644EEC"
                BuildableName = "ReduxKit.framework"
-               BlueprintName = "ReduxKit-iOS"
-               ReferencedContainer = "container:ReduxKit.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "NO"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BCE259571BE912AF00424F65"
-               BuildableName = "ReduxKitTests.xctest"
-               BlueprintName = "ReduxKit-iOSTests"
+               BlueprintName = "ReduxKit-watchOS"
                ReferencedContainer = "container:ReduxKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -43,26 +29,7 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       codeCoverageEnabled = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BCE259571BE912AF00424F65"
-               BuildableName = "ReduxKitTests.xctest"
-               BlueprintName = "ReduxKit-iOSTests"
-               ReferencedContainer = "container:ReduxKit.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BCE2594D1BE912AE00424F65"
-            BuildableName = "ReduxKit.framework"
-            BlueprintName = "ReduxKit-iOS"
-            ReferencedContainer = "container:ReduxKit.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -79,9 +46,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BCE2594D1BE912AE00424F65"
+            BlueprintIdentifier = "73D843121C24377F00644EEC"
             BuildableName = "ReduxKit.framework"
-            BlueprintName = "ReduxKit-iOS"
+            BlueprintName = "ReduxKit-watchOS"
             ReferencedContainer = "container:ReduxKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -97,9 +64,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BCE2594D1BE912AE00424F65"
+            BlueprintIdentifier = "73D843121C24377F00644EEC"
             BuildableName = "ReduxKit.framework"
-            BlueprintName = "ReduxKit-iOS"
+            BlueprintName = "ReduxKit-watchOS"
             ReferencedContainer = "container:ReduxKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

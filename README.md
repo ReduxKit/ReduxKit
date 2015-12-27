@@ -1,12 +1,19 @@
 # [![ReduxKit](https://cdn.rawgit.com/ReduxKit/ReduxKit/b3eb23d773f7c036d7567767884ed5cd50ff6b58/ReduxKit.svg)](https://github.com/ReduxKit/ReduxKit)
 
-[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![Cocoapods Compatible](https://img.shields.io/cocoapods/v/ReduxKit.svg)](https://img.shields.io/cocoapods/v/ReduxKit.svg) [![Platform](https://img.shields.io/cocoapods/p/ReduxKit.svg?style=flat)](http://cocoadocs.org/docsets/ReduxKit)
+[![Build Status](https://img.shields.io/travis/ReduxKit/ReduxKit.svg)](https://travis-ci.org/ReduxKit/ReduxKit) [![Code coverage status](https://img.shields.io/codecov/c/github/ReduxKit/ReduxKit.svg)](http://codecov.io/github/ReduxKit/ReduxKit) [![Doc coverage](https://img.shields.io/cocoapods/metrics/doc-percent/ReduxKit.svg)](https://cocoapods.org/pods/ReduxKit)
+[![Carthage Version](https://img.shields.io/github/tag/ReduxKit/ReduxKit.svg?label=carthage&color=4481C7)](https://github.com/Carthage/Carthage) [![Cocoapods Compatible](https://img.shields.io/cocoapods/v/ReduxKit.svg)](https://cocoapods.org/pods/ReduxKit) [![Platform](https://img.shields.io/cocoapods/p/ReduxKit.svg)](https://cocoapods.org/pods/ReduxKit) [![License MIT](https://img.shields.io/badge/license-MIT-4481C7.svg)](https://opensource.org/licenses/MIT)
 
+
+## Cross promotion / pollination
+
+> [\#13](https://github.com/ReduxKit/ReduxKit/issues/13): [@Ben-G](https://github.com/Ben-G) has done an awesome job of developing an independent, very idiomatic, swift implementation of Redux as [Swift-Flow](https://github.com/Swift-Flow/Swift-Flow).
+>
+> After a short discussion it's clear we all agree that collaboration and sharing of idea's will be beneficial to both projects. Go check it out. Feedback on both projects would be appreciated.
 
 ## Intro
 ReduxKit is a swift implementation of the JavaScript [Redux](http://rackt.github.io/redux) library by Dan Abramov and the React Community. ReduxKit stays as close as possible to Redux while bringing in Swift ways of doing things where appropriate.
 
-A thorough walk through and description of the framework can be found at the official Redux repostory: [Redux](http://rackt.github.io/redux).
+A thorough walk through and description of the framework can be found at the official Redux repository: [Redux](http://rackt.github.io/redux).
 
 It is currently implemented in a few swift apps and is frequently updated. Additions, middleware and help will be very much appreciated! So if you're trying it out and have any suggestions - feel free to post an issue and I'll be on it.
 
@@ -37,7 +44,7 @@ Add ReduxKit to your `Podfile`:
 source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '8.0'
 
-pod 'ReduxKit', '~> 0.1.3'
+pod 'ReduxKit', '~> 0.1'
 ```
 
 Then, run the following command:
@@ -118,7 +125,7 @@ struct AppState {
 let applicationReducer = {(state: AppState? = nil, action: Action) -> AppState in
 
   return AppState(
-    count: counterReducer(appState?.count, action: action),
+    count: counterReducer(state?.count, action: action),
     )
 }
 
@@ -180,24 +187,24 @@ Typealias not supporting generics can been seen most in the applyMiddleware func
 
 ```swift
 // How the applyMiddleware function would ideally be declared
-func applyMiddleware(middlewares: [Middleware])
+func applyMiddleware(middleware: [Middleware])
 	-> StoreEnhancer
 
 // Expanding out (sans generic state):
-func applyMiddleware(middlewares: [MiddlewareApi -> DispatchTransformer])
+func applyMiddleware(middleware: [MiddlewareApi -> DispatchTransformer])
 	-> StoreCreator
 	-> StoreCreator
 
-func applyMiddleware(middlewares: [Store -> DispatchTransformer])
+func applyMiddleware(middleware: [Store -> DispatchTransformer])
 	-> ((Reducer, State?) -> Store)
 	-> ((Reducer, State?) -> Store)
 
-func applyMiddleware(middlewares: [Store -> DispatchTransformer])
+func applyMiddleware(middleware: [Store -> DispatchTransformer])
 	-> (((State?, Action) -> State, State?) -> Store)
 	-> (((State?, Action) -> State, State?) -> Store)
 
 // With the generic State
-func applyMiddleware<State>(middlewares: [(Store<State>) -> DispatchTransformer])
+func applyMiddleware<State>(middleware: [(Store<State>) -> DispatchTransformer])
 	-> (((State?, Action) -> State, State?) -> Store<State>)
 	-> (((State?, Action) -> State, State?) -> Store<State>)
 ```
@@ -291,7 +298,7 @@ struct Store<State>: StoreType {
 ### applyMiddleware
 
 ```swift
-func applyMiddleware(middlewares: [Middleware]) -> StoreEnhancer
+func applyMiddleware(middleware: [Middleware]) -> StoreEnhancer
 func applyMiddleware<State>(middleware: [Store<State> -> DispatchTransformer])
 	-> (((State?, Action) -> State, State?) -> Store<State>)
 	-> (((State?, Action) -> State, State?) -> Store<State>)
@@ -307,7 +314,7 @@ func bindActionCreators<Action where Action: StandardAction>(type: Action.Type, 
 ```
 
 
-## Available Middlewares
+## Available Middleware
 + [reduxSwift-Rx](https://github.com/ReduxKit/reduxSwift-rx)
   \- RxSwift utilities for ReduxSwift
 
