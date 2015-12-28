@@ -6,43 +6,29 @@
 //  Copyright © 2015 Kare Media. All rights reserved.
 //
 
-// MARK: - Type map examples
-
-typealias _Reducer = (_State?, Action) -> _State
-typealias _StreamFactory = _State -> _StateStream
-
-// MARK: - Implementations
-
 /**
- Internal createStore example
+ Creates a ReduxKit Store of a generic State type
+ 
+ **Strongly typed signature**
+ 
+ ```swift
+ typealias Reducer = (State?, Action) -> State
+ func createStore(reducer: Reducer, state: State?) -> Store
+ ```
+
+ - parameter reducer: (State?, Action) -> State
+ - parameter state:   State
+
+ - returns: Store<State>
  */
-func _createStore(reducer: _Reducer, state: _State?) -> _Store {
-    return createStore(reducer, state: state)
-}
+public func createStore<State>(reducer: (State?, Action) -> State, state: State?) -> Store<State> {
 
-public func createStore<State>(reducer: (State?, Action) -> State, state: State?)
-    -> Store<State> {
+    typealias Subscriber = State -> ()
 
-    return createStreamStore(reducer: reducer, state: state)
-}
-
-/**
- Internal createStreamStore example
- */
-func _createStreamStore(streamFactory: _StreamFactory, reducer: _Reducer, state: _State?)
-    -> _Store {
-
-    return createStreamStore(streamFactory, reducer: reducer, state: state)
-}
-
-public func createStreamStore<State>(
-        streamFactory: State -> StateStream<State> = createSimpleStream,
-        reducer: (State?, Action) -> State,
-        state: State?)
-    -> Store<State> {
-
+    var currentState = state ?? reducer(state, DefaultAction())
+    var nextToken = 0
+    var subscribers = [Int: Subscriber]()
     var isDispatching = false
-    let stream = streamFactory(state ?? reducer(state, DefaultAction()))
 
     func dispatch(action: Action) -> Action {
         if isDispatching {
@@ -52,31 +38,27 @@ public func createStreamStore<State>(
         }
 
         isDispatching = true
-        let newState = reducer(stream.getState(), action)
+        currentState = reducer(currentState, action)
         isDispatching = false
 
-        stream.dispatch(newState)
+        for (_, subscriber) in subscribers {
+            subscriber(currentState)
+        }
+
         return action
     }
 
-    return Store(dispatch: dispatch, subscribe: stream.subscribe, getState: stream.getState)
-}
-
-
-/**
- Internal createStreamStore example
- */
-func _createStreamStore(streamFactory: _StreamFactory) -> _StoreCreator {
-    return _createStreamStore(streamFactory)
-}
-
-/// Used to build createStore functions with an alternative streamFactory
-public func createStreamStore<State>(streamFactory: State -> StateStream<State>)
-    -> (reducer: (State?, Action) -> State, state: State?)
-    -> Store<State> {
-
-    return { reducer, state in
-
-        return createStreamStore(streamFactory, reducer: reducer, state: state)
+    func getToken() -> Int {
+        let token = nextToken
+        nextToken += 1
+        return token
     }
+
+    func subscribe(subscriber: State -> ()) -> ReduxDisposable {
+        let token = getToken()
+        subscribers[token] = subscriber
+        return SimpleReduxDisposable(disposed: { subscribers[token] == nil }, dispose: { subscribers.removeValueForKey(token) })
+    }
+
+    return Store(dispatch: dispatch, subscribe: subscribe, getState: { currentState })
 }

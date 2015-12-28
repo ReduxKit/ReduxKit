@@ -37,6 +37,20 @@ class CreateStoreSpec: QuickSpec {
                 expect(state.counter).to(equal(defaultState.counter + 1))
             }
 
+            it("should should not propagate state on subscription") {
+                // Arrange
+                var state: AppState!
+
+                // Act: Run dispatch multiple times
+                store.subscribe { state = $0 }
+                let emptyState = state
+                store.dispatch(IncrementAction())
+
+                // Assert
+                expect(emptyState == nil).to(equal(true))
+                expect(state.counter).to(equal(1))
+            }
+
             it("should effectively run multiple dispatches") {
                 // Arrange
                 var state: AppState!
@@ -117,6 +131,35 @@ class CreateStoreSpec: QuickSpec {
                 expect(state.countries).to(contain(textMessage))
                 expect(state.countries.count).to(equal(iterations))
                 expect(state.textField.value).to(equal(textMessage))
+            }
+
+            it("should unsubscribe when dispose is called") {
+                // Arrange
+                var state: AppState!
+                let disposable = store.subscribe { state = $0 }
+
+                // Act
+                store.dispatch(IncrementAction())
+                disposable.dispose()
+                store.dispatch(IncrementAction())
+
+                // Assert
+                expect(state.counter).to(equal(1))
+                expect(store.state.counter).to(equal(2))
+            }
+
+            it("should maintain disposed status") {
+                // Arrange
+                let disposable = store.subscribe {_ in}
+
+                // Act
+                let disposedBefore = disposable.disposed
+                disposable.dispose()
+                let disposedAfter = disposable.disposed
+
+                // Assert
+                expect(disposedBefore).to(equal(false))
+                expect(disposedAfter).to(equal(true))
             }
         }
     }

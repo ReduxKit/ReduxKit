@@ -178,9 +178,6 @@ typealias MiddlewareApi = Store
 typealias Middleware = MiddlewareApi -> DispatchTransformer
 typealias StoreCreator = (reducer: Reducer, initialState: State?) -> Store
 typealias StoreEnhancer = (StoreCreator) -> StoreCreator
-
-typealias StateStream = ReduxKit.StateStream<State>
-typealias StreamFactory = (initialState: State) -> StateStream
 ```
 
 Typealias not supporting generics can been seen most in the applyMiddleware function and makes for the best example of how to expand the ReduxKit examples out.
@@ -218,24 +215,8 @@ Simplified and actual public functions and types:
 ### createStore
 
 ```swift
-createStore(reducer: Reducer, state: State?) -> Store
-createStore<State>(reducer: (State?, Action) -> State, state: State?) -> Store<State>
-```
-
-### createStreamStore
-
-```swift
-createStreamStore(streamFactory: StreamFactory, reducer: Reducer, state: State?) -> Store
-createStreamStore<State>(
-	streamFactory: State -> StateStream<State> = createSimpleStream,
-	reducer: (State?, Action) -> State,
-	state: State?)
-	-> Store<State>
-
-createStreamStore(streamFactory: StreamFactory) -> StoreCreator
-createStreamStore<State>(streamFactory: State -> StateStream<State>)
-	-> (reducer: (State?, Action) -> State, state: State?)
-	-> Store<State>
+func createStore(reducer: Reducer, state: State?) -> Store
+func createStore<State>(reducer: (State?, Action) -> State, state: State?) -> Store<State>
 ```
 
 ### Disposable
@@ -251,25 +232,7 @@ struct SimpleReduxDisposable: ReduxDisposable {
 }
 ```
 
-### StateStream
-
-```swift
-struct StateStream {
-    let dispatch: State -> ()
-    let subscribe: Subscriber -> ReduxDisposable
-    let getState: () -> State
-    init(dispatch: State -> (), subscribe: Subscriber -> ReduxDisposable, getState: () -> State)
-}
-struct StateStream<State> {
-    let dispatch: State -> ()
-    let subscribe: (State -> ()) -> ReduxDisposable
-    let getState: () -> State
-    init(dispatch: State -> (), subscribe: (State -> ()) -> ReduxDisposable, getState: () -> State)
-}
-```
-
 ### StoreType
-
 
 ```swift
 protocol StoreType {
@@ -281,7 +244,6 @@ protocol StoreType {
 }
 ```
 
-
 ### Store
 
 ```swift
@@ -291,6 +253,28 @@ struct Store<State>: StoreType {
     let getState: () -> State
     var state: State
     init(dispatch: Dispatch, subscribe: (Subscriber) -> ReduxDisposable, getState: () -> State)
+}
+
+```
+
+### MiddlewareApiType
+
+```swift
+protocol MiddlewareApiType {
+    typealias State
+    var dispatch: Dispatch { get }
+    var getState: () -> State { get }
+    init(dispatch: Dispatch, getState: () -> State)
+}
+```
+
+### MiddlewareApi
+
+```swift
+struct MiddlewareApi<State>: MiddlewareApiType {
+    let dispatch: Dispatch
+    let getState: () -> State
+    init(dispatch: Dispatch, getState: () -> State)
 }
 
 ```
@@ -315,40 +299,37 @@ func bindActionCreators<Action where Action: StandardAction>(type: Action.Type, 
 
 
 ## Available Middleware
-+ [reduxSwift-Rx](https://github.com/ReduxKit/reduxSwift-rx)
-  \- RxSwift utilities for ReduxSwift
+
+- [reduxSwift-Rx](https://github.com/ReduxKit/reduxSwift-rx) - RxSwift utilities for ReduxSwift
 
 
-## StateStreams
+## Bindings
 
 The ReduxKit Store is, at it's heart, a subscribable stream of states. You are likely already familiar with the concept from reactive frameworks. The two are so similar in fact that you will more than likely want to use ReduxKit with you favourite reactive framework.
 
-The StateStream type allow does exactly that. Combined with a StateStreamFactory it allows ReduxKit to use almost any existing reactive framework as the state stream.
-
-There is a state stream included with ReduxKit. It is not advisable to use it for anything more than examples as it's not thread or leak safe. The SimpleStateStream is just an array of subscribers.
-
-ReduxKit has StateStream bindings available for:
+It is very easy to create a createStore function that wraps existing reactive frameworks. ReduxKit already has bindings available for:
 
 - [RxSwift](https://github.com/ReduxKit/ReduxKitRxSwift)
 - [ReactiveCocoa](https://github.com/ReduxKit/ReduxKitReactiveCocoa)
 - [ReactiveKit](https://github.com/ReduxKit/ReduxKitReactiveKit)
 - [SwiftBond](https://github.com/ReduxKit/ReduxKitBond)
 
-TODO: Include examples and links to reactive stream providers.
-
 
 ## How can you help?
 
+Pull requests are welcome on the develop branch.
+
 I am hoping to get a solid influx of middleware up and running for ReduxKit so we can change the way we do iOS development in the future. I am therefore welcoming pull requests, feature requests and suggestions. I want this library to be the best it can be and I can only do that with the help of the rest of you.
+
 
 ### TODO
 
 The actual implementation of ReduxKit is fairly complete. More tooling is still required though.
 
-- Test and release reactive framework bindings
-- Create the TODO app to showcase ease of use
-- Documentation: How thorough should we do it? Core principles are very well described by Dan in his docs.
-- Devtools. This is where the power of redux really shines - being able to undo states when testing will make developing and debugging so much easier.
+- [x] Test and release reactive framework bindings
+- [ ] Create the TODO app to showcase ease of use
+- [ ] Documentation: How thorough should we do it? Core principles are very well described by Dan in his docs.
+- [ ] Devtools. This is where the power of redux really shines - being able to undo states when testing will make developing and debugging so much easier.
 
 
 ## License

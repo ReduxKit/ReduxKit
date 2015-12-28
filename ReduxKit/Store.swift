@@ -8,20 +8,25 @@
 
 public typealias Dispatch = Action -> Action
 
-// MARK: - Type map examples
-
-typealias _State = Any
-typealias _Subscriber = _State -> ()
-typealias _Store = Store<_State>
-
 // MARK: - Protocols
 
 /**
- * StoreType protocol
+ StoreType protocol
+
+ Parameters:
+ - dispatch: Dispatch = Action -> Action
+ - subscribe: Subscriber = (() -> State) -> ReduxDisposable
+ - getState: () -> State
  */
-public protocol StoreType: MiddlewareApiType {
+public protocol StoreType {
+
+    typealias State
+
+    var dispatch: Dispatch { get }
 
     var subscribe: (State -> ()) -> ReduxDisposable { get }
+
+    var getState: () -> State { get }
 
     init(dispatch: Dispatch, subscribe: (State -> ()) -> ReduxDisposable, getState: () -> State)
 }
@@ -29,7 +34,18 @@ public protocol StoreType: MiddlewareApiType {
 // MARK: - Implementations
 
 /**
- * Store implementation
+ Store implementation
+
+ Strongly typed alias examples:
+ - `typealias AppState = Any`
+ - `typealias Subscriber = AppState -> ()`
+ - `typealias Store = Store<AppState>`
+
+ Parameters:
+ - dispatch: Dispatch = Action -> Action
+ - subscribe: Subscriber = (() -> State) -> ReduxDisposable
+ - getState: () -> State
+ - state: State
  */
 public struct Store<State>: StoreType {
 
@@ -40,10 +56,6 @@ public struct Store<State>: StoreType {
     public let getState: () -> State
 
     public var state: State { return getState() }
-
-    public init(dispatch: Dispatch, getState: () -> State) {
-        fatalError("init(dispatch:getState:) has not been implemented")
-    }
 
     public init(dispatch: Dispatch, subscribe: (State -> ()) -> ReduxDisposable, getState: () -> State) {
         self.dispatch = dispatch
