@@ -29,7 +29,6 @@
 		738EEA2C1C302D7000797452 /* Compose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D843311C243A8D00644EEC /* Compose.swift */; };
 		738EEA2D1C302D7000797452 /* CreateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D843321C243A8D00644EEC /* CreateStore.swift */; };
 		738EEA2E1C302D7000797452 /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D843331C243A8D00644EEC /* Disposable.swift */; };
-		738EEA2F1C302D7000797452 /* StateStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D843341C243A8D00644EEC /* StateStream.swift */; };
 		738EEA301C302D7000797452 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D843351C243A8D00644EEC /* Store.swift */; };
 		73971CBE1C243F41005AC995 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73D843601C243C6300644EEC /* Nimble.framework */; };
 		73971CBF1C243F44005AC995 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73D843611C243C6300644EEC /* Quick.framework */; };
@@ -58,9 +57,6 @@
 		73D8434F1C243A8D00644EEC /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D843331C243A8D00644EEC /* Disposable.swift */; };
 		73D843511C243A8D00644EEC /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D843331C243A8D00644EEC /* Disposable.swift */; };
 		73D843521C243A8D00644EEC /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D843331C243A8D00644EEC /* Disposable.swift */; };
-		73D843541C243A8D00644EEC /* StateStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D843341C243A8D00644EEC /* StateStream.swift */; };
-		73D843561C243A8D00644EEC /* StateStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D843341C243A8D00644EEC /* StateStream.swift */; };
-		73D843571C243A8D00644EEC /* StateStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D843341C243A8D00644EEC /* StateStream.swift */; };
 		73D843591C243A8D00644EEC /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D843351C243A8D00644EEC /* Store.swift */; };
 		73D8435B1C243A8D00644EEC /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D843351C243A8D00644EEC /* Store.swift */; };
 		73D8435C1C243A8D00644EEC /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D843351C243A8D00644EEC /* Store.swift */; };
@@ -129,7 +125,6 @@
 		73D843311C243A8D00644EEC /* Compose.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Compose.swift; sourceTree = "<group>"; };
 		73D843321C243A8D00644EEC /* CreateStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateStore.swift; sourceTree = "<group>"; };
 		73D843331C243A8D00644EEC /* Disposable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disposable.swift; sourceTree = "<group>"; };
-		73D843341C243A8D00644EEC /* StateStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateStream.swift; sourceTree = "<group>"; };
 		73D843351C243A8D00644EEC /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		73D843601C243C6300644EEC /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/Mac/Nimble.framework; sourceTree = SOURCE_ROOT; };
 		73D843611C243C6300644EEC /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/Mac/Quick.framework; sourceTree = SOURCE_ROOT; };
@@ -223,7 +218,6 @@
 				73D843321C243A8D00644EEC /* CreateStore.swift */,
 				73D843331C243A8D00644EEC /* Disposable.swift */,
 				73061FAA1C2BB644005FA55E /* MiddlewareApi.swift */,
-				73D843341C243A8D00644EEC /* StateStream.swift */,
 				73D843351C243A8D00644EEC /* Store.swift */,
 			);
 			path = ReduxKit;
@@ -622,7 +616,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				73061FAD1C2BB644005FA55E /* MiddlewareApi.swift in Sources */,
-				738EEA2F1C302D7000797452 /* StateStream.swift in Sources */,
 				738EEA2B1C302D7000797452 /* BindActionCreators.swift in Sources */,
 				738EEA301C302D7000797452 /* Store.swift in Sources */,
 				738EEA291C302D7000797452 /* Action.swift in Sources */,
@@ -652,7 +645,6 @@
 			files = (
 				73D8434D1C243A8D00644EEC /* CreateStore.swift in Sources */,
 				73D843521C243A8D00644EEC /* Disposable.swift in Sources */,
-				73D843571C243A8D00644EEC /* StateStream.swift in Sources */,
 				73D8435C1C243A8D00644EEC /* Store.swift in Sources */,
 				73D8433E1C243A8D00644EEC /* ApplyMiddleware.swift in Sources */,
 				73D843431C243A8D00644EEC /* BindActionCreators.swift in Sources */,
@@ -668,7 +660,6 @@
 			files = (
 				73D8434C1C243A8D00644EEC /* CreateStore.swift in Sources */,
 				73D843511C243A8D00644EEC /* Disposable.swift in Sources */,
-				73D843561C243A8D00644EEC /* StateStream.swift in Sources */,
 				73D8435B1C243A8D00644EEC /* Store.swift in Sources */,
 				73D8433D1C243A8D00644EEC /* ApplyMiddleware.swift in Sources */,
 				73D843421C243A8D00644EEC /* BindActionCreators.swift in Sources */,
@@ -699,7 +690,6 @@
 				73D8434A1C243A8D00644EEC /* CreateStore.swift in Sources */,
 				73D843591C243A8D00644EEC /* Store.swift in Sources */,
 				73D843401C243A8D00644EEC /* BindActionCreators.swift in Sources */,
-				73D843541C243A8D00644EEC /* StateStream.swift in Sources */,
 				73D8434F1C243A8D00644EEC /* Disposable.swift in Sources */,
 				73D8433B1C243A8D00644EEC /* ApplyMiddleware.swift in Sources */,
 				73061FAB1C2BB644005FA55E /* MiddlewareApi.swift in Sources */,

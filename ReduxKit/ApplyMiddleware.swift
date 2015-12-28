@@ -8,20 +8,24 @@
 
 public typealias DispatchTransformer = Dispatch -> Dispatch
 
-typealias _MiddlewareApi = MiddlewareApi<_State>
-typealias _Middleware = _MiddlewareApi -> DispatchTransformer
-typealias _StoreCreator = (reducer: _Reducer, initialState: _State?) -> Store<_State>
-typealias _StoreEnhancer = _StoreCreator -> _StoreCreator
-
-
 /**
- Internal example:
-    applyMiddleware([Middleware]) -> StoreEnhancer
- */
-func _applyMiddleware(middleware: [_Middleware]) -> _StoreEnhancer {
-    return applyMiddleware(middleware)
-}
+ applyMiddlware creates a StoreEnhancer from an array of Middleware
+ 
+ **Strongly typed signature**
+ 
+ ```swift
+ typealias MiddlewareApi = MiddlewareApi<State>
+ typealias Middleware = MiddlewareApi -> DispatchTransformer
+ typealias StoreCreator = (reducer: Reducer, initialState: State?) -> Store<State>
+ typealias StoreEnhancer = StoreCreator -> StoreCreator
+ func applyMiddleware(middleware: [Middleware]) -> StoreEnhancer
+ ```
 
+ - parameter middleware: An array of Middleware that accept a MiddlewareApi and
+                         return a DispatchTransformer
+
+ - returns: StoreEnhancer<State>
+ */
 public func applyMiddleware<State>(middleware: [MiddlewareApi<State> -> DispatchTransformer])
     -> (((State?, Action) -> State, State?) -> Store<State>)
     -> (((State?, Action) -> State, State?) -> Store<State>) {
