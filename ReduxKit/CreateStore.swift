@@ -41,10 +41,21 @@ public func createStreamStore<State>(
         state: State?)
     -> Store<State> {
 
+    var isDispatching = false
     let stream = streamFactory(state ?? reducer(state, DefaultAction()))
 
     func dispatch(action: Action) -> Action {
-        stream.dispatch(reducer(stream.getState(), action))
+        if isDispatching {
+            // Use Obj-C exception since throwing of exceptions can be verified through tests
+            NSException.raise("ReduxKit:IllegalDispatchFromReducer", format: "Reducers may not " +
+                "dispatch actions.", arguments: getVaList(["nil"]))
+        }
+
+        isDispatching = true
+        let newState = reducer(stream.getState(), action)
+        isDispatching = false
+
+        stream.dispatch(newState)
         return action
     }
 

@@ -53,6 +53,39 @@ class CreateStoreSpec: QuickSpec {
                 expect(state.counter).to(equal(defaultState.counter + iterations))
             }
 
+            it("should forbid dispatching actions from within reducers") {
+                /*
+                    Reducers should be free of side effects, therefore dispatching actions from
+                    within reducers is illegal.
+                */
+
+                // Arrange
+                var storeWithDispatchingReducer: Store<AppState>!
+
+                func dispatchingReducer(state: AppState? = nil, action: Action) -> AppState {
+                    // Set up the initial state when reducing `DefaultAction`
+                    if action is DefaultAction {
+                        return AppState()
+                    } else if action is IncrementAction {
+                        // Attempt to dispatch a new action when reducing `IncrementAction`
+
+                        // Act: Dispatch from within Reducer & Assert
+                        expect(
+                            storeWithDispatchingReducer.dispatch(
+                                PushAction(payload: PushAction.Payload(text: "Test")))
+                            )
+                        .to(raiseException(named:"ReduxKit:IllegalDispatchFromReducer"))
+                    }
+
+                    return AppState()
+                }
+
+                storeWithDispatchingReducer = createStore(dispatchingReducer, state: nil)
+
+                // Act: Dispatch Initial Action
+                storeWithDispatchingReducer.dispatch(IncrementAction())
+            }
+
             it("should fetch the latest state") {
                 // Arrange
                 var state: AppState!
