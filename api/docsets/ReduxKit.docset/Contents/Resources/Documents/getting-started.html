@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>ReduxKit  Reference</title>
+    <title>Getting Started  Reference</title>
     <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="css/highlight.css" />
     <meta charset='utf-8'>
@@ -9,8 +9,8 @@
     <script src="js/jazzy.js" defer></script>
   </head>
   <body>
-    <a name="//apple_ref/swift/Guide/ReduxKit" class="dashAnchor"></a>
-    <a title="ReduxKit  Reference"></a>
+    <a name="//apple_ref/swift/Guide/Getting Started" class="dashAnchor"></a>
+    <a title="Getting Started  Reference"></a>
     <header>
       <p><a href="index.html">ReduxKit Docs</a> (29% documented)</p>
       <p class="header-right"><a href="https://github.com/ReduxKit/ReduxKit"><img src="img/gh.png"/>View on GitHub</a></p>
@@ -19,7 +19,7 @@
     <p id="breadcrumbs">
       <a href="index.html">ReduxKit Reference</a>
       <img class="carat" src="img/carat.png" />
-      ReduxKit  Reference
+      Getting Started  Reference
     </p>
     <div class="content-wrapper">
       <nav class="sidebar">
@@ -114,24 +114,7 @@
         <section>
           <section class="section">
             
-            <a href='#a_href_https_github_com_reduxkit_reduxkit_img_src_https_cdn_rawgit_com_reduxkit_reduxkit_b3eb23d773f7c036d7567767884ed5cd50ff6b58_reduxkit_svg_alt_reduxkit_a' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='a_href_https_github_com_reduxkit_reduxkit_img_src_https_cdn_rawgit_com_reduxkit_reduxkit_b3eb23d773f7c036d7567767884ed5cd50ff6b58_reduxkit_svg_alt_reduxkit_a'><a href="https://github.com/ReduxKit/ReduxKit"><img src="https://cdn.rawgit.com/ReduxKit/ReduxKit/b3eb23d773f7c036d7567767884ed5cd50ff6b58/ReduxKit.svg" alt="ReduxKit"></a></h1>
-
-<p><a href="https://travis-ci.org/ReduxKit/ReduxKit"><img src="https://img.shields.io/travis/ReduxKit/ReduxKit.svg" alt="Build Status"></a> <a href="http://codecov.io/github/ReduxKit/ReduxKit"><img src="https://img.shields.io/codecov/c/github/ReduxKit/ReduxKit.svg" alt="Code coverage status"></a> <a href="https://cocoapods.org/pods/ReduxKit"><img src="https://img.shields.io/cocoapods/metrics/doc-percent/ReduxKit.svg" alt="Doc coverage"></a>
-<a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/github/tag/ReduxKit/ReduxKit.svg?label=carthage&amp;color=4481C7" alt="Carthage Version"></a> <a href="https://cocoapods.org/pods/ReduxKit"><img src="https://img.shields.io/cocoapods/v/ReduxKit.svg" alt="Cocoapods Compatible"></a> <a href="https://cocoapods.org/pods/ReduxKit"><img src="https://img.shields.io/cocoapods/p/ReduxKit.svg" alt="Platform"></a> <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-4481C7.svg" alt="License MIT"></a></p>
-<a href='#cross_promotion_pollination' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='cross_promotion_pollination'>Cross promotion / pollination</h2>
-
-<blockquote>
-<p><a href="https://github.com/ReduxKit/ReduxKit/issues/13">#13</a>: <a href="https://github.com/Ben-G">@Ben-G</a> has done an awesome job of developing an independent, very idiomatic, swift implementation of Redux as <a href="https://github.com/Swift-Flow/Swift-Flow">Swift-Flow</a>.</p>
-
-<p>After a short discussion it&rsquo;s clear we all agree that collaboration and sharing of idea&rsquo;s will be beneficial to both projects. Go check it out. Feedback on both projects would be appreciated.</p>
-</blockquote>
-<a href='#intro' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='intro'>Intro</h2>
-
-<p>ReduxKit is a swift implementation of the JavaScript <a href="http://rackt.github.io/redux">Redux</a> library by Dan Abramov and the React Community. ReduxKit stays as close as possible to Redux while bringing in Swift ways of doing things where appropriate.</p>
-
-<p>A thorough walk through and description of the framework can be found at the official Redux repository: <a href="http://rackt.github.io/redux">Redux</a>.</p>
-
-<p>It is currently implemented in a few swift apps and is frequently updated. Additions, middleware and help will be very much appreciated! So if you&rsquo;re trying it out and have any suggestions - feel free to post an issue and I&rsquo;ll be on it.</p>
+            <a href='#getting_started' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='getting_started'>Getting Started</h1>
 <a href='#installation' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='installation'>Installation</h2>
 <a href='#a_href_https_github_com_carthage_carthage_carthage_a' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='a_href_https_github_com_carthage_carthage_carthage_a'><a href="https://github.com/Carthage/Carthage">Carthage</a></h3>
 
@@ -254,90 +237,6 @@ $ carthage update
 <span class="n">disposable</span><span class="o">.</span><span class="nf">dispose</span><span class="p">()</span>
 
 </code></pre>
-<a href='#types_and_the_generic_state' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='types_and_the_generic_state'>Types and the generic State</h2>
-
-<p>ReduxKit makes heavy use of Swift generics for simpler implementation and usage.</p>
-
-<p>The only types used as generics are <code>State</code>, <code>Action</code> and <code>PayloadType</code>. Of which only <code>State</code> has no inference and will be commonly used. Because <code>typealias</code> does not support generics this does cause the framework source to become harder to read. Example <code>typealias</code> have been included privately in the source.</p>
-
-<p>Once the root state type has been defined in your project, you may want to declare appropriate <code>typealias</code> mapping to the JavaScript Redux types.</p>
-<pre class="highlight swift"><code><span class="c1">// These two are already exported by ReduxKit as they do not use the State generic</span>
-<span class="c1">// typealias Dispatch = Action -&gt; Action</span>
-<span class="c1">// typealias DispatchTransformer = Dispatch -&gt; Dispatch</span>
-
-<span class="kd">struct</span> <span class="kt">State</span> <span class="p">{}</span> <span class="c1">// Can be named anything you like, as long as it's consistent in the typealias declarations</span>
-
-<span class="c1">// Underscores are used where needed to prevent clashes with exported protocols. Again, naming is up to you.</span>
-
-<span class="kd">typealias</span> <span class="kt">Store</span> <span class="o">=</span> <span class="kt">ReduxKit</span><span class="o">.</span><span class="kt">Store</span><span class="o">&lt;</span><span class="kt">State</span><span class="o">&gt;</span>
-
-<span class="kd">typealias</span> <span class="kt">Reducer</span> <span class="o">=</span> <span class="p">(</span><span class="nv">previousState</span><span class="p">:</span> <span class="kt">State</span><span class="p">?,</span> <span class="nv">action</span><span class="p">:</span> <span class="kt">Action</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">State</span>
-<span class="kd">typealias</span> <span class="kt">Subscriber</span> <span class="o">=</span> <span class="p">(</span><span class="nv">updatedState</span><span class="p">:</span> <span class="kt">State</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">()</span>
-
-<span class="kd">typealias</span> <span class="kt">MiddlewareApi</span> <span class="o">=</span> <span class="kt">Store</span>
-<span class="kd">typealias</span> <span class="kt">Middleware</span> <span class="o">=</span> <span class="kt">MiddlewareApi</span> <span class="o">-&gt;</span> <span class="kt">DispatchTransformer</span>
-<span class="kd">typealias</span> <span class="kt">StoreCreator</span> <span class="o">=</span> <span class="p">(</span><span class="nv">reducer</span><span class="p">:</span> <span class="kt">Reducer</span><span class="p">,</span> <span class="nv">initialState</span><span class="p">:</span> <span class="kt">State</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Store</span>
-<span class="kd">typealias</span> <span class="kt">StoreEnhancer</span> <span class="o">=</span> <span class="p">(</span><span class="kt">StoreCreator</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">StoreCreator</span>
-</code></pre>
-
-<p>Typealias not supporting generics can been seen most in the applyMiddleware function and makes for the best example of how to expand the ReduxKit examples out.</p>
-<pre class="highlight swift"><code><span class="c1">// How the applyMiddleware function would ideally be declared</span>
-<span class="kd">func</span> <span class="nf">applyMiddleware</span><span class="p">(</span><span class="nv">middleware</span><span class="p">:</span> <span class="p">[</span><span class="kt">Middleware</span><span class="p">])</span>
-    <span class="o">-&gt;</span> <span class="kt">StoreEnhancer</span>
-
-<span class="c1">// Expanding out (sans generic state):</span>
-<span class="kd">func</span> <span class="nf">applyMiddleware</span><span class="p">(</span><span class="nv">middleware</span><span class="p">:</span> <span class="p">[</span><span class="kt">MiddlewareApi</span> <span class="o">-&gt;</span> <span class="kt">DispatchTransformer</span><span class="p">])</span>
-    <span class="o">-&gt;</span> <span class="kt">StoreCreator</span>
-    <span class="o">-&gt;</span> <span class="kt">StoreCreator</span>
-
-<span class="kd">func</span> <span class="nf">applyMiddleware</span><span class="p">(</span><span class="nv">middleware</span><span class="p">:</span> <span class="p">[</span><span class="kt">Store</span> <span class="o">-&gt;</span> <span class="kt">DispatchTransformer</span><span class="p">])</span>
-    <span class="o">-&gt;</span> <span class="p">((</span><span class="kt">Reducer</span><span class="p">,</span> <span class="kt">State</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Store</span><span class="p">)</span>
-    <span class="o">-&gt;</span> <span class="p">((</span><span class="kt">Reducer</span><span class="p">,</span> <span class="kt">State</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Store</span><span class="p">)</span>
-
-<span class="kd">func</span> <span class="nf">applyMiddleware</span><span class="p">(</span><span class="nv">middleware</span><span class="p">:</span> <span class="p">[</span><span class="kt">Store</span> <span class="o">-&gt;</span> <span class="kt">DispatchTransformer</span><span class="p">])</span>
-    <span class="o">-&gt;</span> <span class="p">(((</span><span class="kt">State</span><span class="p">?,</span> <span class="kt">Action</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">State</span><span class="p">,</span> <span class="kt">State</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Store</span><span class="p">)</span>
-    <span class="o">-&gt;</span> <span class="p">(((</span><span class="kt">State</span><span class="p">?,</span> <span class="kt">Action</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">State</span><span class="p">,</span> <span class="kt">State</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Store</span><span class="p">)</span>
-
-<span class="c1">// With the generic State</span>
-<span class="kd">func</span> <span class="n">applyMiddleware</span><span class="o">&lt;</span><span class="kt">State</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">middleware</span><span class="p">:</span> <span class="p">[(</span><span class="kt">Store</span><span class="o">&lt;</span><span class="kt">State</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">DispatchTransformer</span><span class="p">])</span>
-    <span class="o">-&gt;</span> <span class="p">(((</span><span class="kt">State</span><span class="p">?,</span> <span class="kt">Action</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">State</span><span class="p">,</span> <span class="kt">State</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Store</span><span class="o">&lt;</span><span class="kt">State</span><span class="o">&gt;</span><span class="p">)</span>
-    <span class="o">-&gt;</span> <span class="p">(((</span><span class="kt">State</span><span class="p">?,</span> <span class="kt">Action</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">State</span><span class="p">,</span> <span class="kt">State</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Store</span><span class="o">&lt;</span><span class="kt">State</span><span class="o">&gt;</span><span class="p">)</span>
-</code></pre>
-<a href='#available_middleware' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='available_middleware'>Available Middleware</h2>
-
-<ul>
-<li><a href="https://github.com/ReduxKit/reduxSwift-rx">reduxSwift-Rx</a> - RxSwift utilities for ReduxSwift</li>
-</ul>
-<a href='#bindings' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='bindings'>Bindings</h2>
-
-<p>The ReduxKit Store is, at it&rsquo;s heart, a subscribable stream of states. You are likely already familiar with the concept from reactive frameworks. The two are so similar in fact that you will more than likely want to use ReduxKit with you favourite reactive framework.</p>
-
-<p>It is very easy to create a createStore function that wraps existing reactive frameworks. ReduxKit already has bindings available for:</p>
-
-<ul>
-<li><a href="https://github.com/ReduxKit/ReduxKitRxSwift">RxSwift</a></li>
-<li><a href="https://github.com/ReduxKit/ReduxKitReactiveCocoa">ReactiveCocoa</a></li>
-<li><a href="https://github.com/ReduxKit/ReduxKitReactiveKit">ReactiveKit</a></li>
-<li><a href="https://github.com/ReduxKit/ReduxKitBond">SwiftBond</a></li>
-</ul>
-<a href='#how_can_you_help' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='how_can_you_help'>How can you help?</h2>
-
-<p>Pull requests are welcome on the develop branch.</p>
-
-<p>I am hoping to get a solid influx of middleware up and running for ReduxKit so we can change the way we do iOS development in the future. I am therefore welcoming pull requests, feature requests and suggestions. I want this library to be the best it can be and I can only do that with the help of the rest of you.</p>
-<a href='#todo' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='todo'>TODO</h3>
-
-<p>The actual implementation of ReduxKit is fairly complete. More tooling is still required though.</p>
-
-<ul>
-<li>[x] Test and release reactive framework bindings</li>
-<li>[ ] Create the TODO app to showcase ease of use</li>
-<li>[ ] Documentation: How thorough should we do it? Core principles are very well described by Dan in his docs.</li>
-<li>[ ] Devtools. This is where the power of redux really shines - being able to undo states when testing will make developing and debugging so much easier.</li>
-</ul>
-<a href='#license' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='license'>License</h2>
-
-<p>MIT</p>
 
           </section>
         </section>

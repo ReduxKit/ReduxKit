@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>SimpleStandardAction Protocol Reference</title>
+    <title>MiddlewareApi Struct Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -9,8 +9,8 @@
     <script src="../js/jazzy.js" defer></script>
   </head>
   <body>
-    <a name="//apple_ref/swift/Protocol/SimpleStandardAction" class="dashAnchor"></a>
-    <a title="SimpleStandardAction Protocol Reference"></a>
+    <a name="//apple_ref/swift/Struct/MiddlewareApi" class="dashAnchor"></a>
+    <a title="MiddlewareApi Struct Reference"></a>
     <header>
       <p><a href="../index.html">ReduxKit Docs</a> (29% documented)</p>
       <p class="header-right"><a href="https://github.com/ReduxKit/ReduxKit"><img src="../img/gh.png"/>View on GitHub</a></p>
@@ -19,7 +19,7 @@
     <p id="breadcrumbs">
       <a href="../index.html">ReduxKit Reference</a>
       <img class="carat" src="../img/carat.png" />
-      SimpleStandardAction Protocol Reference
+      MiddlewareApi Struct Reference
     </p>
     <div class="content-wrapper">
       <nav class="sidebar">
@@ -113,17 +113,14 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>SimpleStandardAction</h1>
+            <h1>MiddlewareApi</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">SimpleStandardAction</span><span class="p">:</span> <span class="kt">Action</span></code></pre>
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">MiddlewareApi</span><span class="o">&lt;</span><span class="kt">State</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">MiddlewareApiType</span></code></pre>
 
                 </div>
               </div>
-            <p>This is the StandardAction which is the recommended protocol to use when
-  implementing actions.</p>
-
-<p>It is generic and expects a rawPayload of a generic type.</p>
+            <p>Store implementation</p>
 
           </section>
           <section class="section task-group-section">
@@ -132,9 +129,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vP8ReduxKit20SimpleStandardAction10rawPayloadqq_S0_11PayloadType"></a>
-                    <a name="//apple_ref/swift/Property/rawPayload" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vP8ReduxKit20SimpleStandardAction10rawPayloadqq_S0_11PayloadType">rawPayload</a>
+                    <a name="/s:vV8ReduxKit13MiddlewareApi8dispatchFPS_6Action_PS1__"></a>
+                    <a name="//apple_ref/swift/Property/dispatch" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV8ReduxKit13MiddlewareApi8dispatchFPS_6Action_PS1__">dispatch</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -149,49 +146,72 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">SimpleStandardAction</span><span class="p">:</span> <span class="kt">Action</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">MiddlewareApi</span><span class="o">&lt;</span><span class="kt">State</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">MiddlewareApiType</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/ReduxKit/ReduxKit/tree/master/ReduxKit/ReduxKit/Action.swift#L0">Show on GitHub</a>
+                        <a href="https://github.com/ReduxKit/ReduxKit/tree/master/ReduxKit/ReduxKit/MiddlewareApi.swift#L0">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:veRq_8ReduxKit20SimpleStandardAction_S_S0_7payloadGSqP__"></a>
-                    <a name="//apple_ref/swift/Property/payload" class="dashAnchor"></a>
-                    <a class="token" href="#/s:veRq_8ReduxKit20SimpleStandardAction_S_S0_7payloadGSqP__">payload</a>
+                    <a name="/s:vV8ReduxKit13MiddlewareApi8getStateFT_q_"></a>
+                    <a name="//apple_ref/swift/Property/getState" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV8ReduxKit13MiddlewareApi8getStateFT_q_">getState</a>
                     </code>
-                      <span class="declaration-note">
-                        Extension method
-                      </span>
                   </div>
                   <div class="height-container">
                     <div class="pointer-container"></div>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Default implementation for payload</p>
+                        <p>Undocumented</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">payload</span><span class="p">:</span> <span class="kt">Any</span><span class="p">?</span> <span class="p">{</span> <span class="k">return</span> <span class="n">rawPayload</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">MiddlewareApi</span><span class="o">&lt;</span><span class="kt">State</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">MiddlewareApiType</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/ReduxKit/ReduxKit/tree/master/ReduxKit/ReduxKit/Action.swift#L56">Show on GitHub</a>
+                        <a href="https://github.com/ReduxKit/ReduxKit/tree/master/ReduxKit/ReduxKit/MiddlewareApi.swift#L0">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FV8ReduxKit13MiddlewareApicurFMGS0_q__FT8dispatchFPS_6Action_PS1__8getStateFT_q__GS0_q__"></a>
+                    <a name="//apple_ref/swift/Method/init(dispatch:getState:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FV8ReduxKit13MiddlewareApicurFMGS0_q__FT8dispatchFPS_6Action_PS1__8getStateFT_q__GS0_q__">init(dispatch:getState:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">MiddlewareApi</span><span class="o">&lt;</span><span class="kt">State</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">MiddlewareApiType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/ReduxKit/ReduxKit/tree/master/ReduxKit/ReduxKit/MiddlewareApi.swift#L40-L43">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
