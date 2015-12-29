@@ -9,22 +9,26 @@
 
 
 /**
- Helper function that helps create shorthand dispatch functions. It requires a
- StandardAction with a valid initializer to function.
+ Helper function that helps create shorthand dispatch functions. It requires a StandardAction with
+ a valid initializer to function.
 
- - parameter type:
- - parameter dispatch:
-*/
-public func bindActionCreators<Action where Action: StandardAction>(type: Action.Type, dispatch: Dispatch)
+ - parameter type:     Type of action to bind
+ - parameter dispatch: Dispatching function (Action -> Action)
+
+ - returns: Callable ActionCreator
+ */
+public func bindActionCreators<Action where Action: StandardAction>(
+    type: Action.Type,
+    dispatch: Dispatch)
     -> (payload: Action.PayloadType?)
     -> () {
 
-    func innerBind(payload: Action.PayloadType? = nil) {
+        func innerBind(payload: Action.PayloadType? = nil) {
 
-        let action = Action(payload: payload, meta: nil, error: false)
+            let action = Action(payload: payload, meta: nil, error: false)
 
-        dispatch(action)
-    }
+            dispatch(action)
+        }
 
-    return innerBind
+        return innerBind
 }

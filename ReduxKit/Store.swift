@@ -57,9 +57,12 @@ public struct Store<State>: StoreType {
 
     public var state: State { return getState() }
 
-    public init(dispatch: Dispatch, subscribe: (State -> ()) -> ReduxDisposable, getState: () -> State) {
-        self.dispatch = dispatch
-        self.subscribe = subscribe
-        self.getState = getState
+    public init(
+        dispatch: Dispatch,
+        subscribe: (State -> ()) -> ReduxDisposable,
+        getState: () -> State) {
+            self.dispatch = dispatch
+            self.subscribe = subscribe
+            self.getState = getState
     }
 }

@@ -333,6 +333,7 @@
 				73552BCA1C298D87003B7389 /* Frameworks */,
 				73552BCB1C298D87003B7389 /* Headers */,
 				73552BCC1C298D87003B7389 /* Resources */,
+				73D9396B1C32AD87009899B3 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -370,6 +371,7 @@
 				73D842E61C24369900644EEC /* Frameworks */,
 				73D842E71C24369900644EEC /* Headers */,
 				73D842E81C24369900644EEC /* Resources */,
+				73D9396A1C32A5CA009899B3 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -388,6 +390,7 @@
 				73D8430F1C24377F00644EEC /* Frameworks */,
 				73D843101C24377F00644EEC /* Headers */,
 				73D843111C24377F00644EEC /* Resources */,
+				73D9396D1C32AD9B009899B3 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -425,6 +428,7 @@
 				BCE2594A1BE912AE00424F65 /* Frameworks */,
 				BCE2594B1BE912AE00424F65 /* Headers */,
 				BCE2594C1BE912AE00424F65 /* Resources */,
+				73D9396C1C32AD94009899B3 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -592,6 +596,58 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+		73D9396A1C32A5CA009899B3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		73D9396B1C32AD87009899B3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		73D9396C1C32AD94009899B3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		73D9396D1C32AD9B009899B3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
 		BC0588281BEF85E700F2F4BF /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;

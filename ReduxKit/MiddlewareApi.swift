@@ -9,10 +9,8 @@
 // MARK: - Protocols
 
 /**
-
  MiddlewareApiType protocol
-
-*/
+ */
 public protocol MiddlewareApiType {
 
     typealias State
@@ -27,10 +25,8 @@ public protocol MiddlewareApiType {
 // MARK: - Implementations
 
 /**
-
  Store implementation
-
-*/
+ */
 public struct MiddlewareApi<State>: MiddlewareApiType {
 
     public let dispatch: Dispatch

@@ -45,7 +45,9 @@ func createBasicStore<State>(reducer: (State?, Action) -> State, state: State?) 
     }
 
     let disposable: (Int) -> ReduxDisposable = { token in
-        SimpleReduxDisposable(disposed: { subscribers[token] != nil }, dispose: { subscribers.removeValueForKey(token) })
+        SimpleReduxDisposable(
+            disposed: { subscribers[token] != nil },
+            dispose: { subscribers.removeValueForKey(token) })
     }
 
     let subscribe: (State -> ()) -> ReduxDisposable = { subscriber in

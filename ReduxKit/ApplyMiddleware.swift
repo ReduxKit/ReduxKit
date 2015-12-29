@@ -10,9 +10,9 @@ public typealias DispatchTransformer = Dispatch -> Dispatch
 
 /**
  applyMiddlware creates a StoreEnhancer from an array of Middleware
- 
+
  **Strongly typed signature**
- 
+
  ```swift
  typealias MiddlewareApi = MiddlewareApi<State>
  typealias Middleware = MiddlewareApi -> DispatchTransformer
@@ -21,34 +21,32 @@ public typealias DispatchTransformer = Dispatch -> Dispatch
  func applyMiddleware(middleware: [Middleware]) -> StoreEnhancer
  ```
 
- - parameter middleware: An array of Middleware that accept a MiddlewareApi and
-                         return a DispatchTransformer
+ - parameter middleware: An array of Middleware that accept a MiddlewareApi and return a
+                         DispatchTransformer
 
- - returns: StoreEnhancer<State>
- */
+ Returns `StoreEnhancer<State>`
+*/
 public func applyMiddleware<State>(middleware: [MiddlewareApi<State> -> DispatchTransformer])
     -> (((State?, Action) -> State, State?) -> Store<State>)
     -> (((State?, Action) -> State, State?) -> Store<State>) {
 
-    return { next in
-        return { reducer, initialState in
+    return { next in { reducer, initialState in
 
-            var dispatch: Dispatch!
+        var dispatch: Dispatch!
 
-            let store = next(reducer, initialState)
+        let store = next(reducer, initialState)
 
-            let middlewareApi = MiddlewareApi(
-                dispatch: { dispatch($0) },
-                getState: store.getState)
+        let middlewareApi = MiddlewareApi(
+            dispatch: { dispatch($0) },
+            getState: store.getState)
 
-            let middlewareChain = middleware.map { $0(middlewareApi) }
+        let middlewareChain = middleware.map { $0(middlewareApi) }
 
-            dispatch = compose(middlewareChain)(store.dispatch)
+        dispatch = compose(middlewareChain)(store.dispatch)
 
-            return Store(
-                dispatch: dispatch,
-                subscribe: store.subscribe,
-                getState: store.getState)
-        }
-    }
+        return Store(
+            dispatch: dispatch,
+            subscribe: store.subscribe,
+            getState: store.getState)
+    }}
 }
