@@ -12,6 +12,7 @@ import Nimble
 
 class CreateStoreSpec: QuickSpec {
 
+    // swiftlint:disable function_body_length
     override func spec() {
 
         describe("Create Store") {
@@ -69,8 +70,8 @@ class CreateStoreSpec: QuickSpec {
 
             it("should forbid dispatching actions from within reducers") {
                 /*
-                    Reducers should be free of side effects, therefore dispatching actions from
-                    within reducers is illegal.
+                 Reducers should be free of side effects, therefore dispatching actions from
+                 within reducers is illegal.
                 */
 
                 // Arrange
@@ -123,7 +124,8 @@ class CreateStoreSpec: QuickSpec {
                 for var i = 0; i < iterations; i++ {
                     store.dispatch(IncrementAction())
                     store.dispatch(PushAction(payload: PushAction.Payload(text: textMessage)))
-                    store.dispatch(UpdateTextFieldAction(payload: UpdateTextFieldAction.Payload(text: textMessage)))
+                    store.dispatch(UpdateTextFieldAction(
+                        payload: UpdateTextFieldAction.Payload(text: textMessage)))
                 }
 
                 // Assert

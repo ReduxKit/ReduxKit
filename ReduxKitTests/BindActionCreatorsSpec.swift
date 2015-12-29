@@ -12,6 +12,8 @@ import Nimble
 
 class BindActionCreatorsSpec: QuickSpec {
 
+    // swiftlint:disable function_body_length
+    // swiftlint:disable line_length
     override func spec() {
 
         describe("BindActionCreators") {

@@ -8,9 +8,9 @@
 
 /**
  Creates a ReduxKit Store of a generic State type
- 
+
  **Strongly typed signature**
- 
+
  ```swift
  typealias Reducer = (State?, Action) -> State
  func createStore(reducer: Reducer, state: State?) -> Store
@@ -36,7 +36,6 @@ public func createStore<State>(reducer: (State?, Action) -> State, state: State?
             NSException.raise("ReduxKit:IllegalDispatchFromReducer", format: "Reducers may not " +
                 "dispatch actions.", arguments: getVaList(["nil"]))
         }
-
         isDispatching = true
         currentState = reducer(currentState, action)
         isDispatching = false
@@ -44,7 +43,6 @@ public func createStore<State>(reducer: (State?, Action) -> State, state: State?
         for (_, subscriber) in subscribers {
             subscriber(currentState)
         }
-
         return action
     }
 
@@ -57,7 +55,9 @@ public func createStore<State>(reducer: (State?, Action) -> State, state: State?
     func subscribe(subscriber: State -> ()) -> ReduxDisposable {
         let token = getToken()
         subscribers[token] = subscriber
-        return SimpleReduxDisposable(disposed: { subscribers[token] == nil }, dispose: { subscribers.removeValueForKey(token) })
+        return SimpleReduxDisposable(
+            disposed: { subscribers[token] == nil },
+            dispose: { subscribers.removeValueForKey(token) })
     }
 
     return Store(dispatch: dispatch, subscribe: subscribe, getState: { currentState })
