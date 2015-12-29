@@ -9,26 +9,29 @@
 import ReduxKit
 
 /**
- *  Application state
+ Application state
  */
 struct AppState {
     var counter: Int!
-    var countries:[String]!
+    var countries: [String]!
     var textField: TextFieldState!
 }
 
 /**
- *  Nested textField state.
- *  Application state can effectively be compartementalized this way.
+ Nested textField state. Application state can effectively be compartementalized this way.
  */
 struct TextFieldState {
-    var value: String = "";
+    var value: String = ""
 }
 
 /**
- Total application reducer. This should create your base state and associate each individual reducer with its part of the state.
+ Total application reducer. This should create your base state and associate each individual
+ reducer with its part of the state.
+
  Reducers can effectively be nested to avoid having to specify the whole chain on the top level.
- All reducers have been implemented with optional states. This is to simplify this reducer, so that it can be called without an initial AppState
+
+ All reducers have been implemented with optional states. This is to simplify this reducer, so that
+ it can be called without an initial AppState
 
  - parameter state:  AppState - will default to nil
  - parameter action: ActionType
@@ -43,15 +46,15 @@ func applicationReducer(state: AppState? = nil, action: Action) -> AppState {
 }
 
 /**
- Example of a simple counter reducer. This state takes a simple integer value and returns it in an incremented state - for the IncrementAction
- This could also have a decrementAction.
+ Example of a simple counter reducer. This state takes a simple integer value and returns it in an
+ incremented state - for the IncrementAction This could also have a decrementAction.
 
  - parameter previousState: Int
  - parameter action:        ActionType
 
  - returns: Will return nextState - Int
  */
-func counterReducer(previousState: Int?, action: Action) -> Int{
+func counterReducer(previousState: Int?, action: Action) -> Int {
 
     // Declare the type of the state
     let state = previousState ?? 0
@@ -73,7 +76,7 @@ func counterReducer(previousState: Int?, action: Action) -> Int{
 
  - returns: Will return nextState: [String]
  */
-func countryReducer(previousState: [String]?,  action: Action) -> [String]{
+func countryReducer(previousState: [String]?,  action: Action) -> [String] {
 
     let state = previousState ?? [String]()
 
@@ -86,7 +89,8 @@ func countryReducer(previousState: [String]?,  action: Action) -> [String]{
 }
 
 /**
- Example of a more complex reducer. It takes a textFieldState as an argument and returns a new textFieldState
+ Example of a more complex reducer. It takes a textFieldState as an argument and returns a new
+ textFieldState
 
  - parameter previousState: TextFieldState?
  - parameter action:        ActionType
@@ -105,7 +109,7 @@ func textFieldReducer(previousState: TextFieldState?, action: Action) -> TextFie
 
 
 /**
- *  Simple updateTextFieldAction - with unique payload
+ Simple updateTextFieldAction - with unique payload
  */
 struct UpdateTextFieldAction: StandardAction {
     let meta: Any?
@@ -131,7 +135,7 @@ struct ReTravelAction: SimpleStandardAction {
 
 
 /**
- *  Simple IncrementAction. Since it doesn't utilize payload it has been set to 1
+ Simple IncrementAction. Since it doesn't utilize payload it has been set to 1
  */
 struct IncrementAction: StandardAction {
     let meta: Any?
@@ -146,7 +150,7 @@ struct IncrementAction: StandardAction {
 }
 
 /**
- *  Push action
+ Push action
  */
 struct PushAction: StandardAction {
     let meta: Any?
@@ -159,11 +163,11 @@ struct PushAction: StandardAction {
         self.error = error
     }
 
-    struct Payload{
+    struct Payload {
         var text: String
 
         init(text: String) {
-            self.text = text;
+            self.text = text
         }
     }
 }
@@ -175,58 +179,51 @@ struct PushAction: StandardAction {
 
  - returns: return value description
  */
-func firstPushMiddleware<State>(store: Store<State>) -> DispatchTransformer {
-    return { next in
-        { action in
-            if let pushAction = action as? PushAction {
-                let newAction = PushAction(payload: PushAction.Payload(text: pushAction.rawPayload.text + ".first"))
-                return next(newAction)
-            }
-            else {
-                return next(action)
-            }
-        }
-    }
-}
-
-/**
- second middleware - it will add .secondary to the payload of any pushAction.
-
- - parameter store: store description
-
- - returns: return value description
- */
-func secondaryPushMiddleware<State>(store: Store<State>) -> DispatchTransformer {
-    return { next in
-        { action in
-            if let pushAction = action as? PushAction {
-                let newAction = PushAction(payload: PushAction.Payload(text: pushAction.rawPayload.text + ".secondary"))
-                return next(newAction)
-            }
-            else {
-                return next(action)
-            }
-        }
-    }
-}
-
-/**
- second middleware - it will add .secondary to the payload of any pushAction.
-
- - parameter store: store description
-
- - returns: return value description
- */
-func reTravelMiddleware<State>(store: Store<State>) -> DispatchTransformer {
-    return { next in
-        { action in
-            if (action is ReTravelAction) {
-                store.dispatch(IncrementAction(payload: 10))
-            }
-            else if (action is IncrementAction) {
-                return next(IncrementAction())
-            }
+func firstPushMiddleware<State>(store: MiddlewareApi<State>) -> DispatchTransformer {
+    return { next in { action in
+        if let pushAction = action as? PushAction {
+            let newAction = PushAction(
+                payload: PushAction.Payload(text: pushAction.rawPayload.text + ".first"))
+            return next(newAction)
+        } else {
             return next(action)
         }
-    }
+    }}
+}
+
+/**
+ second middleware - it will add .secondary to the payload of any pushAction.
+
+ - parameter store: store description
+
+ - returns: return value description
+ */
+func secondaryPushMiddleware<State>(store: MiddlewareApi<State>) -> DispatchTransformer {
+    return { next in { action in
+        if let pushAction = action as? PushAction {
+            let newAction = PushAction(
+                payload: PushAction.Payload(text: pushAction.rawPayload.text + ".secondary"))
+            return next(newAction)
+        } else {
+            return next(action)
+        }
+    }}
+}
+
+/**
+ Re-travel middleware - it will discard ReTravelAction's and dispatch an IncrementAction instead.
+
+ - parameter store: store description
+
+ - returns: return value description
+ */
+func reTravelMiddleware<State>(store: MiddlewareApi<State>) -> DispatchTransformer {
+    return { next in { action in
+        if action is ReTravelAction {
+            store.dispatch(IncrementAction(payload: 10))
+        } else if action is IncrementAction {
+            return next(IncrementAction())
+        }
+        return next(action)
+    }}
 }
