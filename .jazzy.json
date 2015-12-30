@@ -12,5 +12,52 @@
     "github_url": "https://github.com/ReduxKit/ReduxKit",
     "github_file_prefix": "https://github.com/ReduxKit/ReduxKit/tree/master",
     "assets_directory": "assets",
-    "template_directory": "templates"
+    "template_directory": "templates",
+
+    "documentation_glob": "ReduxKit/docs/*.md",
+    "abstract_glob": "ReduxKit/docs/abstracts/*.md",
+
+    "custom_categories": [{
+        "name": "Documentation",
+        "children": [
+            "Introduction",
+            "Getting Started",
+            "Redux Compatibility",
+            "License"
+        ]
+    }, {
+        "name": "Stores",
+        "children": [
+            "StoreType",
+            "Store",
+            "createStore(_:state:)"
+        ]
+    }, {
+        "name": "Disposables",
+        "children": [
+            "ReduxDisposable",
+            "SimpleReduxDisposable"
+        ]
+    }, {
+        "name": "Actions",
+        "children": [
+            "Action",
+            "SimpleStandardAction",
+            "StandardAction",
+            "DefaultAction",
+            "bindActionCreators(_:dispatch:)"
+        ]
+    }, {
+        "name": "Middleware",
+        "children": [
+            "MiddlewareApiType",
+            "MiddlewareApi",
+            "applyMiddleware(_:)"
+        ]
+    }, {
+        "name": "Utilities",
+        "children": [
+            "compose(_:)"
+        ]
+    }]
 }
