@@ -1,2 +1,1 @@
-<entry><version>  s.version           = '0.1.4'
-  s.source            = { :git => 'https://github.com/ReduxKit/ReduxKit.git', :tag => s.version.to_s }</version><url>http://reduxkit.github.io/ReduxKit/docsets/ReduxKit.tgz</url></entry>
+<entry><version>0.1.4</version><url>http://reduxkit.github.io/ReduxKit/docsets/ReduxKit.tgz</url></entry>
