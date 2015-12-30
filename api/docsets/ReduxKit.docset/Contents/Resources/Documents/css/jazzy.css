@@ -170,11 +170,11 @@ pre code {
   padding: 0 0 0 8px; }
 
 .nav-group-task {
-  font-size: 0.9em;
+  font-size: 1em;
   list-style-type: none; }
 
 .nav-group-task-link {
-  color: #888; }
+  color: #808080; }
 
 .main-content {
   order: 1; }
@@ -322,9 +322,7 @@ pre code {
   .footer a {
     color: #fff; }
 
-html.dash header, html.dash .breadcrumbs, html.dash .navigation {
+html.dash .header, html.dash .breadcrumbs, html.dash .navigation {
   display: none; }
 html.dash .height-container {
   display: block; }
-html.dash .item .token {
-  margin-left: 0; }
