@@ -20,23 +20,23 @@ It is currently implemented in a few swift apps and is frequently updated. Addit
 
 ## Contents
 
-- [Installation](http://reduxkit.github.io/ReduxKit/installation.html)
-- [The Gist](http://reduxkit.github.io/ReduxKit/the-gist.html)
-- [Types and generic State](http://reduxkit.github.io/ReduxKit/types-and-generic-state.html)
-- [Bindings](http://reduxkit.github.io/ReduxKit/bindings.html)
-- [Redux Compatibility](http://reduxkit.github.io/ReduxKit/redux-compatibility.html)
-- [Flux Standard Actions](http://reduxkit.github.io/ReduxKit/flux-standard-actions.html)
-- [Contributing](http://reduxkit.github.io/ReduxKit/contributing.html)
-- [Progress](http://reduxkit.github.io/ReduxKit/progress.html)
-- [License](http://reduxkit.github.io/ReduxKit/license.html)
+- [Installation](http://reduxkit.github.io/ReduxKit/master/installation.html)
+- [The Gist](http://reduxkit.github.io/ReduxKit/master/the-gist.html)
+- [Types and generic State](http://reduxkit.github.io/ReduxKit/master/types-and-generic-state.html)
+- [Bindings](http://reduxkit.github.io/ReduxKit/master/bindings.html)
+- [Redux Compatibility](http://reduxkit.github.io/ReduxKit/master/redux-compatibility.html)
+- [Flux Standard Actions](http://reduxkit.github.io/ReduxKit/master/flux-standard-actions.html)
+- [Contributing](http://reduxkit.github.io/ReduxKit/master/contributing.html)
+- [Progress](http://reduxkit.github.io/ReduxKit/master/progress.html)
+- [License](http://reduxkit.github.io/ReduxKit/master/license.html)
 
 ### API
 
-- [Stores](http://reduxkit.github.io/ReduxKit/Stores.html)
-- [Disposables](http://reduxkit.github.io/ReduxKit/Disposables.html)
-- [Actions](http://reduxkit.github.io/ReduxKit/Actions.html)
-- [Middleware](http://reduxkit.github.io/ReduxKit/Middleware.html)
-- [Utilities](http://reduxkit.github.io/ReduxKit/Utilities.html)
+- [Stores](http://reduxkit.github.io/ReduxKit/master/Stores.html)
+- [Disposables](http://reduxkit.github.io/ReduxKit/master/Disposables.html)
+- [Actions](http://reduxkit.github.io/ReduxKit/master/Actions.html)
+- [Middleware](http://reduxkit.github.io/ReduxKit/master/Middleware.html)
+- [Utilities](http://reduxkit.github.io/ReduxKit/master/Utilities.html)
 
 ## Quick start
 
