@@ -12,6 +12,7 @@ import Nimble
 
 class ApplyMiddlewaresSpec: QuickSpec {
 
+    // swiftlint:disable function_body_length
     override func spec() {
 
         describe("ApplyMiddlewares") {

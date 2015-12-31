@@ -7,7 +7,7 @@
 //
 
 /**
- *  Basic action structure
+ Basic action structure
  */
 public protocol Action {
 
@@ -22,15 +22,14 @@ public protocol Action {
 
 public extension Action {
 
-    /// Computed property that automatically fetches the actionType from the
-    /// current action
+    /// Computed property that automatically fetches the actionType from the current action
     public var type: String { return "\(self.dynamicType.self)" }
 }
 
 /**
- *  Optional protocol used for when actions have to be created generically
- *
- *  It requires a initializer to be present
+ Optional protocol used for when actions have to be created generically
+
+ It requires a initializer to be present
  */
 public protocol StandardAction: SimpleStandardAction {
 
@@ -38,16 +37,15 @@ public protocol StandardAction: SimpleStandardAction {
 }
 
 /**
- *  This is the StandardAction which is the recommended protocol to use when
- *  implementing actions.
- *
- *  It is generic and expects a rawPayload of a generic type.
+ This is the StandardAction which is the recommended protocol to use when implementing actions.
+
+ It is generic and expects a rawPayload of a generic type.
  */
 public protocol SimpleStandardAction: Action {
 
     typealias PayloadType
 
-    var rawPayload : PayloadType { get }
+    var rawPayload: PayloadType { get }
 }
 
 public extension SimpleStandardAction {

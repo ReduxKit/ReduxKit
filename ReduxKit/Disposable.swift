@@ -15,14 +15,14 @@ public protocol ReduxDisposable {
 
 public struct SimpleReduxDisposable: ReduxDisposable {
 
-    let _disposed: () -> Bool
+    let disposedCallback: () -> Bool
 
-    public var disposed: Bool { return _disposed() }
+    public var disposed: Bool { return disposedCallback() }
 
     public let dispose: () -> ()
 
     public init(disposed: () -> Bool, dispose: () -> ()) {
-        _disposed = disposed
+        disposedCallback = disposed
         self.dispose = dispose
     }
 }

@@ -27,12 +27,17 @@ struct DecrementAction: SimpleStandardAction {
 }
 
 /**
- * This is a simple reducer. It is a pure function that follows the syntax
- * (state, action) -> state.
- * It describes how an action transforms the previous state into the next state.
- *
- * Instead of using the actions.type property - as is done in the regular Redux framework
- * we use the power of Swifts static typing to deduce the action.
+ This is a simple reducer. It is a pure function that follows the syntax
+ (state, action) -> state.
+ It describes how an action transforms the previous state into the next state.
+
+ Instead of using the actions.type property - as is done in the regular Redux framework
+ we use the power of Swifts static typing to deduce the action.
+
+ - parameter previousState: Int?
+ - parameter action:        Action
+
+ - returns: Int
  */
 func counterReducer(previousState: Int?, action: Action) -> Int {
     let state = previousState ?? 0
@@ -58,10 +63,15 @@ struct AppState {
 }
 
 /**
- * Create the applications reducer. While we could create a combineReducer function
- * we've currently chosen to allow reducers to be statically typed and accept
- * static states - instead of Any - which currently forces us to define the
- * application reducer as such. This could possibly be simplified with reflection.
+ Create the applications reducer. While we could create a combineReducer function
+ we've currently chosen to allow reducers to be statically typed and accept
+ static states - instead of Any - which currently forces us to define the
+ application reducer as such. This could possibly be simplified with reflection.
+
+ - parameter state:  AppState?
+ - parameter action: Action
+
+ - returns: AppState
  */
 func applicationReducer(state: AppState? = nil, action: Action) -> AppState {
     return AppState(
