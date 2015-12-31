@@ -103,7 +103,6 @@
 		735004801C1EA96E0040E6AE /* Cartfile.private */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile.private; sourceTree = "<group>"; };
 		735004811C1EA96E0040E6AE /* Cartfile.resolved */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile.resolved; sourceTree = "<group>"; };
 		735004821C1EA96E0040E6AE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		735004831C1EA96E0040E6AE /* SUMMARY.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = SUMMARY.md; sourceTree = "<group>"; };
 		73552BCE1C298D87003B7389 /* ReduxKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReduxKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73552BD71C298D87003B7389 /* ReduxKit-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ReduxKit-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7389B88B1C24436200D58617 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/tvOS/Nimble.framework; sourceTree = SOURCE_ROOT; };
@@ -263,7 +262,6 @@
 			children = (
 				731D20561C24475200EAE2FE /* LICENSE */,
 				735004821C1EA96E0040E6AE /* README.md */,
-				735004831C1EA96E0040E6AE /* SUMMARY.md */,
 				735004801C1EA96E0040E6AE /* Cartfile.private */,
 				735004811C1EA96E0040E6AE /* Cartfile.resolved */,
 				731D20551C2446AB00EAE2FE /* ReduxKit.podspec */,

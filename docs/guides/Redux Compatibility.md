@@ -20,6 +20,8 @@ public func applyMiddleware<State>(middleware: [MiddlewareApi<State> -> Dispatch
 func applyMiddleware(middleware: [Middleware]) -> StoreEnhancer
 ```
 
+See: [Middleware](Middleware.html)
+
 ## `bindActionCreators(actionCreators, dispatch)`
 
 `bindActionCreators` is similar in usage to Redux, except `bindActionCreators` takes an Action type and returns a function that accepts a payload to create the action with and passes it to the dispatch method.
