@@ -1,21 +1,17 @@
 #!/bin/bash
 
-# ----- Clone
+# ----- Install jazzy
+
+git clone --depth 1 --branch integrated-markdown https://github.com/agentk/jazzy/
+cd jazzy
+bundle install
+cd ..
+
+# ----- Build master
 if [ -d ReduxKit ]; then
   git -C ReduxKit pull origin master
 else
   git clone --depth 1 --branch master https://github.com/ReduxKit/ReduxKit.git ReduxKit
 fi
 
-# ----- Jazzy
-VERSION=`grep "s.version" ReduxKit/ReduxKit.podspec | cut -d '"' -f2`
-jazzy --config .jazzy.json --module-version "$VERSION"
-
-# ----- Gitbook
-gitbook install
-cp book.json .bookignore ReduxKit/
-gitbook build ReduxKit tmp
-rm -rf gitbook docs
-mv tmp/{*.html,*.json,gitbook,docs} ./
-rm -rf tmp
-rm ReduxKit/{.bookignore,book.json}
+./jazzy/bin/jazzy --config .jazzy.json --clean --output master --module-version "master"

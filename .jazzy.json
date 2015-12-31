@@ -1,28 +1,31 @@
 {
-    "output": "api",
-    "clean": true,
     "xcodebuild_arguments": ["-project", "ReduxKit/ReduxKit.xcodeproj", "-scheme", "ReduxKit-Mac"],
     "swift_version": "2.1.1",
     "author_name": "ReduxKit",
     "author_url": "https://github.com/ReduxKit/ReduxKit",
     "module_name": "ReduxKit",
-    "readme_path": "ReduxKit/README.md",
+    "readme_path": "ReduxKit/docs/api/Documentation.md",
     "dash_url": "http://reduxkit.github.io/ReduxKit/api/docsets/ReduxKit.xml",
     "root_url": "http://reduxkit.github.io/ReduxKit/",
     "github_url": "https://github.com/ReduxKit/ReduxKit",
     "github_file_prefix": "https://github.com/ReduxKit/ReduxKit/tree/master",
-    "assets_directory": "assets",
-    "template_directory": "templates",
+    "assets_directory": "jazzy-theme/assets",
+    "template_directory": "jazzy-theme/templates",
 
     "documentation_glob": "ReduxKit/docs/*.md",
-    "abstract_glob": "ReduxKit/docs/abstracts/*.md",
+    "abstract_glob": "ReduxKit/docs/api/*.md",
 
     "custom_categories": [{
         "name": "Documentation",
         "children": [
-            "Introduction",
-            "Getting Started",
+            "Installation",
+            "The Gist",
+            "Types and generic State",
+            "Bindings",
             "Redux Compatibility",
+            "Flux Standard Actions",
+            "Contributing",
+            "Progress",
             "License"
         ]
     }, {
