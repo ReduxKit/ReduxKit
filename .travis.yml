@@ -12,7 +12,7 @@ before_install:
 
 install:
   - gem install xcpretty
-  - carthage bootstrap
+  - carthage bootstrap --no-use-binaries --platform Mac,iOS
 
 env:
   global:
@@ -37,7 +37,7 @@ env:
     - DESTINATION="OS=9.1,name=iPhone 6S"          SCHEME="$IOS_FRAMEWORK_SCHEME"     SDK="$IOS_SDK"     COMMAND="test"
     - DESTINATION="OS=9.2,name=iPhone 6S Plus"     SCHEME="$IOS_FRAMEWORK_SCHEME"     SDK="$IOS_SDK"     COMMAND="test"
     - DESTINATION="arch=x86_64"                    SCHEME="$OSX_FRAMEWORK_SCHEME"     SDK="$OSX_SDK"     COMMAND="test"
-    - DESTINATION="OS=9.1,name=Apple TV 1080p"     SCHEME="$TVOS_FRAMEWORK_SCHEME"    SDK="$TVOS_SDK"    COMMAND="test"
+    - DESTINATION="OS=9.1,name=Apple TV 1080p"     SCHEME="$TVOS_FRAMEWORK_SCHEME"    SDK="$TVOS_SDK"    COMMAND="build"
     - DESTINATION="OS=2.1,name=Apple Watch - 38mm" SCHEME="$WATCHOS_FRAMEWORK_SCHEME" SDK="$WATCHOS_SDK" COMMAND="build"
 
 script:
