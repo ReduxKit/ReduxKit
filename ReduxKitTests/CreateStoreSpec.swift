@@ -38,7 +38,7 @@ class CreateStoreSpec: QuickSpec {
                 expect(state.counter).to(equal(defaultState.counter + 1))
             }
 
-            it("should should not propagate state on subscription") {
+            it("should not propagate state on subscription") {
                 // Arrange
                 var state: AppState!
 
@@ -48,7 +48,7 @@ class CreateStoreSpec: QuickSpec {
                 store.dispatch(IncrementAction())
 
                 // Assert
-                expect(emptyState == nil).to(equal(true))
+                expect(emptyState).to(beNil())
                 expect(state.counter).to(equal(1))
             }
 
@@ -160,8 +160,8 @@ class CreateStoreSpec: QuickSpec {
                 let disposedAfter = disposable.disposed
 
                 // Assert
-                expect(disposedBefore).to(equal(false))
-                expect(disposedAfter).to(equal(true))
+                expect(disposedBefore).to(beFalse())
+                expect(disposedAfter).to(beTrue())
             }
         }
     }
