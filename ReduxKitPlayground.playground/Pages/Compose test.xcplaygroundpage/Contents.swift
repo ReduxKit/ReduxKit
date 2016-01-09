@@ -52,7 +52,7 @@ func outerFunction(firstString: String)
 
 
 
-let stringTest = compose([outerFunction("1 "), outerFunction("2 "), outerFunction("3 ")]);
-print(stringTest(innerS))
+let composedStoreEnhancer = compose([applyMiddleware([]), applyMiddleware([])]);
+print(stringTest)
 
 //let applyMiddlewareTest = testCompose([applyMiddleware([]), applyMiddleware([])]);
