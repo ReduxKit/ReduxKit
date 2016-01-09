@@ -10,16 +10,17 @@ struct AppState {
     var count: Int!
 }
 
-struct CountAction: SimpleStandardAction {
-    let meta: Any? = nil
-    let error: Bool = false
-    let rawPayload: Int = 1
+struct CountAction: Action {
+    let payload: Int
+    init(_ payload: Int = 1) {
+        self.payload = payload
+    }
 }
 
 func reducer(state: AppState? = nil, action: Action) -> AppState {
     switch action {
     case let action as CountAction:
-        return AppState(count: (state?.count ?? 0) + action.rawPayload)
+        return AppState(count: (state?.count ?? 0) + action.payload)
     default:
         return state ?? AppState(count: 0)
     }
@@ -80,7 +81,7 @@ let countAndDump: () -> String = { _ in
 
 // ----------------------------------------------------------------------------
 
-dump() // -> AppState(count: 0)
+dump()         // -> AppState(count: 0)
 countAndDump() // -> AppState(count: 1)
 countAndDump() // -> AppState(count: 2)
 

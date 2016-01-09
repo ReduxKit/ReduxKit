@@ -1,5 +1,5 @@
 //
-//  ActionTypeSpec.swift
+//  FluxStandardActionSpec.swift
 //  ReduxKit
 //
 //  Created by Aleksander Herforth Rendtslev on 06/11/15.
@@ -10,18 +10,19 @@ import Quick
 import Nimble
 @testable import ReduxKit
 
-class ActionTypeSpec: QuickSpec {
+class FluxStandardActionSpec: QuickSpec {
 
     override func spec() {
 
-        describe("ActionTypeSpec") {
+        describe("FluxStandardAction") {
 
-            it("should succesfully retrieve payload from actionType") {
+            // swiftlint:disable line_length
+            it("should succesfully retrieve payload from FluxStandardAction types") {
 
                 // Arrange
-                let incrementAction = IncrementAction() as Action
-                let pushAction = PushAction(payload: nil) as Action
-                let updateTextFieldAction = UpdateTextFieldAction(payload: nil) as Action
+                let incrementAction = IncrementAction() as FluxStandardAction
+                let pushAction = PushAction(payload: nil) as FluxStandardAction
+                let updateTextFieldAction = UpdateTextFieldAction(payload: nil) as FluxStandardAction
 
                 // Act
                 let incrementPayload = incrementAction.payload

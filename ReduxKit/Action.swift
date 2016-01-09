@@ -6,62 +6,21 @@
 //  Copyright © 2015 Kare Media. All rights reserved.
 //
 
+// MARK: Action protocol
+
 /**
- Basic action structure
+ Base action type all actions must conform to.
+
+ The Action protocol is intentionally minimal to allow Action types to best fit their situation.
+
+ If there are common properties needed on all Action types in you app, the Action protocol can be
+ extended and each action can inherit from the new protocol instead. See FluxStandardAction for a
+ good example of this in practice.
  */
-public protocol Action {
-
-    var type: String { get }
-
-    var payload: Any? { get }
-
-    var meta: Any? { get }
-
-    var error: Bool { get }
-}
+public protocol Action {}
 
 public extension Action {
 
     /// Computed property that automatically fetches the actionType from the current action
     public var type: String { return "\(self.dynamicType.self)" }
-}
-
-/**
- Optional protocol used for when actions have to be created generically
-
- It requires a initializer to be present
- */
-public protocol StandardAction: SimpleStandardAction {
-
-    init(payload: PayloadType?, meta: Any?, error: Bool)
-}
-
-/**
- This is the StandardAction which is the recommended protocol to use when implementing actions.
-
- It is generic and expects a rawPayload of a generic type.
- */
-public protocol SimpleStandardAction: Action {
-
-    typealias PayloadType
-
-    var rawPayload: PayloadType { get }
-}
-
-public extension SimpleStandardAction {
-
-    /// Default implementation for payload
-    public var payload: Any? { return rawPayload }
-}
-
-
-public struct DefaultAction: SimpleStandardAction {
-
-    public let meta: Any? = nil
-
-    public let error: Bool = false
-
-    public let rawPayload: String = "$$ReduxKit-DefaultAction"
-
-    public init() {}
 }

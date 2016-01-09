@@ -94,7 +94,7 @@ store.dispatch(IncrementAction())
 // AppState(count: 1)
 
 store.dispatch(IncrementAction())
-// AppState(count: 1)
+// AppState(count: 2)
 
 store.dispatch(DecrementAction())
 // AppState(count: 1)

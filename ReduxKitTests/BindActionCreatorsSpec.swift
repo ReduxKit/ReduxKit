@@ -17,20 +17,20 @@ class BindActionCreatorsSpec: QuickSpec {
     override func spec() {
 
         describe("BindActionCreators") {
+
+            // Arrange
+            var state: AppState!
             var defaultState: AppState!
             var store: Store<AppState>!
+            let textMessage = "test"
 
             beforeEach {
                 store = createStore(applicationReducer, state: nil)
                 defaultState = store.state
+                store.subscribe { state = $0 }
             }
 
             it("should succesfully create an action method that calls the store's dispatch with nil value") {
-
-                // Arrange
-                var state: AppState!
-                store.subscribe { state = $0 }
-
                 // Act
                 let increment = bindActionCreators(IncrementAction.self, dispatch: store.dispatch)
 
@@ -42,12 +42,6 @@ class BindActionCreatorsSpec: QuickSpec {
             }
 
             it("should succesfully create an action method that calls the store's dispatch with an actual value") {
-                // Arrange
-                var state: AppState!
-                let textMessage = "test"
-
-                store.subscribe { state = $0 }
-
                 // Act
                 let push = bindActionCreators(PushAction.self, dispatch: store.dispatch)
 
