@@ -189,6 +189,6 @@ disposable.dispose()
 
 [MIT](http://reduxkit.github.io/ReduxKit/license.html)
 
-## Credits 
-Aleksander Herforth Rendtslev - @aleksion
-Karl Bowden - @agentk
+## Credits
+Aleksander Herforth Rendtslev - [@arendtslev](https://twitter.com/ARendtslev)    
+Karl Bowden - [@karlbowden](https://twitter.com/karlbowden)
