@@ -5,5 +5,6 @@
         <page name='Increment and decrement'/>
         <page name='Disposables'/>
         <page name='Custom store creator'/>
+        <page name='State and Struct and Class'/>
     </pages>
 </playground>
