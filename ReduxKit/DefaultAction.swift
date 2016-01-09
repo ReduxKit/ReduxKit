@@ -6,4 +6,6 @@
 //  Copyright © 2016 Kare Media. All rights reserved.
 //
 
-public struct DefaultAction: Action {}
+public struct DefaultAction: Action {
+    public init() {}
+}
