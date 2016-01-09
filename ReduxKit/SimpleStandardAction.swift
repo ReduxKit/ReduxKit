@@ -7,9 +7,14 @@
 //
 
 /**
- This is the StandardAction which is the recommended protocol to use when implementing actions.
+ The SimpleStandardAction contains a strongly typed rawPayload property. It is generic and expects
+ a rawPayload of a generic type.
 
- It is generic and expects a rawPayload of a generic type.
+ The protocol automatically assigns the rawPayload to the Actions payload property. This removes
+ the necessity of type casting whenever working with actions in a reducer.
+
+ There's also the StandardAction protocol, that requires the struct to have an initializer. This is
+ required if the bindActionCreators helper is to be used.
  */
 public protocol SimpleStandardAction: FluxStandardAction {
 
