@@ -25,7 +25,6 @@ It is currently implemented in a few swift apps and is frequently updated. Addit
 - [Types and generic State](types-and-generic-state.html)
 - [Bindings](bindings.html)
 - [Redux Compatibility](redux-compatibility.html)
-- [Flux Standard Actions](flux-standard-actions.html)
 - [Contributing](contributing.html)
 - [Progress](progress.html)
 - [License](license.html)
