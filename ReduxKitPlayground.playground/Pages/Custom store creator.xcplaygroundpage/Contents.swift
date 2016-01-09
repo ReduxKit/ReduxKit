@@ -25,6 +25,8 @@ func reducer(state: AppState? = nil, action: Action) -> AppState {
     }
 }
 
+
+
 // ----------------------------------------------------------------------------
 //
 // MARK: - Store creator
@@ -60,10 +62,7 @@ func createBasicStore<State>(reducer: (State?, Action) -> State, state: State?) 
     return Store(dispatch: dispatch, subscribe: subscribe, getState: { currentState })
 }
 
-
 let store = createBasicStore(reducer, state: nil)
-
-
 
 // ----------------------------------------------------------------------------
 //
