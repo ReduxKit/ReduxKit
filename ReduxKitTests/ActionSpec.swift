@@ -1,5 +1,5 @@
 //
-//  StoreSpec.swift
+//  ActionSpec.swift
 //  ReduxKit
 //
 //  Created by Karl Bowden on 9/01/2016.
@@ -10,11 +10,11 @@ import Quick
 import Nimble
 @testable import ReduxKit
 
-class StoreSpec: QuickSpec {
+class ActionSpec: QuickSpec {
 
     override func spec() {
 
-        describe("StoreSpec") {
+        describe("ActionSpec") {
 
             it("should dispatch actions that conform to Action") {
                 // Arrange

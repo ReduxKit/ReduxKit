@@ -12,7 +12,7 @@
 		73061FAD1C2BB644005FA55E /* MiddlewareApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73061FAA1C2BB644005FA55E /* MiddlewareApi.swift */; };
 		73061FAE1C2BB644005FA55E /* MiddlewareApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73061FAA1C2BB644005FA55E /* MiddlewareApi.swift */; };
 		73552BD81C298D87003B7389 /* ReduxKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73552BCE1C298D87003B7389 /* ReduxKit.framework */; };
-		73552BE61C2990A5003B7389 /* ActionTypeSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D8431C1C24399200644EEC /* ActionTypeSpec.swift */; };
+		73552BE61C2990A5003B7389 /* FluxStandardActionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D8431C1C24399200644EEC /* FluxStandardActionSpec.swift */; };
 		73552BE71C2990A5003B7389 /* ApplyMiddlewaresSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D8431D1C24399200644EEC /* ApplyMiddlewaresSpec.swift */; };
 		73552BE81C2990A5003B7389 /* BindActionCreatorsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D8431E1C24399200644EEC /* BindActionCreatorsSpec.swift */; };
 		73552BE91C2990A5003B7389 /* CreateStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D8431F1C24399200644EEC /* CreateStoreSpec.swift */; };
@@ -37,11 +37,11 @@
 		73D383EA1C4098AA00A2F063 /* FluxStandardAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D383E81C4098AA00A2F063 /* FluxStandardAction.swift */; };
 		73D383EB1C4098AA00A2F063 /* FluxStandardAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D383E81C4098AA00A2F063 /* FluxStandardAction.swift */; };
 		73D383EC1C4098AA00A2F063 /* FluxStandardAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D383E81C4098AA00A2F063 /* FluxStandardAction.swift */; };
-		73D6282A1C4094330098579E /* StoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D628291C4094330098579E /* StoreSpec.swift */; };
-		73D6282B1C4094330098579E /* StoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D628291C4094330098579E /* StoreSpec.swift */; };
-		73D6282C1C4094330098579E /* StoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D628291C4094330098579E /* StoreSpec.swift */; };
+		73D6282A1C4094330098579E /* ActionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D628291C4094330098579E /* ActionSpec.swift */; };
+		73D6282B1C4094330098579E /* ActionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D628291C4094330098579E /* ActionSpec.swift */; };
+		73D6282C1C4094330098579E /* ActionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D628291C4094330098579E /* ActionSpec.swift */; };
 		73D842ED1C24369900644EEC /* ReduxKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 73D842EC1C24369900644EEC /* ReduxKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		73D843211C24399200644EEC /* ActionTypeSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D8431C1C24399200644EEC /* ActionTypeSpec.swift */; };
+		73D843211C24399200644EEC /* FluxStandardActionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D8431C1C24399200644EEC /* FluxStandardActionSpec.swift */; };
 		73D843231C24399200644EEC /* ApplyMiddlewaresSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D8431D1C24399200644EEC /* ApplyMiddlewaresSpec.swift */; };
 		73D843251C24399200644EEC /* BindActionCreatorsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D8431E1C24399200644EEC /* BindActionCreatorsSpec.swift */; };
 		73D843271C24399200644EEC /* CreateStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D8431F1C24399200644EEC /* CreateStoreSpec.swift */; };
@@ -69,7 +69,7 @@
 		73D8435C1C243A8D00644EEC /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D843351C243A8D00644EEC /* Store.swift */; };
 		73D8435E1C243B7200644EEC /* ReduxKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 73D842EC1C24369900644EEC /* ReduxKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		73D8436D1C243C8800644EEC /* ReduxKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73D842EA1C24369900644EEC /* ReduxKit.framework */; };
-		73D843731C243CCE00644EEC /* ActionTypeSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D8431C1C24399200644EEC /* ActionTypeSpec.swift */; };
+		73D843731C243CCE00644EEC /* FluxStandardActionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D8431C1C24399200644EEC /* FluxStandardActionSpec.swift */; };
 		73D843741C243CCE00644EEC /* ApplyMiddlewaresSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D8431D1C24399200644EEC /* ApplyMiddlewaresSpec.swift */; };
 		73D843751C243CCE00644EEC /* BindActionCreatorsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D8431E1C24399200644EEC /* BindActionCreatorsSpec.swift */; };
 		73D843761C243CCE00644EEC /* CreateStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D8431F1C24399200644EEC /* CreateStoreSpec.swift */; };
@@ -116,13 +116,13 @@
 		7389B88C1C24436200D58617 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/tvOS/Quick.framework; sourceTree = SOURCE_ROOT; };
 		738EEA251C30284D00797452 /* MiddlewareApiSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiddlewareApiSpec.swift; sourceTree = "<group>"; };
 		73D383E81C4098AA00A2F063 /* FluxStandardAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluxStandardAction.swift; sourceTree = "<group>"; };
-		73D628291C4094330098579E /* StoreSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreSpec.swift; sourceTree = "<group>"; };
+		73D628291C4094330098579E /* ActionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionSpec.swift; sourceTree = "<group>"; };
 		73D842EA1C24369900644EEC /* ReduxKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReduxKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73D842EC1C24369900644EEC /* ReduxKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReduxKit.h; sourceTree = "<group>"; };
 		73D842EE1C24369900644EEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73D842FA1C24369900644EEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73D843131C24377F00644EEC /* ReduxKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReduxKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		73D8431C1C24399200644EEC /* ActionTypeSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionTypeSpec.swift; sourceTree = "<group>"; };
+		73D8431C1C24399200644EEC /* FluxStandardActionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluxStandardActionSpec.swift; sourceTree = "<group>"; };
 		73D8431D1C24399200644EEC /* ApplyMiddlewaresSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplyMiddlewaresSpec.swift; sourceTree = "<group>"; };
 		73D8431E1C24399200644EEC /* BindActionCreatorsSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BindActionCreatorsSpec.swift; sourceTree = "<group>"; };
 		73D8431F1C24399200644EEC /* CreateStoreSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateStoreSpec.swift; sourceTree = "<group>"; };
@@ -236,13 +236,13 @@
 			isa = PBXGroup;
 			children = (
 				73D842FA1C24369900644EEC /* Info.plist */,
-				73D8431C1C24399200644EEC /* ActionTypeSpec.swift */,
+				73D628291C4094330098579E /* ActionSpec.swift */,
 				73D8431D1C24399200644EEC /* ApplyMiddlewaresSpec.swift */,
 				73D8431E1C24399200644EEC /* BindActionCreatorsSpec.swift */,
 				73D8431F1C24399200644EEC /* CreateStoreSpec.swift */,
+				73D8431C1C24399200644EEC /* FluxStandardActionSpec.swift */,
 				738EEA251C30284D00797452 /* MiddlewareApiSpec.swift */,
 				73D843201C24399200644EEC /* Mocks.swift */,
-				73D628291C4094330098579E /* StoreSpec.swift */,
 				73D8431B1C24392900644EEC /* Dependencies iOS */,
 				73D8435F1C243C3000644EEC /* Dependencies Mac */,
 				7389B88A1C24433F00D58617 /* Dependencies tvOS */,
@@ -697,9 +697,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				73552BE91C2990A5003B7389 /* CreateStoreSpec.swift in Sources */,
-				73D6282C1C4094330098579E /* StoreSpec.swift in Sources */,
+				73D6282C1C4094330098579E /* ActionSpec.swift in Sources */,
 				738EEA281C30284D00797452 /* MiddlewareApiSpec.swift in Sources */,
-				73552BE61C2990A5003B7389 /* ActionTypeSpec.swift in Sources */,
+				73552BE61C2990A5003B7389 /* FluxStandardActionSpec.swift in Sources */,
 				73552BE71C2990A5003B7389 /* ApplyMiddlewaresSpec.swift in Sources */,
 				73552BE81C2990A5003B7389 /* BindActionCreatorsSpec.swift in Sources */,
 				73552BEA1C2990A5003B7389 /* Mocks.swift in Sources */,
@@ -743,11 +743,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				73D843751C243CCE00644EEC /* BindActionCreatorsSpec.swift in Sources */,
-				73D6282B1C4094330098579E /* StoreSpec.swift in Sources */,
+				73D6282B1C4094330098579E /* ActionSpec.swift in Sources */,
 				738EEA271C30284D00797452 /* MiddlewareApiSpec.swift in Sources */,
 				73D843741C243CCE00644EEC /* ApplyMiddlewaresSpec.swift in Sources */,
 				73D843761C243CCE00644EEC /* CreateStoreSpec.swift in Sources */,
-				73D843731C243CCE00644EEC /* ActionTypeSpec.swift in Sources */,
+				73D843731C243CCE00644EEC /* FluxStandardActionSpec.swift in Sources */,
 				73D843771C243CCE00644EEC /* Mocks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -773,12 +773,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				73D843271C24399200644EEC /* CreateStoreSpec.swift in Sources */,
-				73D6282A1C4094330098579E /* StoreSpec.swift in Sources */,
+				73D6282A1C4094330098579E /* ActionSpec.swift in Sources */,
 				738EEA261C30284D00797452 /* MiddlewareApiSpec.swift in Sources */,
 				73D843231C24399200644EEC /* ApplyMiddlewaresSpec.swift in Sources */,
 				73D843291C24399200644EEC /* Mocks.swift in Sources */,
 				73D843251C24399200644EEC /* BindActionCreatorsSpec.swift in Sources */,
-				73D843211C24399200644EEC /* ActionTypeSpec.swift in Sources */,
+				73D843211C24399200644EEC /* FluxStandardActionSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
