@@ -99,12 +99,17 @@ struct IncrementAction: Action {
     }
 }
 
-struct DecrementAction: Action {
-    let payload: Int
-    init(payload: Int = 1) {
-        self.payload = payload
-    }
+
+/**
+ * And implemented as an enum action
+ */
+enum CountEnumAction: Action {
+    case Increment
+    case Decrement
+    case Set(Int)
 }
+
+
 
 /**
  This is a simple reducer. It is a pure function that follows the syntax (State, Action) -> State.
@@ -119,10 +124,18 @@ func counterReducer(previousState: Int?, action: Action) -> Int {
     var state = previousState ?? defaultValue
 
     switch action {
+        /// Handling an action implemented as a struct
         case let action as IncrementAction:
             return state + action.payload
-        case let action as DecrementAction:
-            return state - action.payload
+        // Handling actions implemented as Enums
+        case CountEnumAction.Increment:
+            return AppState(count: state.count + 1)
+        case CountEnumAction.Decrement:
+            return AppState(count: state.count - 1)
+        case CountEnumAction.Set(let value):
+           return AppState(count: value)
+
+
         default:
             return state
     }
@@ -161,10 +174,10 @@ let disposable = store.subscribe { state in
 store.dispatch(IncrementAction())
 // {counter: 1}
 
-store.dispatch(IncrementAction())
+store.dispatch(CountEnumAction.Increment)
 // {counter: 2}
 
-store.dispatch(DecrementAction())
+store.dispatch(CountEnumAction.Decrement)
 // {counter: 1}
 
 // Dispose of the subscriber after use.
@@ -175,5 +188,3 @@ disposable.dispose()
 ## License
 
 [MIT](http://reduxkit.github.io/ReduxKit/license.html)
-
-
