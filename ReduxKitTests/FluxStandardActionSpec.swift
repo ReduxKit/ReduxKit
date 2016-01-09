@@ -14,7 +14,7 @@ class FluxStandardActionSpec: QuickSpec {
 
     override func spec() {
 
-        describe("FluxStandardActionSpec") {
+        describe("FluxStandardAction") {
 
             // swiftlint:disable line_length
             it("should succesfully retrieve payload from FluxStandardAction types") {
