@@ -85,7 +85,7 @@ class ActionSpec: QuickSpec {
                 let actualType = MyAction().type
 
                 // Assert
-                expect(actualType is String).to(beTruthy())
+                expect((actualType as Any) is String).to(beTruthy())
             }
 
             it("should contains the type name") {
