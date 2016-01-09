@@ -6,8 +6,16 @@
 //  Copyright © 2015 Kare Media. All rights reserved.
 //
 
+// MARK: Action protocol
+
 /**
- Basic action structure
+ Base action type all actions must conform to.
+
+ The Action protocol is intentionally minimal to allow Action types to best fit their situation.
+
+ If there are common properties needed on all Action types in you app, the Action protocol can be
+ extended and each action can inherit from the new protocol instead. See FluxStandardAction for a
+ good example of this in practice.
  */
 public protocol Action {}
 
