@@ -33,6 +33,10 @@
 		73971CBE1C243F41005AC995 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73D843601C243C6300644EEC /* Nimble.framework */; };
 		73971CBF1C243F44005AC995 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73D843611C243C6300644EEC /* Quick.framework */; };
 		73971CC21C24409D005AC995 /* ReduxKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 73D842EC1C24369900644EEC /* ReduxKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		73D383E91C4098AA00A2F063 /* FluxStandardAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D383E81C4098AA00A2F063 /* FluxStandardAction.swift */; };
+		73D383EA1C4098AA00A2F063 /* FluxStandardAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D383E81C4098AA00A2F063 /* FluxStandardAction.swift */; };
+		73D383EB1C4098AA00A2F063 /* FluxStandardAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D383E81C4098AA00A2F063 /* FluxStandardAction.swift */; };
+		73D383EC1C4098AA00A2F063 /* FluxStandardAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D383E81C4098AA00A2F063 /* FluxStandardAction.swift */; };
 		73D6282A1C4094330098579E /* StoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D628291C4094330098579E /* StoreSpec.swift */; };
 		73D6282B1C4094330098579E /* StoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D628291C4094330098579E /* StoreSpec.swift */; };
 		73D6282C1C4094330098579E /* StoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D628291C4094330098579E /* StoreSpec.swift */; };
@@ -111,6 +115,7 @@
 		7389B88B1C24436200D58617 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/tvOS/Nimble.framework; sourceTree = SOURCE_ROOT; };
 		7389B88C1C24436200D58617 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/tvOS/Quick.framework; sourceTree = SOURCE_ROOT; };
 		738EEA251C30284D00797452 /* MiddlewareApiSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiddlewareApiSpec.swift; sourceTree = "<group>"; };
+		73D383E81C4098AA00A2F063 /* FluxStandardAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluxStandardAction.swift; sourceTree = "<group>"; };
 		73D628291C4094330098579E /* StoreSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreSpec.swift; sourceTree = "<group>"; };
 		73D842EA1C24369900644EEC /* ReduxKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReduxKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73D842EC1C24369900644EEC /* ReduxKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReduxKit.h; sourceTree = "<group>"; };
@@ -220,6 +225,7 @@
 				73D843311C243A8D00644EEC /* Compose.swift */,
 				73D843321C243A8D00644EEC /* CreateStore.swift */,
 				73D843331C243A8D00644EEC /* Disposable.swift */,
+				73D383E81C4098AA00A2F063 /* FluxStandardAction.swift */,
 				73061FAA1C2BB644005FA55E /* MiddlewareApi.swift */,
 				73D843351C243A8D00644EEC /* Store.swift */,
 			);
@@ -679,6 +685,7 @@
 				738EEA301C302D7000797452 /* Store.swift in Sources */,
 				738EEA291C302D7000797452 /* Action.swift in Sources */,
 				738EEA2A1C302D7000797452 /* ApplyMiddleware.swift in Sources */,
+				73D383EB1C4098AA00A2F063 /* FluxStandardAction.swift in Sources */,
 				738EEA2C1C302D7000797452 /* Compose.swift in Sources */,
 				738EEA2E1C302D7000797452 /* Disposable.swift in Sources */,
 				738EEA2D1C302D7000797452 /* CreateStore.swift in Sources */,
@@ -708,6 +715,7 @@
 				73D8435C1C243A8D00644EEC /* Store.swift in Sources */,
 				73D8433E1C243A8D00644EEC /* ApplyMiddleware.swift in Sources */,
 				73D843431C243A8D00644EEC /* BindActionCreators.swift in Sources */,
+				73D383EA1C4098AA00A2F063 /* FluxStandardAction.swift in Sources */,
 				73D843481C243A8D00644EEC /* Compose.swift in Sources */,
 				73061FAC1C2BB644005FA55E /* MiddlewareApi.swift in Sources */,
 				73D843391C243A8D00644EEC /* Action.swift in Sources */,
@@ -723,6 +731,7 @@
 				73D8435B1C243A8D00644EEC /* Store.swift in Sources */,
 				73D8433D1C243A8D00644EEC /* ApplyMiddleware.swift in Sources */,
 				73D843421C243A8D00644EEC /* BindActionCreators.swift in Sources */,
+				73D383EC1C4098AA00A2F063 /* FluxStandardAction.swift in Sources */,
 				73D843471C243A8D00644EEC /* Compose.swift in Sources */,
 				73061FAE1C2BB644005FA55E /* MiddlewareApi.swift in Sources */,
 				73D843381C243A8D00644EEC /* Action.swift in Sources */,
@@ -752,6 +761,7 @@
 				73D843591C243A8D00644EEC /* Store.swift in Sources */,
 				73D843401C243A8D00644EEC /* BindActionCreators.swift in Sources */,
 				73D8434F1C243A8D00644EEC /* Disposable.swift in Sources */,
+				73D383E91C4098AA00A2F063 /* FluxStandardAction.swift in Sources */,
 				73D8433B1C243A8D00644EEC /* ApplyMiddleware.swift in Sources */,
 				73061FAB1C2BB644005FA55E /* MiddlewareApi.swift in Sources */,
 				73D843451C243A8D00644EEC /* Compose.swift in Sources */,
