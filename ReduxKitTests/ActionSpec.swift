@@ -80,7 +80,15 @@ class ActionSpec: QuickSpec {
             struct MyAction: Action {}
             let expectedTypeContent = "MyAction"
 
-            it("should be a string that contains the type name") {
+            it("should be a string") {
+                // Act
+                let actualType = MyAction().type
+
+                // Assert
+                expect(actualType is String).to(beTruthy())
+            }
+
+            it("should contains the type name") {
                 // Act
                 let actualType = MyAction().type
 
