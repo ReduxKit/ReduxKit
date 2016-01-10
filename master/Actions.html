@@ -18,7 +18,7 @@
         <a class='header-link' href='index.html'>
           ReduxKit Docs
         </a>
-         (29% documented)
+         (32% documented)
       </p>
     
         <p class='header-col header-col--secondary'>
@@ -64,9 +64,6 @@
                 <a class='nav-group-task-link' href='redux-compatibility.html'>Redux Compatibility</a>
               </li>
               <li class='nav-group-task'>
-                <a class='nav-group-task-link' href='flux-standard-actions.html'>Flux Standard Actions</a>
-              </li>
-              <li class='nav-group-task'>
                 <a class='nav-group-task-link' href='contributing.html'>Contributing</a>
               </li>
               <li class='nav-group-task'>
@@ -107,6 +104,9 @@
             <ul class='nav-group-tasks'>
               <li class='nav-group-task'>
                 <a class='nav-group-task-link' href='Protocols/Action.html'>Action</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='Protocols/FluxStandardAction.html'>FluxStandardAction</a>
               </li>
               <li class='nav-group-task'>
                 <a class='nav-group-task-link' href='Protocols/SimpleStandardAction.html'>SimpleStandardAction</a>
@@ -151,13 +151,58 @@
         <section class='section'>
           <div class='section-content'>
             <h1>Actions</h1>
-            
+            <a href='#plain_actions' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='plain_actions'>Plain Actions</h2>
+
+<p>ReduxKit only defines a minimal protocol that <code>Action</code> types must conform to. Action types can be enums, structs or classes. Examples:</p>
+<pre class="highlight swift"><code><span class="c1">// A simple enum with three actions</span>
+<span class="kd">enum</span> <span class="kt">CountAction</span><span class="p">:</span> <span class="kt">Action</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="kt">Increment</span>
+    <span class="k">case</span> <span class="kt">Decrement</span>
+    <span class="k">case</span> <span class="kt">Set</span><span class="p">(</span><span class="nv">payload</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1">// The IncrementAction as a struct:</span>
+<span class="kd">struct</span> <span class="kt">IncrementAction</span><span class="p">:</span> <span class="kt">Action</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">payload</span><span class="p">:</span> <span class="kt">Int</span>
+<span class="p">}</span>
+
+<span class="c1">// Or even a class</span>
+<span class="kd">class</span> <span class="kt">IncrementActionClass</span><span class="p">:</span> <span class="kt">Action</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">payload</span><span class="p">:</span> <span class="kt">Int</span>
+    <span class="nf">init</span><span class="p">(</span><span class="nv">payload</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">payload</span> <span class="o">=</span> <span class="n">payload</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+<a href='#flux_standard_actions' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='flux_standard_actions'>Flux Standard Actions</h2>
+
+<p><a href="https://github.com/acdlite/flux-standard-action">Flux Standard Actions</a> are also implemented for applications that require consistent Actions. Flux Standard Actions allows for a lot of flexibility while still maintaining a standard pattern. Example:</p>
+<pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">IncrementAction</span><span class="p">:</span> <span class="kt">StandardAction</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">meta</span><span class="p">:</span> <span class="kt">Any</span><span class="p">?</span>
+    <span class="k">let</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">Bool</span>
+    <span class="k">let</span> <span class="nv">rawPayload</span><span class="p">:</span> <span class="kt">Int</span>
+
+    <span class="nf">init</span><span class="p">(</span><span class="nv">payload</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">meta</span><span class="p">:</span> <span class="kt">Any</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">rawPayload</span> <span class="o">=</span> <span class="n">payload</span> <span class="p">??</span> <span class="mi">1</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">meta</span> <span class="o">=</span> <span class="n">meta</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">error</span> <span class="o">=</span> <span class="n">error</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
           </div>
         </section>
 
         <section class='section'>
           <div class='section-content'>
             <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Action%20protocol"></a>
+                <a name="//apple_ref/swift/Section/Action protocol" class="dashAnchor"></a>
+                <a href="#/Action%20protocol">
+                  <h3 class="section-name">Action protocol</h3>
+                </a>
+              </div>
               <ul class='item-container'>
                 <li class="item">
                   <div>
@@ -172,7 +217,13 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Basic action structure</p>
+                        <p>Base action type all actions must conform to.</p>
+
+<p>The Action protocol is intentionally minimal to allow Action types to best fit their situation.</p>
+
+<p>If there are common properties needed on all Action types in you app, the Action protocol can be
+extended and each action can inherit from the new protocol instead. See FluxStandardAction for a
+good example of this in practice.</p>
 
                         <a href="Protocols/Action.html" class="slightly-smaller">See more</a>
                       </div>
@@ -180,16 +231,55 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">Action</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">Action</span> <span class="p">{}</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/ReduxKit/ReduxKit/tree/master/ReduxKit/ReduxKit/Action.swift#L12-L21">Show on GitHub</a>
+                        <a href="https://github.com/ReduxKit/ReduxKit/tree/master/ReduxKit/ReduxKit/Action.swift#L20">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
                 </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class='item-container'>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:P8ReduxKit18FluxStandardAction"></a>
+                    <a name="//apple_ref/swift/Protocol/FluxStandardAction" class="dashAnchor"></a>
+                    <a class="token" href="#/s:P8ReduxKit18FluxStandardAction">FluxStandardAction</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Basic action structure</p>
+
+                        <a href="Protocols/FluxStandardAction.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">FluxStandardAction</span><span class="p">:</span> <span class="kt">Action</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/ReduxKit/ReduxKit/tree/master/ReduxKit/ReduxKit/FluxStandardAction.swift#L13-L22">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class='item-container'>
                 <li class="item">
                   <div>
                     <code>
@@ -203,10 +293,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>This is the StandardAction which is the recommended protocol to use when
-  implementing actions.</p>
+                        <p>The SimpleStandardAction contains a strongly typed rawPayload property. It is generic and expects
+a rawPayload of a generic type.</p>
 
-<p>It is generic and expects a rawPayload of a generic type.</p>
+<p>The protocol automatically assigns the rawPayload to the Actions payload property. This removes
+the necessity of type casting whenever working with actions in a reducer.</p>
+
+<p>There&rsquo;s also the StandardAction protocol, that requires the struct to have an initializer. This is
+required if the bindActionCreators helper is to be used.</p>
 
                         <a href="Protocols/SimpleStandardAction.html" class="slightly-smaller">See more</a>
                       </div>
@@ -214,16 +308,20 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">SimpleStandardAction</span><span class="p">:</span> <span class="kt">Action</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">SimpleStandardAction</span><span class="p">:</span> <span class="kt">FluxStandardAction</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/ReduxKit/ReduxKit/tree/master/ReduxKit/ReduxKit/Action.swift#L46-L51">Show on GitHub</a>
+                        <a href="https://github.com/ReduxKit/ReduxKit/tree/master/ReduxKit/ReduxKit/SimpleStandardAction.swift#L19-L24">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
                 </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class='item-container'>
                 <li class="item">
                   <div>
                     <code>
@@ -252,11 +350,15 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/ReduxKit/ReduxKit/tree/master/ReduxKit/ReduxKit/Action.swift#L35-L38">Show on GitHub</a>
+                        <a href="https://github.com/ReduxKit/ReduxKit/tree/master/ReduxKit/ReduxKit/StandardAction.swift#L14-L17">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
                 </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class='item-container'>
                 <li class="item">
                   <div>
                     <code>
@@ -275,7 +377,7 @@
                         <a href="Structs/DefaultAction.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/ReduxKit/ReduxKit/tree/master/ReduxKit/ReduxKit/Action.swift#L60-L69">Show on GitHub</a>
+                        <a href="https://github.com/ReduxKit/ReduxKit/tree/master/ReduxKit/ReduxKit/DefaultAction.swift#L9-L11">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -297,15 +399,17 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Helper function that helps create shorthand dispatch functions. It requires a
-StandardAction with a valid initializer to function.</p>
+                        <p>Helper function that helps create shorthand dispatch functions. It requires a StandardAction with
+a valid initializer to function.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">bindActionCreators</span><span class="o">&lt;</span><span class="kt">Action</span> <span class="k">where</span> <span class="kt">Action</span><span class="p">:</span> <span class="kt">StandardAction</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">type</span><span class="p">:</span> <span class="kt">Action</span><span class="o">.</span><span class="k">Type</span><span class="p">,</span> <span class="nv">dispatch</span><span class="p">:</span> <span class="kt">Dispatch</span><span class="p">)</span>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">bindActionCreators</span><span class="o">&lt;</span><span class="kt">Action</span> <span class="k">where</span> <span class="kt">Action</span><span class="p">:</span> <span class="kt">StandardAction</span><span class="o">&gt;</span><span class="p">(</span>
+    <span class="nv">type</span><span class="p">:</span> <span class="kt">Action</span><span class="o">.</span><span class="k">Type</span><span class="p">,</span>
+    <span class="nv">dispatch</span><span class="p">:</span> <span class="kt">Dispatch</span><span class="p">)</span>
     <span class="o">-&gt;</span> <span class="p">(</span><span class="nv">payload</span><span class="p">:</span> <span class="kt">Action</span><span class="o">.</span><span class="kt">PayloadType</span><span class="p">?)</span>
     <span class="o">-&gt;</span> <span class="p">()</span></code></pre>
 
@@ -323,7 +427,8 @@ StandardAction with a valid initializer to function.</p>
                               </td>
                               <td>
                                 <div>
-                                  
+                                  <p>Type of action to bind</p>
+
                                 </div>
                               </td>
                             </tr>
@@ -335,15 +440,21 @@ StandardAction with a valid initializer to function.</p>
                               </td>
                               <td>
                                 <div>
-                                  
+                                  <p>Dispatching function (Action -&gt; Action)</p>
+
                                 </div>
                               </td>
                             </tr>
                           </tbody>
                         </table>
                       </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Callable ActionCreator</p>
+
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/ReduxKit/ReduxKit/tree/master/ReduxKit/ReduxKit/BindActionCreators.swift#L18-L30">Show on GitHub</a>
+                        <a href="https://github.com/ReduxKit/ReduxKit/tree/master/ReduxKit/ReduxKit/BindActionCreators.swift#L20-L34">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -356,7 +467,7 @@ StandardAction with a valid initializer to function.</p>
       </article>
     </div>
     <section class='footer'>
-      <p>&copy; 2015 <a class="link" href="https://github.com/ReduxKit/ReduxKit" target="_blank" rel="external">ReduxKit</a>. All rights reserved. (Last updated: 2015-12-31)</p>
+      <p>&copy; 2016 <a class="link" href="https://github.com/ReduxKit/ReduxKit" target="_blank" rel="external">ReduxKit</a>. All rights reserved. (Last updated: 2016-01-10)</p>
       <p>Generated by <a class='link' href='https://github.com/realm/jazzy' target='_blank' rel='external'>jazzy ♪♫ v0.4.1</a>, a <a class='link' href='http://realm.io' target='_blank' rel='external'>Realm</a> project.</p>
     </section>
   </body>

@@ -19,7 +19,7 @@
         <a class='header-link' href='index.html'>
           ReduxKit Docs
         </a>
-         (29% documented)
+         (32% documented)
       </p>
     
         <p class='header-col header-col--secondary'>
@@ -65,9 +65,6 @@
                 <a class='nav-group-task-link' href='redux-compatibility.html'>Redux Compatibility</a>
               </li>
               <li class='nav-group-task'>
-                <a class='nav-group-task-link' href='flux-standard-actions.html'>Flux Standard Actions</a>
-              </li>
-              <li class='nav-group-task'>
                 <a class='nav-group-task-link' href='contributing.html'>Contributing</a>
               </li>
               <li class='nav-group-task'>
@@ -108,6 +105,9 @@
             <ul class='nav-group-tasks'>
               <li class='nav-group-task'>
                 <a class='nav-group-task-link' href='Protocols/Action.html'>Action</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='Protocols/FluxStandardAction.html'>FluxStandardAction</a>
               </li>
               <li class='nav-group-task'>
                 <a class='nav-group-task-link' href='Protocols/SimpleStandardAction.html'>SimpleStandardAction</a>
@@ -158,34 +158,34 @@
 <pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">ReduxKit</span>
 
 <span class="o">/**</span>
- <span class="kt">This</span> <span class="k">is</span> <span class="n">a</span> <span class="n">simple</span> <span class="n">standard</span> <span class="n">action</span><span class="o">.</span> <span class="kt">The</span> <span class="n">only</span> <span class="n">requirement</span> <span class="k">is</span> <span class="n">that</span> <span class="n">an</span> <span class="n">action</span> <span class="n">complies</span> <span class="n">to</span>
- <span class="n">the</span> <span class="kt">Action</span> <span class="kd">protocol</span><span class="o">.</span> <span class="kt">The</span> <span class="kt">SimpleStandardAction</span> <span class="n">contains</span> <span class="n">a</span> <span class="n">strongly</span> <span class="n">typed</span> <span class="n">rawPayload</span>
- <span class="n">property</span><span class="o">.</span> <span class="kt">The</span> <span class="kd">protocol</span> <span class="n">automatically</span> <span class="k">as</span><span class="n">signs</span> <span class="n">the</span> <span class="n">rawPayload</span> <span class="n">to</span> <span class="n">the</span> <span class="kt">Actions</span> <span class="n">payload</span>
- <span class="n">property</span><span class="o">.</span> <span class="kt">This</span> <span class="n">removes</span> <span class="n">the</span> <span class="n">necessity</span> <span class="n">of</span> <span class="n">type</span> <span class="n">casting</span> <span class="n">whenever</span> <span class="n">working</span> <span class="n">with</span> <span class="n">actions</span> <span class="k">in</span>
- <span class="n">a</span> <span class="n">reducer</span><span class="o">.</span>
+ <span class="kt">This</span> <span class="k">is</span> <span class="n">an</span> <span class="n">extremely</span> <span class="n">simple</span> <span class="n">and</span> <span class="n">flexible</span> <span class="n">action</span><span class="o">.</span> <span class="kt">The</span> <span class="n">only</span> <span class="n">requirement</span> <span class="k">for</span> <span class="n">actions</span> <span class="k">is</span> <span class="n">that</span> <span class="n">they</span>
+ <span class="n">conform</span> <span class="n">to</span> <span class="n">the</span> <span class="kt">Action</span> <span class="kd">protocol</span><span class="o">.</span>
 
- <span class="kt">There</span><span class="err">'</span><span class="n">s</span> <span class="n">also</span> <span class="n">the</span> <span class="kt">StandardAction</span> <span class="kd">protocol</span><span class="p">,</span> <span class="n">that</span> <span class="n">requires</span> <span class="n">the</span> <span class="kd">struct</span> <span class="n">to</span> <span class="n">have</span> <span class="n">an</span>
- <span class="n">initializer</span><span class="o">.</span> <span class="kt">This</span> <span class="k">is</span> <span class="kd">required</span> <span class="k">if</span> <span class="n">the</span> <span class="n">bindActionCreators</span> <span class="n">helper</span> <span class="k">is</span> <span class="n">to</span> <span class="n">be</span> <span class="n">used</span><span class="o">.</span>
+ <span class="kt">The</span> <span class="kt">Action</span> <span class="kd">protocol</span> <span class="n">can</span> <span class="n">be</span> <span class="n">inherited</span> <span class="n">from</span> <span class="k">for</span> <span class="n">app</span> <span class="n">specific</span> <span class="kt">Action</span> <span class="n">requirements</span><span class="o">.</span> <span class="kt">For</span> <span class="n">a</span> <span class="n">good</span> <span class="n">example</span>
+ <span class="n">of</span> <span class="n">this</span><span class="p">,</span> <span class="n">see</span> <span class="kt">FluxStandardAction</span> <span class="n">and</span> <span class="n">the</span> <span class="n">implementing</span> <span class="n">types</span> <span class="k">in</span> <span class="n">the</span> <span class="n">source</span><span class="o">.</span>
+
+ <span class="kt">Action</span> <span class="n">can</span> <span class="n">be</span> <span class="n">implemented</span> <span class="k">as</span> <span class="n">an</span> <span class="kd">enum</span><span class="p">,</span> <span class="kd">struct</span> <span class="n">or</span> <span class="kd">class</span><span class="o">.</span>
  <span class="o">*/</span>
-<span class="kd">struct</span> <span class="kt">IncrementAction</span><span class="p">:</span> <span class="kt">SimpleStandardAction</span> <span class="p">{</span>
-    <span class="k">let</span> <span class="nv">meta</span><span class="p">:</span> <span class="kt">Any</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span>
-    <span class="k">let</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span>
-    <span class="k">let</span> <span class="nv">rawPayload</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="kd">struct</span> <span class="kt">IncrementAction</span><span class="p">:</span> <span class="kt">Action</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">payload</span><span class="p">:</span> <span class="kt">Int</span>
+    <span class="nf">init</span><span class="p">(</span><span class="nv">payload</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">payload</span> <span class="o">=</span> <span class="n">payload</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="kd">struct</span> <span class="kt">DecrementAction</span><span class="p">:</span> <span class="kt">SimpleStandardAction</span> <span class="p">{</span>
-    <span class="k">let</span> <span class="nv">meta</span><span class="p">:</span> <span class="kt">Any</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span>
-    <span class="k">let</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span>
-    <span class="k">let</span> <span class="nv">rawPayload</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="kd">struct</span> <span class="kt">DecrementAction</span><span class="p">:</span> <span class="kt">Action</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">payload</span><span class="p">:</span> <span class="kt">Int</span>
+    <span class="nf">init</span><span class="p">(</span><span class="nv">payload</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">payload</span> <span class="o">=</span> <span class="n">payload</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 
 <span class="o">/**</span>
- <span class="kt">This</span> <span class="k">is</span> <span class="n">a</span> <span class="n">simple</span> <span class="n">reducer</span><span class="o">.</span> <span class="kt">It</span> <span class="k">is</span> <span class="n">a</span> <span class="n">pure</span> <span class="n">function</span> <span class="n">that</span> <span class="n">follows</span> <span class="n">the</span> <span class="nf">syntax</span>
- <span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">action</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">state</span><span class="o">.</span>
+ <span class="kt">This</span> <span class="k">is</span> <span class="n">a</span> <span class="n">simple</span> <span class="n">reducer</span><span class="o">.</span> <span class="kt">It</span> <span class="k">is</span> <span class="n">a</span> <span class="n">pure</span> <span class="n">function</span> <span class="n">that</span> <span class="n">follows</span> <span class="n">the</span> <span class="nf">syntax</span> <span class="p">(</span><span class="kt">State</span><span class="p">,</span> <span class="kt">Action</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">State</span><span class="o">.</span>
  <span class="kt">It</span> <span class="n">describes</span> <span class="n">how</span> <span class="n">an</span> <span class="n">action</span> <span class="n">transforms</span> <span class="n">the</span> <span class="n">previous</span> <span class="n">state</span> <span class="n">into</span> <span class="n">the</span> <span class="n">next</span> <span class="n">state</span><span class="o">.</span>
 
- <span class="kt">Instead</span> <span class="n">of</span> <span class="n">using</span> <span class="n">the</span> <span class="n">actions</span><span class="o">.</span><span class="n">type</span> <span class="n">property</span> <span class="o">-</span> <span class="k">as</span> <span class="k">is</span> <span class="n">done</span> <span class="k">in</span> <span class="n">the</span> <span class="n">regular</span> <span class="kt">Redux</span> <span class="n">framework</span>
- <span class="n">we</span> <span class="n">use</span> <span class="n">the</span> <span class="n">power</span> <span class="n">of</span> <span class="kt">Swifts</span> <span class="kd">static</span> <span class="n">typing</span> <span class="n">to</span> <span class="n">deduce</span> <span class="n">the</span> <span class="n">action</span><span class="o">.</span>
+ <span class="kt">Instead</span> <span class="n">of</span> <span class="n">using</span> <span class="n">the</span> <span class="kt">Action</span><span class="o">.</span><span class="n">type</span> <span class="n">property</span> <span class="o">-</span> <span class="k">as</span> <span class="k">is</span> <span class="n">done</span> <span class="k">in</span> <span class="n">the</span> <span class="n">regular</span> <span class="kt">Redux</span> <span class="n">framework</span> <span class="n">we</span> <span class="n">use</span> <span class="n">the</span>
+ <span class="n">power</span> <span class="n">of</span> <span class="kt">Swifts</span> <span class="kd">static</span> <span class="n">typing</span> <span class="n">to</span> <span class="n">deduce</span> <span class="n">the</span> <span class="n">action</span><span class="o">.</span>
  <span class="o">*/</span>
 <span class="kd">func</span> <span class="nf">counterReducer</span><span class="p">(</span><span class="nv">previousState</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?,</span> <span class="nv">action</span><span class="p">:</span> <span class="kt">Action</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
     <span class="c1">// Declare the reducers default value</span>
@@ -194,9 +194,9 @@
 
     <span class="k">switch</span> <span class="n">action</span> <span class="p">{</span>
         <span class="k">case</span> <span class="k">let</span> <span class="nv">action</span> <span class="k">as</span> <span class="kt">IncrementAction</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">state</span> <span class="o">+</span> <span class="n">action</span><span class="o">.</span><span class="n">rawPayload</span>
+            <span class="k">return</span> <span class="n">state</span> <span class="o">+</span> <span class="n">action</span><span class="o">.</span><span class="n">payload</span>
         <span class="k">case</span> <span class="k">let</span> <span class="nv">action</span> <span class="k">as</span> <span class="kt">DecrementAction</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">state</span> <span class="o">-</span> <span class="n">action</span><span class="o">.</span><span class="n">rawPayload</span>
+            <span class="k">return</span> <span class="n">state</span> <span class="o">-</span> <span class="n">action</span><span class="o">.</span><span class="n">payload</span>
         <span class="k">default</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">state</span>
     <span class="p">}</span>
@@ -204,32 +204,31 @@
 
 <span class="o">/**</span>
  <span class="kt">The</span> <span class="n">applications</span> <span class="n">state</span><span class="o">.</span> <span class="kt">This</span> <span class="n">should</span> <span class="n">contain</span> <span class="n">the</span> <span class="n">state</span> <span class="n">of</span> <span class="n">the</span> <span class="n">whole</span> <span class="n">application</span><span class="o">.</span>
- <span class="kt">When</span> <span class="n">building</span> <span class="n">larger</span> <span class="n">applications</span><span class="p">,</span> <span class="n">you</span> <span class="n">can</span> <span class="n">optionally</span> <span class="k">as</span><span class="n">sign</span> <span class="n">complex</span> <span class="n">structs</span> <span class="n">to</span>
- <span class="n">properties</span> <span class="n">on</span> <span class="n">the</span> <span class="kt">AppState</span> <span class="n">and</span> <span class="n">handle</span> <span class="n">them</span> <span class="k">in</span> <span class="n">the</span> <span class="n">part</span> <span class="n">of</span> <span class="n">the</span> <span class="n">application</span> <span class="n">that</span>
- <span class="n">uses</span> <span class="n">them</span><span class="o">.</span>
+ <span class="kt">When</span> <span class="n">building</span> <span class="n">larger</span> <span class="n">applications</span><span class="p">,</span> <span class="n">you</span> <span class="n">can</span> <span class="n">optionally</span> <span class="k">as</span><span class="n">sign</span> <span class="n">complex</span> <span class="n">structs</span> <span class="n">to</span> <span class="n">properties</span> <span class="n">on</span> <span class="n">the</span>
+ <span class="kt">AppState</span> <span class="n">and</span> <span class="n">handle</span> <span class="n">them</span> <span class="k">in</span> <span class="n">the</span> <span class="n">part</span> <span class="n">of</span> <span class="n">the</span> <span class="n">application</span> <span class="n">that</span> <span class="n">uses</span> <span class="n">them</span><span class="o">.</span>
  <span class="o">*/</span>
 <span class="kd">struct</span> <span class="kt">AppState</span> <span class="p">{</span>
-  <span class="k">var</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span><span class="o">!</span>
+    <span class="k">var</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span><span class="o">!</span>
 <span class="p">}</span>
 
 <span class="o">/**</span>
- <span class="kt">Create</span> <span class="n">the</span> <span class="n">applications</span> <span class="n">reducer</span><span class="o">.</span> <span class="kt">While</span> <span class="n">we</span> <span class="n">could</span> <span class="n">create</span> <span class="n">a</span> <span class="n">combineReducer</span> <span class="n">function</span>
- <span class="n">we</span><span class="err">'</span><span class="n">ve</span> <span class="n">currently</span> <span class="n">chosen</span> <span class="n">to</span> <span class="n">allow</span> <span class="n">reducers</span> <span class="n">to</span> <span class="n">be</span> <span class="n">statically</span> <span class="n">typed</span> <span class="n">and</span> <span class="n">accept</span>
- <span class="kd">static</span> <span class="n">states</span> <span class="o">-</span> <span class="n">instead</span> <span class="n">of</span> <span class="kt">Any</span> <span class="o">-</span> <span class="n">which</span> <span class="n">currently</span> <span class="n">forces</span> <span class="n">us</span> <span class="n">to</span> <span class="n">define</span> <span class="n">the</span>
- <span class="n">application</span> <span class="n">reducer</span> <span class="k">as</span> <span class="n">such</span><span class="o">.</span> <span class="kt">This</span> <span class="n">could</span> <span class="n">possibly</span> <span class="n">be</span> <span class="n">simplified</span> <span class="n">with</span> <span class="n">reflection</span><span class="o">.</span>
+ <span class="kt">Create</span> <span class="n">the</span> <span class="n">applications</span> <span class="n">reducer</span><span class="o">.</span> <span class="kt">While</span> <span class="n">we</span> <span class="n">could</span> <span class="n">create</span> <span class="n">a</span> <span class="n">combineReducer</span> <span class="n">function</span> <span class="n">we</span><span class="err">'</span><span class="n">ve</span> <span class="n">currently</span>
+ <span class="n">chosen</span> <span class="n">to</span> <span class="n">allow</span> <span class="n">reducers</span> <span class="n">to</span> <span class="n">be</span> <span class="n">statically</span> <span class="n">typed</span> <span class="n">and</span> <span class="n">accept</span> <span class="kd">static</span> <span class="n">states</span> <span class="o">-</span> <span class="n">instead</span> <span class="n">of</span> <span class="kt">Any</span> <span class="o">-</span> <span class="n">which</span>
+ <span class="n">currently</span> <span class="n">forces</span> <span class="n">us</span> <span class="n">to</span> <span class="n">define</span> <span class="n">the</span> <span class="n">application</span> <span class="n">reducer</span> <span class="k">as</span> <span class="n">such</span><span class="o">.</span> <span class="kt">This</span> <span class="n">could</span> <span class="n">possibly</span> <span class="n">be</span> <span class="n">simplified</span>
+ <span class="n">with</span> <span class="n">reflection</span><span class="o">.</span>
  <span class="o">*/</span>
 <span class="k">let</span> <span class="nv">applicationReducer</span> <span class="o">=</span> <span class="p">{(</span><span class="nv">state</span><span class="p">:</span> <span class="kt">AppState</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">action</span><span class="p">:</span> <span class="kt">Action</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AppState</span> <span class="k">in</span>
 
-  <span class="k">return</span> <span class="kt">AppState</span><span class="p">(</span>
-    <span class="nv">count</span><span class="p">:</span> <span class="nf">counterReducer</span><span class="p">(</span><span class="n">state</span><span class="p">?</span><span class="o">.</span><span class="n">count</span><span class="p">,</span> <span class="nv">action</span><span class="p">:</span> <span class="n">action</span><span class="p">),</span>
+    <span class="k">return</span> <span class="kt">AppState</span><span class="p">(</span>
+        <span class="nv">count</span><span class="p">:</span> <span class="nf">counterReducer</span><span class="p">(</span><span class="n">state</span><span class="p">?</span><span class="o">.</span><span class="n">count</span><span class="p">,</span> <span class="nv">action</span><span class="p">:</span> <span class="n">action</span><span class="p">),</span>
     <span class="p">)</span>
 <span class="p">}</span>
 
 <span class="c1">// Create application store. The second parameter is an optional default state.</span>
 <span class="k">let</span> <span class="nv">store</span> <span class="o">=</span> <span class="nf">createStore</span><span class="p">(</span><span class="n">applicationReducer</span><span class="p">,</span> <span class="kc">nil</span><span class="p">)</span>
 
-<span class="k">let</span> <span class="nv">disposable</span> <span class="o">=</span> <span class="n">store</span><span class="o">.</span><span class="n">subscribe</span><span class="p">{</span> <span class="n">state</span> <span class="k">in</span>
-  <span class="nf">print</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">disposable</span> <span class="o">=</span> <span class="n">store</span><span class="o">.</span><span class="n">subscribe</span> <span class="p">{</span> <span class="n">state</span> <span class="k">in</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
 <span class="p">}</span>
 
 
@@ -254,7 +253,7 @@
       </article>
     </div>
     <section class='footer'>
-      <p>&copy; 2015 <a class="link" href="https://github.com/ReduxKit/ReduxKit" target="_blank" rel="external">ReduxKit</a>. All rights reserved. (Last updated: 2015-12-31)</p>
+      <p>&copy; 2016 <a class="link" href="https://github.com/ReduxKit/ReduxKit" target="_blank" rel="external">ReduxKit</a>. All rights reserved. (Last updated: 2016-01-10)</p>
       <p>Generated by <a class='link' href='https://github.com/realm/jazzy' target='_blank' rel='external'>jazzy ♪♫ v0.4.1</a>, a <a class='link' href='http://realm.io' target='_blank' rel='external'>Realm</a> project.</p>
     </section>
   </body>

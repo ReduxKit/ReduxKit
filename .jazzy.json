@@ -23,7 +23,6 @@
             "Types and generic State",
             "Bindings",
             "Redux Compatibility",
-            "Flux Standard Actions",
             "Contributing",
             "Progress",
             "License"
@@ -45,6 +44,7 @@
         "name": "Actions",
         "children": [
             "Action",
+            "FluxStandardAction",
             "SimpleStandardAction",
             "StandardAction",
             "DefaultAction",

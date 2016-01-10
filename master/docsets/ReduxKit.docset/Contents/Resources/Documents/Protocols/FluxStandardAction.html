@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang='en'>
   <head>
-    <title>SimpleStandardAction Protocol Reference</title>
+    <title>FluxStandardAction Protocol Reference</title>
     <link rel='stylesheet' type='text/css' href='../css/jazzy.css' />
     <link rel='stylesheet' type='text/css' href='../css/highlight.css' />
     <meta charset='utf-8'>
@@ -10,9 +10,9 @@
   </head>
   <body>
 
-    <a name='//apple_ref/swift/Protocol/SimpleStandardAction' class='dashAnchor'></a>
+    <a name='//apple_ref/swift/Protocol/FluxStandardAction' class='dashAnchor'></a>
 
-    <a title='SimpleStandardAction Protocol Reference'></a>
+    <a title='FluxStandardAction Protocol Reference'></a>
 
     <header class='header'>
       <p class='header-col header-col--primary'>
@@ -40,7 +40,7 @@
     <p class='breadcrumbs'>
       <a class='breadcrumb' href='../index.html'>ReduxKit Reference</a>
       <img class='carat' src='../img/carat.png' />
-      SimpleStandardAction Protocol Reference
+      FluxStandardAction Protocol Reference
     </p>
 
     <div class='content-wrapper'>
@@ -151,21 +151,14 @@
 
         <section class='section'>
           <div class='section-content'>
-            <h1>SimpleStandardAction</h1>
+            <h1>FluxStandardAction</h1>
               <div class='declaration'>
                 <div class='language'>
-                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">SimpleStandardAction</span><span class="p">:</span> <span class="kt">FluxStandardAction</span></code></pre>
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">FluxStandardAction</span><span class="p">:</span> <span class="kt">Action</span></code></pre>
 
                 </div>
               </div>
-            <p>The SimpleStandardAction contains a strongly typed rawPayload property. It is generic and expects
-a rawPayload of a generic type.</p>
-
-<p>The protocol automatically assigns the rawPayload to the Actions payload property. This removes
-the necessity of type casting whenever working with actions in a reducer.</p>
-
-<p>There&rsquo;s also the StandardAction protocol, that requires the struct to have an initializer. This is
-required if the bindActionCreators helper is to be used.</p>
+            <p>Basic action structure</p>
 
           </div>
         </section>
@@ -177,9 +170,9 @@ required if the bindActionCreators helper is to be used.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vP8ReduxKit20SimpleStandardAction10rawPayloadqq_S0_11PayloadType"></a>
-                    <a name="//apple_ref/swift/Property/rawPayload" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vP8ReduxKit20SimpleStandardAction10rawPayloadqq_S0_11PayloadType">rawPayload</a>
+                    <a name="/s:vP8ReduxKit18FluxStandardAction4typeSS"></a>
+                    <a name="//apple_ref/swift/Property/type" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vP8ReduxKit18FluxStandardAction4typeSS">type</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -194,49 +187,102 @@ required if the bindActionCreators helper is to be used.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">SimpleStandardAction</span><span class="p">:</span> <span class="kt">FluxStandardAction</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">FluxStandardAction</span><span class="p">:</span> <span class="kt">Action</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/ReduxKit/ReduxKit/tree/master/ReduxKit/ReduxKit/SimpleStandardAction.swift#L0">Show on GitHub</a>
+                        <a href="https://github.com/ReduxKit/ReduxKit/tree/master/ReduxKit/ReduxKit/FluxStandardAction.swift#L0">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul class='item-container'>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:veRq_8ReduxKit20SimpleStandardAction_S_S0_7payloadGSqP__"></a>
+                    <a name="/s:vP8ReduxKit18FluxStandardAction7payloadGSqP__"></a>
                     <a name="//apple_ref/swift/Property/payload" class="dashAnchor"></a>
-                    <a class="token" href="#/s:veRq_8ReduxKit20SimpleStandardAction_S_S0_7payloadGSqP__">payload</a>
+                    <a class="token" href="#/s:vP8ReduxKit18FluxStandardAction7payloadGSqP__">payload</a>
                     </code>
-                      <span class="declaration-note">
-                        Extension method
-                      </span>
                   </div>
                   <div class="height-container">
                     <div class="pointer-container"></div>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Default implementation for payload</p>
+                        <p>Undocumented</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">payload</span><span class="p">:</span> <span class="kt">Any</span><span class="p">?</span> <span class="p">{</span> <span class="k">return</span> <span class="n">rawPayload</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">FluxStandardAction</span><span class="p">:</span> <span class="kt">Action</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/ReduxKit/ReduxKit/tree/master/ReduxKit/ReduxKit/SimpleStandardAction.swift#L29">Show on GitHub</a>
+                        <a href="https://github.com/ReduxKit/ReduxKit/tree/master/ReduxKit/ReduxKit/FluxStandardAction.swift#L0">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vP8ReduxKit18FluxStandardAction4metaGSqP__"></a>
+                    <a name="//apple_ref/swift/Property/meta" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vP8ReduxKit18FluxStandardAction4metaGSqP__">meta</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">FluxStandardAction</span><span class="p">:</span> <span class="kt">Action</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/ReduxKit/ReduxKit/tree/master/ReduxKit/ReduxKit/FluxStandardAction.swift#L0">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vP8ReduxKit18FluxStandardAction5errorSb"></a>
+                    <a name="//apple_ref/swift/Property/error" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vP8ReduxKit18FluxStandardAction5errorSb">error</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">FluxStandardAction</span><span class="p">:</span> <span class="kt">Action</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/ReduxKit/ReduxKit/tree/master/ReduxKit/ReduxKit/FluxStandardAction.swift#L0">Show on GitHub</a>
                       </div>
                     </section>
                   </div>

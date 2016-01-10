@@ -3,9 +3,11 @@ Disposable.swift
 	var disposed: Bool { get }
 	var dispose: () -> () { get }
 	public struct SimpleReduxDisposable: ReduxDisposable
-	public var disposed: Bool { return _disposed() }
+	public var disposed: Bool { return disposedCallback() }
 	public let dispose: () -> ()
 	public init(disposed: () -> Bool, dispose: () -> ())
+StandardAction.swift
+	init(payload: PayloadType?, meta: Any?, error: Bool)
 Store.swift
 	var dispatch: Dispatch { get }
 	var subscribe: (State -> ()) -> ReduxDisposable { get }
@@ -15,9 +17,22 @@ Store.swift
 	public let subscribe: (State -> ()) -> ReduxDisposable
 	public let getState: () -> State
 	public var state: State { return getState() }
-	public init(dispatch: Dispatch, subscribe: (State -> ()) -> ReduxDisposable, getState: () -> State)
+	public init(
+        dispatch: Dispatch,
+        subscribe: (State -> ()) -> ReduxDisposable,
+        getState: () -> State)
+FluxStandardAction.swift
+	var type: String { get }
+	var payload: Any? { get }
+	var meta: Any? { get }
+	var error: Bool { get }
+SimpleStandardAction.swift
+	var rawPayload: PayloadType { get }
 Compose.swift
 	public func compose<T>(objects: [(T) -> T]) -> (T) -> T
+DefaultAction.swift
+	public struct DefaultAction: Action
+	public init() {}
 MiddlewareApi.swift
 	var dispatch: Dispatch { get }
 	var getState: () -> State { get }
@@ -25,15 +40,3 @@ MiddlewareApi.swift
 	public let dispatch: Dispatch
 	public let getState: () -> State
 	public init(dispatch: Dispatch, getState: () -> State)
-Action.swift
-	var type: String { get }
-	var payload: Any? { get }
-	var meta: Any? { get }
-	var error: Bool { get }
-	init(payload: PayloadType?, meta: Any?, error: Bool)
-	var rawPayload : PayloadType { get }
-	public struct DefaultAction: SimpleStandardAction
-	public let meta: Any? = nil
-	public let error: Bool = false
-	public let rawPayload: String = "$$ReduxKit-DefaultAction"
-	public init() {}
