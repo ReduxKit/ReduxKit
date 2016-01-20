@@ -3,12 +3,21 @@
 [![Build Status](https://img.shields.io/travis/ReduxKit/ReduxKit.svg)](https://travis-ci.org/ReduxKit/ReduxKit) [![Code coverage status](https://img.shields.io/codecov/c/github/ReduxKit/ReduxKit.svg)](http://codecov.io/github/ReduxKit/ReduxKit) [![Doc coverage](https://img.shields.io/cocoapods/metrics/doc-percent/ReduxKit.svg)](https://cocoapods.org/pods/ReduxKit)
 [![Carthage Version](https://img.shields.io/github/tag/ReduxKit/ReduxKit.svg?label=carthage&color=4481C7)](https://github.com/Carthage/Carthage) [![Cocoapods Compatible](https://img.shields.io/cocoapods/v/ReduxKit.svg)](https://cocoapods.org/pods/ReduxKit) [![Platform](https://img.shields.io/cocoapods/p/ReduxKit.svg)](https://cocoapods.org/pods/ReduxKit) [![License MIT](https://img.shields.io/badge/license-MIT-4481C7.svg)](https://opensource.org/licenses/MIT)
 
+# Merge / deprecation announcement:
 
-## Cross promotion / pollination
+**ReduxKit** and **Swift-Flow** have joined forces! The result is **ReSwift**.
 
-> [\#13](https://github.com/ReduxKit/ReduxKit/issues/13): [@Ben-G](https://github.com/Ben-G) has done an awesome job of developing an independent, very idiomatic, swift implementation of Redux as [Swift-Flow](https://github.com/Swift-Flow/Swift-Flow).
->
-> After a short discussion it's clear we all agree that collaboration and sharing of idea's will be beneficial to both projects. Go check it out. Feedback on both projects would be appreciated.
+> _The nitty gritty_: We decided to deprecate ReduxKit and keep it as a reference implementation of how an almost exact Redux implementation in Swift can be accomplished. 
+> 
+> Swift-Flow has adopted the name **[ReSwift](https://github.com/ReSwift/ReSwift)** and moved to it's new home as a nod to it's Redux roots that remain at it's core. Going forward, our combined efforts will be focused on ReSwift and surrounding tooling.
+
+**ReduxKit:**
+
+- Will no longer be actively maintained
+- Will remain as a reference implementation of Redux in Swift
+- Pull requests are still welcome
+
+What are you waiting for? Go get started with **[ReSwift](https://github.com/ReSwift/ReSwift)** today!
 
 ## Introduction
 
